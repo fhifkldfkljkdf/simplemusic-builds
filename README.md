@@ -7,7 +7,7 @@ problems with it to them.
 ## Download
 
 **[SimpMusic-dev-listen-together-arm64.apk](https://github.com/fhifkldfkljkdf/simplemusic-builds/raw/main/SimpMusic-dev-listen-together-arm64.apk)**
-(66.5 MB, for 64-bit Android phones)
+(68.4 MB, for 64-bit Android phones)
 
 1. Open the link on your phone. No GitHub account is needed.
 2. Open the downloaded file. The first time, Android asks you to allow installing apps from your browser.
@@ -24,10 +24,13 @@ Listen Together:
 - **Listen on my own**: play other songs without leaving the room, then come back with one tap.
 - **Share what I play**: while listening on your own, the host sees your songs as suggestions and can
   play them for everyone.
+- **Room QR codes**: tap the QR button next to the room code to show it. Friends join by tapping
+  **Scan QR code** in Listen Together, or by scanning it with their phone's camera app. Your name is
+  remembered, so joining by QR code needs no typing.
 
 ## Source code
 
 SimpMusic is licensed under the GNU General Public License v3.0 (see [LICENSE](LICENSE)).
-[SimpMusic-source-5dabf3d.zip](SimpMusic-source-5dabf3d.zip) is the complete source code this build was
-made from, including the changes above: the app at commit `5dabf3d` and its `core` module at `6f16a72`.
+[SimpMusic-source-9ac1cb1.zip](SimpMusic-source-9ac1cb1.zip) is the complete source code this build was
+made from, including the changes above: the app at commit `9ac1cb1` and its `core` module at `f15d631`.
 Build it with `./gradlew :androidApp:assembleDebug` (Android SDK and JDK 21 required).
