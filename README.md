@@ -1,6 +1,6 @@
 # SimpMusic test builds (unofficial)
 
-<img src="icon.png" width="96" alt="The test build's app icon: five white rounded bars of a sound wave, on a violet-to-magenta background">
+<img src="icon.png" width="96" alt="The test build's app icon: five white rounded bars of a sound wave, on a blue background">
 
 An unofficial test build of [SimpMusic](https://github.com/maxrave-dev/SimpMusic), the YouTube Music
 client by maxrave-dev. It is not made or supported by the SimpMusic developers, so please don't report
@@ -27,21 +27,21 @@ a throwaway test key, not the SimpMusic developers' key.
 
 New in this update:
 
-- **Listen Together connects phones directly on the same Wi-Fi.** Phones in a room on the same network
-  now talk to each other directly as well as through the relays, so the room keeps playing even if the
-  relays are slow or unreachable. The room screen shows how you are connected ("Connected directly to
-  the host", or how many relays are reachable). Scanning the room's QR code connects directly straight
-  away, so you can join on a shared Wi-Fi even when no relay can be reached. Guest Wi-Fi networks that
-  keep devices apart still go through the relays.
-- **Familiar · Mix · New, one tap away.** Choose what Start radio plays right under **Start radio** in a
-  song's menu. While a radio is playing, the same choice is at the top of the queue: changing it
-  rebuilds the radio with the song that is playing still playing. **New** (the default) plays only songs
-  you have not heard, **Familiar** leans on songs and artists you know, **Mix** is in between. The
-  slider in Settings is the same setting, for anything in between.
-- **Cleaner app icon.**
+- **Listen Together finds people on the same Wi-Fi by itself.** Phones on the same network now find
+  each other automatically: type the room code and you connect straight to the host's phone, with no
+  QR code to scan and no internet needed. Rooms hosted on your Wi-Fi also show up under **Nearby on this
+  Wi-Fi** on the Listen Together page, to join with one tap (the host still lets you in). Hosts who
+  don't want to be listed can turn off **Show my rooms on this Wi-Fi** in Listen Together settings.
+  If the host's phone leaves, the next person takes over and everyone else finds them automatically.
+- **The radio mix is now a slider.** In a song's menu under **Start radio**, at the top of a radio's
+  queue, and in Settings: drag from **Familiar** (songs and artists you know) to **New** (songs you
+  haven't heard), with the current choice named above it ("Mostly new", "Mix"…).
+- **Blue app icon.**
 
 Earlier updates:
 
+- **Listen Together connects phones directly on the same Wi-Fi**, beside the relays, so a room keeps
+  playing when the relays are slow or unreachable. The room screen shows how you are connected.
 - **Start radio plays songs you have not heard** (with the mix on New), and keeps doing so as it goes on.
 - **Radios stop repeating themselves.** Repeats of the same song (official video, audio, lyric video)
   are left out, no artist gets more than 2 songs in any 8, and when too few new songs are left the
@@ -81,9 +81,8 @@ Radio:
 - Radios learn from what you listen to on this phone: songs you just heard are held back, songs you
   usually skip come later, and artists you play a lot come sooner. Turn it off in Settings
   (**Learn from my listening in radio**). It needs local tracking on.
-- **Familiar or new songs**: Familiar / Mix / New under Start radio and in a radio's queue, or the
-  slider in Settings. Left gives more songs and artists you already know, right gives more you have
-  never heard.
+- **Familiar or new songs**: the radio mix slider under Start radio, in a radio's queue, and in
+  Settings. Left gives more songs and artists you already know, right gives more you have never heard.
 - **Start radio** on the song that is playing keeps it playing, instead of starting it over.
 
 Playback:
@@ -94,7 +93,7 @@ Playback:
 ## Source code
 
 SimpMusic is licensed under the GNU General Public License v3.0 (see [LICENSE](LICENSE)).
-[SimpMusic-source-0a7f5b1.zip](SimpMusic-source-0a7f5b1.zip) is the complete source code this build was
-made from, including the changes above: the app at commit `0a7f5b1` and its `core` module at `6cbe824`.
+[SimpMusic-source-ac12c2d.zip](SimpMusic-source-ac12c2d.zip) is the complete source code this build was
+made from, including the changes above: the app at commit `ac12c2d` and its `core` module at `9ba63cf`.
 Build it with `./gradlew :androidApp:assembleOptimized` (an unsigned release-type APK, to sign with
 your own key) or `./gradlew :androidApp:assembleDebug` (Android SDK and JDK 21 required).
