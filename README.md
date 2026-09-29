@@ -1,6 +1,6 @@
 # SimpMusic test builds (unofficial)
 
-<img src="icon.png" width="96" alt="The test build's app icon: five white rounded bars of a sound wave, on a blue background">
+<img src="icon.png" width="96" alt="The test build's app icon: a white sound wave, on a bright blue background">
 
 An unofficial test build of [SimpMusic](https://github.com/maxrave-dev/SimpMusic), the YouTube Music
 client by maxrave-dev. It is not made or supported by the SimpMusic developers, so please don't report
@@ -27,19 +27,22 @@ a throwaway test key, not the SimpMusic developers' key.
 
 New in this update:
 
-- **Listen Together finds people on the same Wi-Fi by itself.** Phones on the same network now find
-  each other automatically: type the room code and you connect straight to the host's phone, with no
-  QR code to scan and no internet needed. Rooms hosted on your Wi-Fi also show up under **Nearby on this
-  Wi-Fi** on the Listen Together page, to join with one tap (the host still lets you in). Hosts who
-  don't want to be listed can turn off **Show my rooms on this Wi-Fi** in Listen Together settings.
-  If the host's phone leaves, the next person takes over and everyone else finds them automatically.
-- **The radio mix is now a slider.** In a song's menu under **Start radio**, at the top of a radio's
-  queue, and in Settings: drag from **Familiar** (songs and artists you know) to **New** (songs you
-  haven't heard), with the current choice named above it ("Mostly new", "Mix"…).
-- **Blue app icon.**
+- **Radios play more of the best songs.** Songs that are widely played and well liked now come up sooner,
+  and one of the radio's biggest songs comes back at least every few tracks. Obscure uploads (lyric
+  re-uploads, off-topic tracks with a few thousand plays) move to the back. A popular artist's biggest
+  songs are no longer pushed to the end of the page by the "not too many songs by one artist" rule.
+- **Skipping starts sooner.** The next two songs were already loaded ahead of time. Now the app also
+  looks up the next five after those, so skipping further ahead or tapping a song further down the
+  queue doesn't wait for that step. A song that failed to load ahead of time is tried again.
+- **The radio mix slider moved.** It is now the last item in a song's ⋯ menu (under Share), and at the
+  bottom of the queue.
+- **Brighter, cleaner app icon.**
 
 Earlier updates:
 
+- **Listen Together finds people on the same Wi-Fi by itself**: type the code and you connect straight to
+  the host's phone, and rooms nearby show up to join with one tap.
+- **The radio mix is a slider**, from Familiar to New.
 - **Listen Together connects phones directly on the same Wi-Fi**, beside the relays, so a room keeps
   playing when the relays are slow or unreachable. The room screen shows how you are connected.
 - **Start radio plays songs you have not heard** (with the mix on New), and keeps doing so as it goes on.
@@ -93,7 +96,7 @@ Playback:
 ## Source code
 
 SimpMusic is licensed under the GNU General Public License v3.0 (see [LICENSE](LICENSE)).
-[SimpMusic-source-ac12c2d.zip](SimpMusic-source-ac12c2d.zip) is the complete source code this build was
-made from, including the changes above: the app at commit `ac12c2d` and its `core` module at `9ba63cf`.
+[SimpMusic-source-9e4cd95.zip](SimpMusic-source-9e4cd95.zip) is the complete source code this build was
+made from, including the changes above: the app at commit `9e4cd95` and its `core` module at `60d5fb1`.
 Build it with `./gradlew :androidApp:assembleOptimized` (an unsigned release-type APK, to sign with
 your own key) or `./gradlew :androidApp:assembleDebug` (Android SDK and JDK 21 required).
