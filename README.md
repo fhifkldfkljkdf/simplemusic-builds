@@ -1,5 +1,7 @@
 # SimpMusic test builds (unofficial)
 
+<img src="icon.png" width="96" alt="The test build's app icon: a white music note sending out a signal, on a violet-to-pink background">
+
 An unofficial test build of [SimpMusic](https://github.com/maxrave-dev/SimpMusic), the YouTube Music
 client by maxrave-dev. It is not made or supported by the SimpMusic developers, so please don't report
 problems with it to them.
@@ -7,14 +9,14 @@ problems with it to them.
 ## Download
 
 **[SimpMusic-dev-listen-together-arm64.apk](https://github.com/fhifkldfkljkdf/simplemusic-builds/raw/main/SimpMusic-dev-listen-together-arm64.apk)**
-(28.0 MB, for 64-bit Android phones)
+(27.9 MB, for 64-bit Android phones)
 
 1. Open the link on your phone. No GitHub account is needed.
 2. Open the downloaded file. The first time, Android asks you to allow installing apps from your browser.
 3. Tap **Install**.
 
 It installs as a separate app next to SimpMusic (package `com.maxrave.simpmusic.dev`), so your
-normal SimpMusic is left alone. If you installed an earlier test build from here, this one installs
+normal SimpMusic is left alone. It has its own icon (above), so you can tell the two apart. If you installed an earlier test build from here, this one installs
 over it and keeps your data.
 
 This is an optimized build: the same code a release is built from (shrunk, without debug checks), so
@@ -22,6 +24,22 @@ it is smaller and runs faster than the earlier test builds, which were debug bui
 a throwaway test key, not the SimpMusic developers' key.
 
 ## What is different in this build
+
+New in this update:
+
+- **Start radio plays songs you have not heard.** From a song, a playlist or an artist, the radio keeps
+  only songs you have never played or liked in this app, and keeps doing so as it goes on.
+- **Radios stop repeating themselves.** YouTube's later radio pages repeat most of the earlier ones, and
+  one song comes as several videos (official video, audio, lyric video). Repeats are left out, no artist
+  gets more than 2 songs in any 8, and when too few new songs are left the radio branches out from new
+  songs it found.
+- **Listen Together recovers from lost messages.** If a pause, a song change or someone joining gets lost
+  on the way, or your connection drops for a moment, your phone notices and catches up with the host by
+  itself.
+- **Playback keeps going.** When the connection drops, the song waits for it and carries on where it
+  stopped, instead of stopping for good. A song that will not play is skipped (with a short message)
+  instead of stopping the queue, and pressing play after an error works again.
+- **New app icon.**
 
 Listen Together:
 
@@ -65,7 +83,7 @@ Playback:
 ## Source code
 
 SimpMusic is licensed under the GNU General Public License v3.0 (see [LICENSE](LICENSE)).
-[SimpMusic-source-4ade447.zip](SimpMusic-source-4ade447.zip) is the complete source code this build was
-made from, including the changes above: the app at commit `4ade447` and its `core` module at `5971b6d`.
+[SimpMusic-source-2273b4c.zip](SimpMusic-source-2273b4c.zip) is the complete source code this build was
+made from, including the changes above: the app at commit `2273b4c` and its `core` module at `914b24b`.
 Build it with `./gradlew :androidApp:assembleOptimized` (an unsigned release-type APK, to sign with
 your own key) or `./gradlew :androidApp:assembleDebug` (Android SDK and JDK 21 required).
