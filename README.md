@@ -27,6 +27,15 @@ a throwaway test key, not the SimpMusic developers' key.
 
 New in this update:
 
+- **When YouTube limits the app, music keeps playing.** If YouTube starts refusing requests (rate
+  limits, "confirm you're not a bot"), the app stops asking YouTube for a while and plays songs from
+  the SoundCloud backup straight away, without waiting on YouTube and without a message. A song
+  YouTube cuts off midway carries on from the backup where it stopped, after a moment of buffering. YouTube is tried again after 5 minutes (longer if it
+  keeps refusing). The backup is 128 kbps MP3, and it only covers songs with a matching full-length
+  upload on SoundCloud.
+
+Earlier updates:
+
 - **Hi-Fi sound** (Settings → Playback, off by default). Always plays and downloads the best audio
   YouTube has: 256 kbps with YouTube Premium, about 160 kbps (Opus) without. The sound is left
   untouched while it is on: equalizer, delay, reverb and volume normalisation are bypassed (your
@@ -44,9 +53,6 @@ New in this update:
   unless you turn them on.
 - With **High** audio quality and no YouTube Premium, songs could get a video-only stream with no
   sound. They now get the best audio stream instead.
-
-Earlier updates:
-
 - **Radios play more of the best songs.** Songs that are widely played and well liked now come up sooner,
   and one of the radio's biggest songs comes back at least every few tracks. Obscure uploads (lyric
   re-uploads, off-topic tracks with a few thousand plays) move to the back. A popular artist's biggest
@@ -113,7 +119,7 @@ Playback:
 ## Source code
 
 SimpMusic is licensed under the GNU General Public License v3.0 (see [LICENSE](LICENSE)).
-[SimpMusic-source-048484f.zip](SimpMusic-source-048484f.zip) is the complete source code this build was
-made from, including the changes above: the app at commit `048484f` and its `core` module at `7ca99d7`.
+[SimpMusic-source-58dad80.zip](SimpMusic-source-58dad80.zip) is the complete source code this build was
+made from, including the changes above: the app at commit `58dad80` and its `core` module at `9eb8e25`.
 Build it with `./gradlew :androidApp:assembleOptimized` (an unsigned release-type APK, to sign with
 your own key) or `./gradlew :androidApp:assembleDebug` (Android SDK and JDK 21 required).
