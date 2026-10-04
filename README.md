@@ -9,7 +9,7 @@ problems with it to them.
 ## Download
 
 **[SimpMusic-dev-listen-together-arm64.apk](https://github.com/fhifkldfkljkdf/simplemusic-builds/raw/main/SimpMusic-dev-listen-together-arm64.apk)**
-(29.3 MB, for 64-bit Android phones)
+(27.7 MB, for 64-bit Android phones)
 
 1. Open the link on your phone. No GitHub account is needed.
 2. Open the downloaded file. The first time, Android asks you to allow installing apps from your browser.
@@ -27,6 +27,26 @@ a throwaway test key, not the SimpMusic developers' key.
 
 New in this update:
 
+- **Hi-Fi sound** (Settings → Playback, off by default). Always plays and downloads the best audio
+  YouTube has: 256 kbps with YouTube Premium, about 160 kbps (Opus) without. The sound is left
+  untouched while it is on: equalizer, delay, reverb and volume normalisation are bypassed (your
+  settings for them are kept). YouTube has no lossless audio, so this is the best quality possible here.
+- **SoundCloud as a backup source.** When YouTube won't play a song, the same recording plays from a
+  full-length upload on SoundCloud instead of stopping. It only uses an upload whose title, artist and
+  length match the song, never a remix, live version or 30-second preview, so songs without such an
+  upload still have no backup. Backup audio is 128 kbps MP3, and the song's info sheet says when it is
+  playing. Downloads always wait for YouTube. Turn it off in Settings → Content.
+- **Moving a song in the queue no longer reshuffles it.** With shuffle on, dragging one song moved it
+  and then put every song after the current one in a new random order. Now only the song you moved
+  moves.
+- **No tracking.** This build has no crash reporting (Sentry) and no Google Play Services (the Cast
+  button is gone with it). Sending your listening history to YouTube and uploading lyrics stay off
+  unless you turn them on.
+- With **High** audio quality and no YouTube Premium, songs could get a video-only stream with no
+  sound. They now get the best audio stream instead.
+
+Earlier updates:
+
 - **Radios play more of the best songs.** Songs that are widely played and well liked now come up sooner,
   and one of the radio's biggest songs comes back at least every few tracks. Obscure uploads (lyric
   re-uploads, off-topic tracks with a few thousand plays) move to the back. A popular artist's biggest
@@ -37,9 +57,6 @@ New in this update:
 - **The radio mix slider moved.** It is now the last item in a song's ⋯ menu (under Share), and at the
   bottom of the queue.
 - **Brighter, cleaner app icon.**
-
-Earlier updates:
-
 - **Listen Together finds people on the same Wi-Fi by itself**: type the code and you connect straight to
   the host's phone, and rooms nearby show up to join with one tap.
 - **The radio mix is a slider**, from Familiar to New.
@@ -96,7 +113,7 @@ Playback:
 ## Source code
 
 SimpMusic is licensed under the GNU General Public License v3.0 (see [LICENSE](LICENSE)).
-[SimpMusic-source-9e4cd95.zip](SimpMusic-source-9e4cd95.zip) is the complete source code this build was
-made from, including the changes above: the app at commit `9e4cd95` and its `core` module at `60d5fb1`.
+[SimpMusic-source-048484f.zip](SimpMusic-source-048484f.zip) is the complete source code this build was
+made from, including the changes above: the app at commit `048484f` and its `core` module at `7ca99d7`.
 Build it with `./gradlew :androidApp:assembleOptimized` (an unsigned release-type APK, to sign with
 your own key) or `./gradlew :androidApp:assembleDebug` (Android SDK and JDK 21 required).
