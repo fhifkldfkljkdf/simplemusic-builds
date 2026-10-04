@@ -1,6 +1,6 @@
 # SimpMusic test builds (unofficial)
 
-<img src="icon.png" width="96" alt="The test build's app icon: a white sound wave, on a bright blue background">
+<img src="icon.png" width="96" alt="The test build's app icon: a white play button sending out two sound waves, on a cyan-to-indigo background">
 
 An unofficial test build of [SimpMusic](https://github.com/maxrave-dev/SimpMusic), the YouTube Music
 client by maxrave-dev. It is not made or supported by the SimpMusic developers, so please don't report
@@ -27,15 +27,32 @@ a throwaway test key, not the SimpMusic developers' key.
 
 New in this update:
 
+- **New app icon.** A play button sending out two sound waves: music that plays and reaches the
+  people listening with you.
+- **The player shows where the music comes from.** A small label under the seek bar reads, for
+  example, "YouTube · OPUS 160 kbps", "SoundCloud · MP3 128 kbps" or "Downloaded". It changes if a
+  song switches to the backup midway.
+- **More songs are ready ahead of time.** The next three songs are fully loaded (was two), the next
+  ten are looked up (was five), and the opening minute or so of five more is saved, so skipping
+  further ahead starts straight away. This uses up to about 8 MB of extra data ahead of time.
+- **Less is sent about what you play:**
+  - The like/dislike counter service (Return YouTube Dislike) is no longer asked about every song.
+  - SponsorBlock, when you turn it on, no longer learns which video you play: it is asked about a
+    group of videos and the app picks out the right one.
+  - The BPM/key lookup on TIDAL for every song now only runs while DJ crossfade is on.
+  - Reporting what you play to YouTube and uploading lyrics to SimpMusic are removed from Settings
+    and always off.
+- **Latest SimpMusic changes included** (from the original app's core), among them playback of
+  YouTube live broadcasts.
+
+Earlier updates:
+
 - **When YouTube limits the app, music keeps playing.** If YouTube starts refusing requests (rate
   limits, "confirm you're not a bot"), the app stops asking YouTube for a while and plays songs from
   the SoundCloud backup straight away, without waiting on YouTube and without a message. A song
   YouTube cuts off midway carries on from the backup where it stopped, after a moment of buffering. YouTube is tried again after 5 minutes (longer if it
   keeps refusing). The backup is 128 kbps MP3, and it only covers songs with a matching full-length
   upload on SoundCloud.
-
-Earlier updates:
-
 - **Hi-Fi sound** (Settings → Playback, off by default). Always plays and downloads the best audio
   YouTube has: 256 kbps with YouTube Premium, about 160 kbps (Opus) without. The sound is left
   untouched while it is on: equalizer, delay, reverb and volume normalisation are bypassed (your
@@ -119,7 +136,7 @@ Playback:
 ## Source code
 
 SimpMusic is licensed under the GNU General Public License v3.0 (see [LICENSE](LICENSE)).
-[SimpMusic-source-58dad80.zip](SimpMusic-source-58dad80.zip) is the complete source code this build was
-made from, including the changes above: the app at commit `58dad80` and its `core` module at `9eb8e25`.
+[SimpMusic-source-7d03a8e.zip](SimpMusic-source-7d03a8e.zip) is the complete source code this build was
+made from, including the changes above: the app at commit `7d03a8e` and its `core` module at `de0a9fe`.
 Build it with `./gradlew :androidApp:assembleOptimized` (an unsigned release-type APK, to sign with
 your own key) or `./gradlew :androidApp:assembleDebug` (Android SDK and JDK 21 required).
