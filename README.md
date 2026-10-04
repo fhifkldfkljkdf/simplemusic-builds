@@ -27,6 +27,16 @@ a throwaway test key, not the SimpMusic developers' key.
 
 New in this update:
 
+- **Lossless (FLAC) with Hi-Fi sound, no account needed.** With Hi-Fi sound on (Settings → Playback),
+  each song is first looked up on the Internet Archive (archive.org). If it has a FLAC file of the
+  same recording, matching the title, artist and length, and not a live, demo or remixed version,
+  that file plays in lossless quality. Otherwise the song plays from YouTube as before. Many songs
+  are there, many are not: Queen's "Bohemian Rhapsody" is, Taylor Swift's "Shake It Off" is not. The
+  label under the seek bar says "Internet Archive · FLAC" when it is playing. Lossless files are
+  large (about 10 times YouTube's size, some much more), so this uses a lot more data on mobile.
+
+Earlier updates:
+
 - **New app icon.** A play button sending out two sound waves: music that plays and reaches the
   people listening with you.
 - **The player shows where the music comes from.** A small label under the seek bar reads, for
@@ -44,9 +54,6 @@ New in this update:
     and always off.
 - **Latest SimpMusic changes included** (from the original app's core), among them playback of
   YouTube live broadcasts.
-
-Earlier updates:
-
 - **When YouTube limits the app, music keeps playing.** If YouTube starts refusing requests (rate
   limits, "confirm you're not a bot"), the app stops asking YouTube for a while and plays songs from
   the SoundCloud backup straight away, without waiting on YouTube and without a message. A song
@@ -136,7 +143,7 @@ Playback:
 ## Source code
 
 SimpMusic is licensed under the GNU General Public License v3.0 (see [LICENSE](LICENSE)).
-[SimpMusic-source-7d03a8e.zip](SimpMusic-source-7d03a8e.zip) is the complete source code this build was
-made from, including the changes above: the app at commit `7d03a8e` and its `core` module at `de0a9fe`.
+[SimpMusic-source-d96e40d.zip](SimpMusic-source-d96e40d.zip) is the complete source code this build was
+made from, including the changes above: the app at commit `d96e40d` and its `core` module at `9a5eae1`.
 Build it with `./gradlew :androidApp:assembleOptimized` (an unsigned release-type APK, to sign with
 your own key) or `./gradlew :androidApp:assembleDebug` (Android SDK and JDK 21 required).
