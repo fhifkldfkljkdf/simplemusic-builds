@@ -27,6 +27,20 @@ a throwaway test key, not the SimpMusic developers' key.
 
 New in this update:
 
+- **Noise cancelling for Sennheiser MOMENTUM 4.** When your MOMENTUM 4 is connected, the player shows
+  its noise cancelling next to the source label under the seek bar: "ANC 80%", "Adaptive ANC",
+  "Transparency" or "ANC off". Tap it to switch between ANC, Adaptive, Transparent and Off, set how
+  strongly ANC cancels with a slider, choose wind noise reduction (Off, Maximum, Automatic), and see the
+  battery. Changes you make on the headphones themselves show up right away.
+  The first time, tap the label and then **Allow**: Android asks for the "Nearby devices" permission,
+  which the app needs to talk to the headphones. If it says it can't reach them, close Sennheiser
+  Smart Control and tap **Try again**.
+  This is built from how other people decoded the headphones' control protocol, not from anything
+  Sennheiser published, and it has not been tried on a real MOMENTUM 4 yet. Other headphones are not
+  supported.
+
+Earlier updates:
+
 - **Fixed: some Internet Archive songs played with no sound.** The player fetches a song in pieces,
   and a later piece could come from YouTube's copy instead of the FLAC file, which the player cannot
   read. Each song now stays on the file it started with. Archive files are also checked before use
@@ -47,7 +61,6 @@ New in this update:
   Tap another to switch to it. This uses the seamless switch when it can, otherwise the song reloads
   where it is.
 
-Earlier updates:
 
 - **Lossless (FLAC) with Hi-Fi sound, no account needed.** With Hi-Fi sound on (Settings → Playback),
   songs play from a FLAC file on the Internet Archive (archive.org) when it has the same recording
@@ -161,7 +174,7 @@ Playback:
 ## Source code
 
 SimpMusic is licensed under the GNU General Public License v3.0 (see [LICENSE](LICENSE)).
-[SimpMusic-source-697bece.zip](SimpMusic-source-697bece.zip) is the complete source code this build was
-made from, including the changes above: the app at commit `697bece` and its `core` module at `7f1d407`.
+[SimpMusic-source-0a13c58.zip](SimpMusic-source-0a13c58.zip) is the complete source code this build was
+made from, including the changes above: the app at commit `0a13c58` and its `core` module at `daf1732`.
 Build it with `./gradlew :androidApp:assembleOptimized` (an unsigned release-type APK, to sign with
 your own key) or `./gradlew :androidApp:assembleDebug` (Android SDK and JDK 21 required).
