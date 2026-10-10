@@ -9,7 +9,7 @@ problems with it to them.
 ## Download
 
 **[SimpMusic-dev-listen-together-arm64.apk](https://github.com/fhifkldfkljkdf/simplemusic-builds/raw/main/SimpMusic-dev-listen-together-arm64.apk)**
-(27.7 MB, for 64-bit Android phones)
+(27.8 MB, for 64-bit Android phones)
 
 1. Open the link on your phone. No GitHub account is needed.
 2. Open the downloaded file. The first time, Android asks you to allow installing apps from your browser.
@@ -27,16 +27,34 @@ a throwaway test key, not the SimpMusic developers' key.
 
 New in this update:
 
-- **Lossless (FLAC) with Hi-Fi sound, no account needed.** With Hi-Fi sound on (Settings → Playback),
-  each song is first looked up on the Internet Archive (archive.org). If it has a FLAC file of the
-  same recording, matching the title, artist and length, and not a live, demo or remixed version,
-  that file plays in lossless quality. Otherwise the song plays from YouTube as before. Many songs
-  are there, many are not: Queen's "Bohemian Rhapsody" is, Taylor Swift's "Shake It Off" is not. The
-  label under the seek bar says "Internet Archive · FLAC" when it is playing. Lossless files are
-  large (about 10 times YouTube's size, some much more), so this uses a lot more data on mobile.
+- **Fixed: some Internet Archive songs played with no sound.** The player fetches a song in pieces,
+  and a later piece could come from YouTube's copy instead of the FLAC file, which the player cannot
+  read. Each song now stays on the file it started with. Archive files are also checked before use
+  (a real FLAC file, stereo, the right length, downloadable), and CD-quality files are preferred.
+  Files above 96 kHz are skipped: the phone plays them at 48 kHz anyway, and they stutter on slow
+  connections.
+- **Songs start right away.** With Hi-Fi sound on, a song used to wait up to 6 seconds while the
+  Internet Archive was searched. Now it starts at once from the fastest source, and the search runs
+  in the background. Songs coming up in the queue are looked up ahead of time, so they start in
+  lossless straight away.
+- **Quality upgrades by itself, without a break.** When the lossless file for the song that is playing
+  turns up, the app opens it silently, lines it up with what you hear to within about a millisecond,
+  matches the volume, and switches over. If the two copies don't line up exactly (different
+  remasters often don't), it doesn't switch mid-song, and the next time the song plays it starts in
+  lossless.
+- **See every source.** Tap the source label under the seek bar to see where the song can play from:
+  Internet Archive (lossless), YouTube and SoundCloud, each with its quality, and which one is playing.
+  Tap another to switch to it. This uses the seamless switch when it can, otherwise the song reloads
+  where it is.
 
 Earlier updates:
 
+- **Lossless (FLAC) with Hi-Fi sound, no account needed.** With Hi-Fi sound on (Settings → Playback),
+  songs play from a FLAC file on the Internet Archive (archive.org) when it has the same recording
+  (title, artist and length match, not a live, demo or remixed version), otherwise from YouTube.
+  Many songs are there, many are not: Queen's "Bohemian Rhapsody" is, Taylor Swift's "Shake It Off"
+  is not. Lossless files are large (about 10 times YouTube's size), so this uses a lot more data on
+  mobile.
 - **New app icon.** A play button sending out two sound waves: music that plays and reaches the
   people listening with you.
 - **The player shows where the music comes from.** A small label under the seek bar reads, for
@@ -143,7 +161,7 @@ Playback:
 ## Source code
 
 SimpMusic is licensed under the GNU General Public License v3.0 (see [LICENSE](LICENSE)).
-[SimpMusic-source-d96e40d.zip](SimpMusic-source-d96e40d.zip) is the complete source code this build was
-made from, including the changes above: the app at commit `d96e40d` and its `core` module at `9a5eae1`.
+[SimpMusic-source-697bece.zip](SimpMusic-source-697bece.zip) is the complete source code this build was
+made from, including the changes above: the app at commit `697bece` and its `core` module at `7f1d407`.
 Build it with `./gradlew :androidApp:assembleOptimized` (an unsigned release-type APK, to sign with
 your own key) or `./gradlew :androidApp:assembleDebug` (Android SDK and JDK 21 required).
