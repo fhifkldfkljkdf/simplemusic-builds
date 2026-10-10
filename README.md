@@ -27,6 +27,19 @@ a throwaway test key, not the SimpMusic developers' key.
 
 New in this update:
 
+- **Noise cancelling for Huawei and Honor earbuds.** The same label and panel as the MOMENTUM 4 now
+  work with Huawei FreeBuds (including the FreeBuds Pro 4 and FreeBuds 6i), FreeClip, FreeLace and
+  Honor Earbuds. Depending on the model you can switch between noise cancelling, awareness
+  (transparency) and off, pick the cancelling level (Comfort, Normal, Ultra, Dynamic) and voice
+  boost, and see the battery of each earbud and the case. Earbuds without noise control show their
+  battery. The model list and protocol come from [OpenFreebuds](https://github.com/melianmiko/OpenFreebuds);
+  models it doesn't list are recognised by name and may only partly work. The first time, tap the
+  label and then **Allow** (the "Nearby devices" permission). If it can't reach the earbuds, close
+  HUAWEI AI Life and tap **Try again**. Like the MOMENTUM 4 support, this has not been tried on real
+  earbuds yet.
+
+Earlier updates:
+
 - **Noise cancelling for Sennheiser MOMENTUM 4.** When your MOMENTUM 4 is connected, the player shows
   its noise cancelling next to the source label under the seek bar: "ANC 80%", "Adaptive ANC",
   "Transparency" or "ANC off". Tap it to switch between ANC, Adaptive, Transparent and Off, set how
@@ -36,10 +49,7 @@ New in this update:
   which the app needs to talk to the headphones. If it says it can't reach them, close Sennheiser
   Smart Control and tap **Try again**.
   This is built from how other people decoded the headphones' control protocol, not from anything
-  Sennheiser published, and it has not been tried on a real MOMENTUM 4 yet. Other headphones are not
-  supported.
-
-Earlier updates:
+  Sennheiser published, and it has not been tried on a real MOMENTUM 4 yet.
 
 - **Fixed: some Internet Archive songs played with no sound.** The player fetches a song in pieces,
   and a later piece could come from YouTube's copy instead of the FLAC file, which the player cannot
@@ -174,7 +184,7 @@ Playback:
 ## Source code
 
 SimpMusic is licensed under the GNU General Public License v3.0 (see [LICENSE](LICENSE)).
-[SimpMusic-source-0a13c58.zip](SimpMusic-source-0a13c58.zip) is the complete source code this build was
-made from, including the changes above: the app at commit `0a13c58` and its `core` module at `daf1732`.
+[SimpMusic-source-6932054.zip](SimpMusic-source-6932054.zip) is the complete source code this build was
+made from, including the changes above: the app at commit `6932054` and its `core` module at `3d73cc3`.
 Build it with `./gradlew :androidApp:assembleOptimized` (an unsigned release-type APK, to sign with
 your own key) or `./gradlew :androidApp:assembleDebug` (Android SDK and JDK 21 required).
