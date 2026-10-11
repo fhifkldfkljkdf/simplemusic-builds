@@ -27,6 +27,23 @@ a throwaway test key, not the SimpMusic developers' key.
 
 New in this update:
 
+- **Music on Home without signing in.** Signed out, YouTube Music only offers podcasts and an artist
+  picker on its Home. The app now opens Home with three shelves of its own:
+  - **Quick picks**: radios of the songs you play most on this phone, mixed together;
+  - **New for you**: songs from those radios you have never played;
+  - **Listen again**: your most played songs.
+
+  On a fresh install with nothing played yet, Quick picks start from today's top music videos instead.
+  Sign in and YouTube's own Home takes over again.
+- **Shuffle and noise control in the player notification.** Shuffle is now the first button in the
+  notification, the lock screen and Android's media controls. Next to it, while your MOMENTUM 4 or
+  Huawei/Honor earbuds are connected, a button shows the noise mode: noise cancelling (with its strength),
+  adaptive, transparency or off. Tap it to switch to the next mode. Like, repeat and radio follow where
+  there is room. The button disappears a minute after music stops, so the headphones' own app can
+  connect to them again.
+
+Earlier updates:
+
 - **Listen Together connects by itself.** Opening Listen Together connects straight away: rooms on
   your Wi-Fi show up, and **Create room** and **Join room** work without tapping Connect first. If you
   leave the screen without joining a room, it disconnects again.
@@ -52,9 +69,6 @@ New in this update:
   For the same reason, the Internet Archive's MP3 uploads are not used as a high-bitrate source.
 - **Fewer stalls at the start of a lossless song.** A song now starts on the lossless file only when
   about 9 seconds of it are already downloaded. Otherwise it starts on YouTube and switches mid-song.
-
-Earlier updates:
-
 - **New app icon.** A white play button cut through by a sound wave, on a blue-to-violet background.
   The same mark now replaces the old SimpMusic note everywhere it was still showing: the status bar
   and media controls, Android Auto, the logo inside the app, and the Credits screen.
@@ -250,7 +264,7 @@ Playback:
 ## Source code
 
 SimpMusic is licensed under the GNU General Public License v3.0 (see [LICENSE](LICENSE)).
-[SimpMusic-source-b36ad93.zip](SimpMusic-source-b36ad93.zip) is the complete source code this build was
-made from, including the changes above: the app at commit `b36ad93` and its `core` module at `39e47a0`.
+[SimpMusic-source-211f61f.zip](SimpMusic-source-211f61f.zip) is the complete source code this build was
+made from, including the changes above: the app at commit `211f61f` and its `core` module at `31cb416`.
 Build it with `./gradlew :androidApp:assembleOptimized` (an unsigned release-type APK, to sign with
 your own key) or `./gradlew :androidApp:assembleDebug` (Android SDK and JDK 21 required).
