@@ -27,6 +27,24 @@ a throwaway test key, not the SimpMusic developers' key.
 
 New in this update:
 
+- **A heart in the media controls.** The like button is now the first button in the notification,
+  the lock screen and Android's quick settings player, so you can like a song without opening the app.
+  The heart fills in straight away, also when the app is closed. Android shows only two extra buttons
+  there, so the second one is noise control while your MOMENTUM 4 or Huawei/Honor earbuds are
+  connected, and Shuffle otherwise.
+- **Noise control from the notification no longer pauses your song.** The MOMENTUM 4 pauses music
+  when transparency turns on (a setting in Sennheiser's app). The app now ignores the headphones'
+  pause and play while it is switching the mode, so the song keeps playing. The headset's own touch
+  gesture still works as you set it up.
+- **Smoother noise-control switching.** Tapping the button changes it at once. The headphones are only
+  switched once you stop tapping, so going from noise cancelling to off in three quick taps no longer
+  passes through adaptive and transparency on the way. Switches on the MOMENTUM 4 also take about half
+  as many messages to the headset as before.
+- **Clearer labels.** The button now reads like the label in the player: "ANC · 80%", "ANC · Comfort",
+  "Adaptive ANC", "Transparency", "ANC off".
+
+Earlier updates:
+
 - **Music on Home without signing in.** Signed out, YouTube Music only offers podcasts and an artist
   picker on its Home. The app now opens Home with three shelves of its own:
   - **Quick picks**: radios of the songs you play most on this phone, mixed together;
@@ -35,14 +53,12 @@ New in this update:
 
   On a fresh install with nothing played yet, Quick picks start from today's top music videos instead.
   Sign in and YouTube's own Home takes over again.
-- **Shuffle and noise control in the player notification.** Shuffle is now the first button in the
-  notification, the lock screen and Android's media controls. Next to it, while your MOMENTUM 4 or
+- **Shuffle and noise control in the player notification.** Shuffle became one of the two buttons
+  shown in the notification, the lock screen and Android's media controls (since replaced by the heart). Next to it, while your MOMENTUM 4 or
   Huawei/Honor earbuds are connected, a button shows the noise mode: noise cancelling (with its strength),
   adaptive, transparency or off. Tap it to switch to the next mode. Like, repeat and radio follow where
   there is room. The button disappears a minute after music stops, so the headphones' own app can
   connect to them again.
-
-Earlier updates:
 
 - **Listen Together connects by itself.** Opening Listen Together connects straight away: rooms on
   your Wi-Fi show up, and **Create room** and **Join room** work without tapping Connect first. If you
@@ -264,7 +280,7 @@ Playback:
 ## Source code
 
 SimpMusic is licensed under the GNU General Public License v3.0 (see [LICENSE](LICENSE)).
-[SimpMusic-source-211f61f.zip](SimpMusic-source-211f61f.zip) is the complete source code this build was
-made from, including the changes above: the app at commit `211f61f` and its `core` module at `31cb416`.
+[SimpMusic-source-76a53ed.zip](SimpMusic-source-76a53ed.zip) is the complete source code this build was
+made from, including the changes above: the app at commit `76a53ed` and its `core` module at `6ed4b3a`.
 Build it with `./gradlew :androidApp:assembleOptimized` (an unsigned release-type APK, to sign with
 your own key) or `./gradlew :androidApp:assembleDebug` (Android SDK and JDK 21 required).
