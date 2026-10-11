@@ -9,7 +9,7 @@ problems with it to them.
 ## Download
 
 **[SimpMusic-dev-listen-together-arm64.apk](https://github.com/fhifkldfkljkdf/simplemusic-builds/raw/main/SimpMusic-dev-listen-together-arm64.apk)**
-(28.1 MB, for 64-bit Android phones)
+(28.2 MB, for 64-bit Android phones)
 
 1. Open the link on your phone. No GitHub account is needed.
 2. Open the downloaded file. The first time, Android asks you to allow installing apps from your browser.
@@ -26,6 +26,34 @@ a throwaway test key, not the SimpMusic developers' key.
 ## What is different in this build
 
 New in this update:
+
+- **Listen Together connects by itself.** Opening Listen Together connects straight away: rooms on
+  your Wi-Fi show up, and **Create room** and **Join room** work without tapping Connect first. If you
+  leave the screen without joining a room, it disconnects again.
+- **Everyone in a room can control playback.** Guests can now play, pause, skip, seek and pick songs
+  for the whole room from their own player. Each request is carried out on the host's phone, so the
+  room keeps one queue and everyone hears the same next song. The host can turn this off with
+  **Everyone can control playback** in the room (it is on by default, and Listen Together settings has
+  the same switch for new rooms). A phone call on a guest's phone pauses only that phone.
+- **Listen Together fixes.** Guests no longer jump back when the host's queue grows (endless queue)
+  or when the host approves a suggestion. An approved suggestion now goes into the queue instead of
+  playing at once on guests' phones. Guests no longer jump to the start of the song and back when
+  someone joins or leaves, or when the host changes. The next song no longer restarts a second in on
+  guests' phones, and songs already played no longer come back after the current one. The screen no
+  longer gets stuck on "Connecting".
+- **A second high-bitrate source: Audius.** With Hi-Fi sound on, when the Internet Archive has no
+  lossless copy of a song, the app looks for the artist's own 320 kbps upload on
+  [Audius](https://audius.co), a free music service (no account needed). Only uploads by the artist's
+  own account are used, never other people's copies. Coverage is small: mostly electronic and
+  independent artists who publish there. Of 14 well-known songs I tried, it had 2. Most songs still
+  play from YouTube. As with lossless, a song starts at once and moves to the better copy mid-song.
+- **Fake lossless is skipped.** Internet Archive files named after a YouTube upload or a download
+  site ("Official Audio", "y2mate") are no longer used: they hold YouTube's own audio in a bigger file.
+  For the same reason, the Internet Archive's MP3 uploads are not used as a high-bitrate source.
+- **Fewer stalls at the start of a lossless song.** A song now starts on the lossless file only when
+  about 9 seconds of it are already downloaded. Otherwise it starts on YouTube and switches mid-song.
+
+Earlier updates:
 
 - **New app icon.** A white play button cut through by a sound wave, on a blue-to-violet background.
   The same mark now replaces the old SimpMusic note everywhere it was still showing: the status bar
@@ -52,9 +80,6 @@ New in this update:
   Apple Music-style player, Settings and Home. The new launch banners on Home are left out, like the
   other pop-ups.
 - **Fixed:** automatic backups didn't work on Android 8 and 9.
-
-Earlier updates:
-
 - **No more pop-ups from the developer.** Upstream SimpMusic asks, at set numbers of app opens, for a
   GitHub star or review, to share your saved lyrics, to read the developer's blog, and to star the developer's
   "kotlin-footguns" project. All of those are gone, and so is the "log in to YouTube" warning. The
@@ -187,6 +212,9 @@ Listen Together:
   goes quiet (app closed, no signal), the next person in the room takes over after about 30 seconds and
   the music carries on. Everyone in a room needs this build: rooms no longer work with the official
   SimpMusic or Metrolist.
+- **Connects when you open it.** There is nothing to tap before creating or joining a room.
+- **Everyone can control playback**: guests play, pause, skip, seek and pick songs for the whole room
+  from their own player, unless the host turns **Everyone can control playback** off in the room.
 - You stay in a room when your connection drops, for up to 15 minutes, and rejoin by yourself.
 - **Listen on my own**: play other songs without leaving the room, then come back with one tap.
 - **Share what I play**: while listening on your own, the host sees your songs as suggestions and can
@@ -222,7 +250,7 @@ Playback:
 ## Source code
 
 SimpMusic is licensed under the GNU General Public License v3.0 (see [LICENSE](LICENSE)).
-[SimpMusic-source-109ba83.zip](SimpMusic-source-109ba83.zip) is the complete source code this build was
-made from, including the changes above: the app at commit `109ba83` and its `core` module at `1bd39bd`.
+[SimpMusic-source-b36ad93.zip](SimpMusic-source-b36ad93.zip) is the complete source code this build was
+made from, including the changes above: the app at commit `b36ad93` and its `core` module at `39e47a0`.
 Build it with `./gradlew :androidApp:assembleOptimized` (an unsigned release-type APK, to sign with
 your own key) or `./gradlew :androidApp:assembleDebug` (Android SDK and JDK 21 required).
