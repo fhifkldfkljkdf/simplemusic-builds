@@ -27,6 +27,20 @@ a throwaway test key, not the SimpMusic developers' key.
 
 New in this update:
 
+- **No more pop-ups from the developer.** Upstream SimpMusic asks, at set numbers of app opens, for a
+  GitHub star or review, to share your saved lyrics, to read the developer's blog, and to star the developer's
+  "kotlin-footguns" project. All of those are gone, and so is the "log in to YouTube" warning. The
+  daily job that checked the developer's blog and sent you notifications about new posts is removed,
+  together with its Settings switch, and old blog notifications no longer appear. The app also
+  stopped checking for official SimpMusic releases every time it starts (those are a different app
+  from this build); **Check for update** in Settings still works if you ask.
+- **Fixes.** Some failures in the background (a lossless or SoundCloud search, switching sources,
+  the headphone connection) could close the whole app; now they're logged and the app carries on.
+  Seeking used to stop a song from switching to its lossless copy for the rest of the song; it now
+  tries again from where you seeked to.
+
+Earlier updates:
+
 - **Noise cancelling for Huawei and Honor earbuds.** The same label and panel as the MOMENTUM 4 now
   work with Huawei FreeBuds (including the FreeBuds Pro 4 and FreeBuds 6i), FreeClip, FreeLace and
   Honor Earbuds. Depending on the model you can switch between noise cancelling, awareness
@@ -37,8 +51,6 @@ New in this update:
   label and then **Allow** (the "Nearby devices" permission). If it can't reach the earbuds, close
   HUAWEI AI Life and tap **Try again**. Like the MOMENTUM 4 support, this has not been tried on real
   earbuds yet.
-
-Earlier updates:
 
 - **Noise cancelling for Sennheiser MOMENTUM 4.** When your MOMENTUM 4 is connected, the player shows
   its noise cancelling next to the source label under the seek bar: "ANC 80%", "Adaptive ANC",
@@ -184,7 +196,7 @@ Playback:
 ## Source code
 
 SimpMusic is licensed under the GNU General Public License v3.0 (see [LICENSE](LICENSE)).
-[SimpMusic-source-6932054.zip](SimpMusic-source-6932054.zip) is the complete source code this build was
-made from, including the changes above: the app at commit `6932054` and its `core` module at `3d73cc3`.
+[SimpMusic-source-8879516.zip](SimpMusic-source-8879516.zip) is the complete source code this build was
+made from, including the changes above: the app at commit `8879516` and its `core` module at `a6d837e`.
 Build it with `./gradlew :androidApp:assembleOptimized` (an unsigned release-type APK, to sign with
 your own key) or `./gradlew :androidApp:assembleDebug` (Android SDK and JDK 21 required).
