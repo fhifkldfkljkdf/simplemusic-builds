@@ -1,6 +1,6 @@
 # SimpMusic test builds (unofficial)
 
-<img src="icon.png" width="96" alt="The test build's app icon: a white play button sending out two sound waves, on a cyan-to-indigo background">
+<img src="icon.png" width="96" alt="The test build's app icon: a white play button cut through by a sound wave, on a blue-to-violet background">
 
 An unofficial test build of [SimpMusic](https://github.com/maxrave-dev/SimpMusic), the YouTube Music
 client by maxrave-dev. It is not made or supported by the SimpMusic developers, so please don't report
@@ -9,7 +9,7 @@ problems with it to them.
 ## Download
 
 **[SimpMusic-dev-listen-together-arm64.apk](https://github.com/fhifkldfkljkdf/simplemusic-builds/raw/main/SimpMusic-dev-listen-together-arm64.apk)**
-(27.8 MB, for 64-bit Android phones)
+(28.1 MB, for 64-bit Android phones)
 
 1. Open the link on your phone. No GitHub account is needed.
 2. Open the downloaded file. The first time, Android asks you to allow installing apps from your browser.
@@ -27,6 +27,34 @@ a throwaway test key, not the SimpMusic developers' key.
 
 New in this update:
 
+- **New app icon.** A white play button cut through by a sound wave, on a blue-to-violet background.
+  The same mark now replaces the old SimpMusic note everywhere it was still showing: the status bar
+  and media controls, Android Auto, the logo inside the app, and the Credits screen.
+- **Songs start sooner.** For a song that isn't cached yet, the app now asks YouTube for the song's
+  details and the playable stream at the same time instead of one after the other, and skips a
+  duplicate check of the stream address. The code that unlocks YouTube's streams is prepared
+  just after the app opens, so the first song no longer waits for it. With Hi-Fi sound on, a tapped
+  song whose lossless file is already known starts right away on YouTube and moves to the lossless
+  file a little later, instead of waiting about a second for archive.org; songs coming up in the queue
+  still load the lossless file in advance. Upcoming songs are also looked up while the app waits for
+  their lossless search, so skipping ahead stays instant.
+- **The move to lossless is meant to go unnoticed.** If the lossless copy is louder, it stays at the
+  level you were hearing until the song ends instead of being turned up; if it is quieter, the song
+  is brought down to it very slowly before the switch. A song whose lossless copy can't be lined up
+  without a seam starts on that copy the next time instead.
+- **Noise control holds its connection better.** MOMENTUM 4: a slow battery answer, or a setting the
+  firmware doesn't report, no longer stops noise control from appearing. Closing and reopening the
+  player no longer reconnects to the headphones, and a change made right after connecting is no
+  longer lost.
+- **Up to date with SimpMusic 2.3.0.** The latest official changes are merged in, including its bug
+  fixes (shuffled queue order kept when songs are added, playlist edits past the first page,
+  Japanese lyrics romanization after a reinstall, seek bars while paused) and its redesigns of the
+  Apple Music-style player, Settings and Home. The new launch banners on Home are left out, like the
+  other pop-ups.
+- **Fixed:** automatic backups didn't work on Android 8 and 9.
+
+Earlier updates:
+
 - **No more pop-ups from the developer.** Upstream SimpMusic asks, at set numbers of app opens, for a
   GitHub star or review, to share your saved lyrics, to read the developer's blog, and to star the developer's
   "kotlin-footguns" project. All of those are gone, and so is the "log in to YouTube" warning. The
@@ -38,8 +66,6 @@ New in this update:
   the headphone connection) could close the whole app; now they're logged and the app carries on.
   Seeking used to stop a song from switching to its lossless copy for the rest of the song; it now
   tries again from where you seeked to.
-
-Earlier updates:
 
 - **Noise cancelling for Huawei and Honor earbuds.** The same label and panel as the MOMENTUM 4 now
   work with Huawei FreeBuds (including the FreeBuds Pro 4 and FreeBuds 6i), FreeClip, FreeLace and
@@ -196,7 +222,7 @@ Playback:
 ## Source code
 
 SimpMusic is licensed under the GNU General Public License v3.0 (see [LICENSE](LICENSE)).
-[SimpMusic-source-8879516.zip](SimpMusic-source-8879516.zip) is the complete source code this build was
-made from, including the changes above: the app at commit `8879516` and its `core` module at `a6d837e`.
+[SimpMusic-source-109ba83.zip](SimpMusic-source-109ba83.zip) is the complete source code this build was
+made from, including the changes above: the app at commit `109ba83` and its `core` module at `1bd39bd`.
 Build it with `./gradlew :androidApp:assembleOptimized` (an unsigned release-type APK, to sign with
 your own key) or `./gradlew :androidApp:assembleDebug` (Android SDK and JDK 21 required).
