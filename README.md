@@ -27,6 +27,48 @@ a throwaway test key, not the SimpMusic developers' key.
 
 New in this update:
 
+- **Lossless and Audius songs play to the end.** The player read every song in 5 MB pieces. For the
+  Internet Archive's FLAC files and Audius's MP3s, the end of a piece looked like the end of the song.
+  A lossless song stopped after about 45 seconds (or about 13 seconds when the file carries a large
+  cover picture), an Audius song after about two minutes, and you couldn't skip forward past the first
+  piece. These sources now play in one go.
+- **Only real releases count as high quality.** A better-quality copy is now used only if it is the
+  actual digital release. Concert tapes and bootlegs, transfers from vinyl, cassette or 78 rpm records,
+  session takes and alternate versions are skipped, and so are files too quiet to hold music.
+  Copies that earlier builds had already picked are checked again under these rules.
+- **Songs start sooner.** A song whose YouTube address was looked up in the last ten minutes on the
+  same network now starts without checking that address with Google first (that check cost a
+  connection, about a quarter to half a second). Playback also starts before the app finishes some
+  bookkeeping.
+- **Better battery life.**
+  - With the screen off, the app updates the song position once a second instead of 20 times
+    (4 times a second with SponsorBlock on).
+  - Songs loaded ahead for instant skipping keep 30 seconds ready instead of downloading 200 seconds
+    each.
+  - With Battery Saver on, the app loads one song ahead instead of three, and caches no openings.
+  - Lyrics and canvas videos load when you look at the app, not for every song played with the
+    screen off.
+  - The friends feature only connects while you have friends and the app is open.
+- **More privacy.**
+  - The lyrics and canvas services no longer hear about songs you play with the screen off, unless
+    you open the app.
+  - The app no longer contacts the SimpMusic developer's GitHub on every launch. That file is only
+    needed for DJ crossfade.
+- **Keep free storage.** In Settings → Storage, the player cache can now leave a share of your phone's
+  storage free (20% by default; off, 10%, 15%, 25% and 30% are the other choices). When free space drops
+  below it, the oldest cached songs are removed. This also catches space taken by other apps, and both
+  cache settings now apply without restarting the app.
+- **AI features without an API key, on your phone.**
+  - Without an AI key, "Your music taste" in Library is now written on your phone from your listening.
+    Nothing is sent anywhere, and the card says "written on this phone".
+  - Playlist suggestions (the ✨ button) now work for every playlist, not only ones synced to a YouTube
+    account. They come from YouTube radios of a few songs in the playlist, picked on your phone, with
+    no account and no AI key. Reload gives suggestions based on other songs in the playlist.
+- **Analytics' back arrow is gone when you open it from the tab bar.** It only took you to Home. It
+  still shows when Analytics is opened from somewhere deeper in the app.
+
+Earlier updates:
+
 - **A heart in the media controls.** The like button is now the first button in the notification,
   the lock screen and Android's quick settings player, so you can like a song without opening the app.
   The heart fills in straight away, also when the app is closed. Android shows only two extra buttons
@@ -42,8 +84,6 @@ New in this update:
   as many messages to the headset as before.
 - **Clearer labels.** The button now reads like the label in the player: "ANC · 80%", "ANC · Comfort",
   "Adaptive ANC", "Transparency", "ANC off".
-
-Earlier updates:
 
 - **Music on Home without signing in.** Signed out, YouTube Music only offers podcasts and an artist
   picker on its Home. The app now opens Home with three shelves of its own:
@@ -280,7 +320,7 @@ Playback:
 ## Source code
 
 SimpMusic is licensed under the GNU General Public License v3.0 (see [LICENSE](LICENSE)).
-[SimpMusic-source-76a53ed.zip](SimpMusic-source-76a53ed.zip) is the complete source code this build was
-made from, including the changes above: the app at commit `76a53ed` and its `core` module at `6ed4b3a`.
+[SimpMusic-source-9ebda39.zip](SimpMusic-source-9ebda39.zip) is the complete source code this build was
+made from, including the changes above: the app at commit `9ebda39` and its `core` module at `5a1a452`.
 Build it with `./gradlew :androidApp:assembleOptimized` (an unsigned release-type APK, to sign with
 your own key) or `./gradlew :androidApp:assembleDebug` (Android SDK and JDK 21 required).
