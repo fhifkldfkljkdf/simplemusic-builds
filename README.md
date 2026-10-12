@@ -27,6 +27,34 @@ a throwaway test key, not the SimpMusic developers' key.
 
 New in this update:
 
+- **A Podcasts tab.** Paste an address in the field at the top to follow a podcast. It can be:
+  - an RSS feed, such as `https://darknetdiaries.com/feedfree.xml`;
+  - a podcast's web page (the app finds its feed);
+  - a YouTube channel (`youtube.com/@lexfridman`, `/channel/…`);
+  - a YouTube playlist.
+
+  The tab shows the podcasts you follow, their newest episodes together, and recommendations. Open a podcast to
+  see all its episodes, follow or unfollow it, or check for new ones.
+  - RSS episodes play from the podcast's own audio file. YouTube episodes play like any YouTube video.
+  - Every episode remembers where you stopped and continues from there, wherever you start it from. Episodes
+    you finished are marked as played.
+  - Recommendations come from Apple's public podcast directory, searched with the topics of the podcasts you
+    follow (nothing about you or what you play). You can follow one in one tap, or open it and listen first.
+  - Everything is kept on your phone. YouTube channels show their latest 30 videos, and keep the ones seen
+    before.
+  - YouTube's own channel feeds are currently down for everyone (they answer "not found"), so the app reads
+    channels the way YouTube's website does.
+  - Episodes are never sent to lyrics or canvas services, and never searched for on the Internet Archive or
+    Audius.
+- **Turn each high-quality source on or off.** With Hi-Fi sound on, Settings → Playback now has a switch for
+  the Internet Archive and one for Audius. YouTube is always there, and the SoundCloud backup keeps its own
+  switch. The sources sheet shows a source you turned off as off. The best available copy is still picked
+  automatically: lossless first, then Audius, then YouTube.
+- **Analytics' back arrow, refined.** It is hidden when Analytics is opened from the tab bar, and shown when
+  you reach it from another screen.
+
+Earlier updates:
+
 - **Lossless and Audius songs play to the end.** The player read every song in 5 MB pieces. For the
   Internet Archive's FLAC files and Audius's MP3s, the end of a piece looked like the end of the song.
   A lossless song stopped after about 45 seconds (or about 13 seconds when the file carries a large
@@ -66,8 +94,6 @@ New in this update:
     no account and no AI key. Reload gives suggestions based on other songs in the playlist.
 - **Analytics' back arrow is gone when you open it from the tab bar.** It only took you to Home. It
   still shows when Analytics is opened from somewhere deeper in the app.
-
-Earlier updates:
 
 - **A heart in the media controls.** The like button is now the first button in the notification,
   the lock screen and Android's quick settings player, so you can like a song without opening the app.
@@ -320,7 +346,7 @@ Playback:
 ## Source code
 
 SimpMusic is licensed under the GNU General Public License v3.0 (see [LICENSE](LICENSE)).
-[SimpMusic-source-9ebda39.zip](SimpMusic-source-9ebda39.zip) is the complete source code this build was
-made from, including the changes above: the app at commit `9ebda39` and its `core` module at `5a1a452`.
+[SimpMusic-source-ae589e1.zip](SimpMusic-source-ae589e1.zip) is the complete source code this build was
+made from, including the changes above: the app at commit `ae589e1` and its `core` module at `c7c96b7`.
 Build it with `./gradlew :androidApp:assembleOptimized` (an unsigned release-type APK, to sign with
 your own key) or `./gradlew :androidApp:assembleDebug` (Android SDK and JDK 21 required).
