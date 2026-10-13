@@ -27,14 +27,23 @@ a throwaway test key, not the SimpMusic developers' key.
 
 New in this update:
 
+- **Insights in the notification.** The Android media notification (lock screen and quick-settings player)
+  now shows the stream's quality, the download speed and the headphones' battery on its second line, e.g.
+  `Queen · FLAC 16/44.1 · 2.4 MB/s · 80%`.
+- **A clearer update download.** The progress is a bar with a percentage, shown inline in the update dialog,
+  instead of a bare number on the button.
+- **Finish an update later.** A downloaded update is kept, so if you leave the installer (or the dialog) you
+  can install it without downloading again: the update dialog says "Install", and Settings has an "Install
+  downloaded update" entry.
+
+Earlier updates:
+
 - **Podcasts get their own playback speed.** The speed sheet now has a separate "Podcast speed" next to the
   song speed, so an episode can be sped up without changing how songs play. The player picks the right one
   per track.
 - **The speed control works with crossfade on.** It used to be greyed out whenever crossfade was enabled (a
   desktop limitation). On Android the speed is applied through the crossfade — the fade itself scales with
   your speed — so the control is now live there.
-
-Earlier updates:
 
 - **Find a podcast by name.** The Podcasts tab can now search Apple's public podcast directory: type a name
   in the new search field and tap a result to follow it, instead of only pasting an RSS feed or a YouTube
@@ -410,7 +419,7 @@ Playback:
 ## Source code
 
 SimpMusic is licensed under the GNU General Public License v3.0 (see [LICENSE](LICENSE)).
-[SimpMusic-source-8ac32a8.zip](SimpMusic-source-8ac32a8.zip) is the complete source code this build was
-made from, including the changes above: the app at commit `8ac32a8` and its `core` module at `e6d43ba`.
+[SimpMusic-source-fa28478.zip](SimpMusic-source-fa28478.zip) is the complete source code this build was
+made from, including the changes above: the app at commit `fa28478` and its `core` module at `4dd8589`.
 Build it with `./gradlew :androidApp:assembleOptimized` (an unsigned release-type APK, to sign with
 your own key) or `./gradlew :androidApp:assembleDebug` (Android SDK and JDK 21 required).
