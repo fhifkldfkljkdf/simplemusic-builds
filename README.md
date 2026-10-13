@@ -27,6 +27,8 @@ a throwaway test key, not the SimpMusic developers' key.
 
 New in this update:
 
+- **Test build.** Nothing new to use: this release exists so the fixed updater in 2.4.8 has a newer
+  version to install. Install 2.4.8 by hand first, then use the in-app update to reach this one.
 - **The update installer is fixed.** The app kept the APK it had downloaded before and offered to install
   *that* file instead of fetching the new release — and installing an older APK over the app is exactly what
   Android refuses with its bare "App not installed". Every APK is now checked before it is offered or handed
@@ -464,7 +466,7 @@ Playback:
 ## Source code
 
 SimpMusic is licensed under the GNU General Public License v3.0 (see [LICENSE](LICENSE)).
-[SimpMusic-source-3f1867e.zip](SimpMusic-source-3f1867e.zip) is the complete source code this build was
-made from, including the changes above: the app at commit `3f1867e` and its `core` module at `ac1f941`.
+[SimpMusic-source-d63b212.zip](SimpMusic-source-d63b212.zip) is the complete source code this build was
+made from, including the changes above: the app at commit `d63b212` and its `core` module at `ac1f941`.
 Build it with `./gradlew :androidApp:assembleOptimized` (an unsigned release-type APK, to sign with
 your own key) or `./gradlew :androidApp:assembleDebug` (Android SDK and JDK 21 required).
