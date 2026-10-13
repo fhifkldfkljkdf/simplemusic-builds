@@ -27,6 +27,14 @@ a throwaway test key, not the SimpMusic developers' key.
 
 New in this update:
 
+- **The headphones now say which noise mode is on.** Switching ANC / Transparency on a MOMENTUM 4 now
+  speaks the mode's name (for example "Noise cancelling"), whether you switch from the app or from the
+  headset's own button. Previously it only spoke when the app changed the mode, so the headset's button
+  said nothing. It also falls back to the device's default voice if no English voice is installed, and
+  writes what it said to Settings → App log so a silent cue can be diagnosed.
+
+Earlier updates:
+
 - **Fix: the app could crash on launch (2.4.5).** The Statistics screen's navigation route was missing the
   serialization marker AndroidX Navigation needs, and the app builds its routes at startup — so 2.4.5 could
   die before showing anything, with "An unexpected error occurred". Fixed. If you are on 2.4.5, install this
@@ -36,8 +44,6 @@ New in this update:
   update that the installer rejects. If you have not allowed this app to install updates, it now opens that
   setting instead of silently doing nothing. A failed download or install is shown in the dialog, which stays
   open, rather than closing as if it worked.
-
-Earlier updates:
 
 - **Statistics graphs.** Settings → Statistics now has two line charts: the connected headphones' battery
   over time (drawn from the readings the app already saves), and the download speed over time (the player
@@ -453,7 +459,7 @@ Playback:
 ## Source code
 
 SimpMusic is licensed under the GNU General Public License v3.0 (see [LICENSE](LICENSE)).
-[SimpMusic-source-2e4ec56.zip](SimpMusic-source-2e4ec56.zip) is the complete source code this build was
-made from, including the changes above: the app at commit `2e4ec56` and its `core` module at `a3ce545`.
+[SimpMusic-source-97eb8f3.zip](SimpMusic-source-97eb8f3.zip) is the complete source code this build was
+made from, including the changes above: the app at commit `97eb8f3` and its `core` module at `66e79e7`.
 Build it with `./gradlew :androidApp:assembleOptimized` (an unsigned release-type APK, to sign with
 your own key) or `./gradlew :androidApp:assembleDebug` (Android SDK and JDK 21 required).
