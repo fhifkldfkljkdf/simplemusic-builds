@@ -27,6 +27,10 @@ a throwaway test key, not the SimpMusic developers' key.
 
 New in this update:
 
+- **A better voice for the spoken mode cue, and no more on-screen messages.** The cue says
+  "Noise cancelling" (words, not the letters A-N-C), "Adaptive", "Transparency" and "Off" in a
+  smoother high-quality voice (Piper's `en_GB-cori-high`, public domain). The one-off messages that
+  were added to diagnose the silent cue are gone - it works, and it is logged in Settings -> App log.
 - **The spoken mode cue is shorter and clearer.** It now says just the mode - "ANC", "Adaptive",
   "Transparency", "Off" - in a cleaner studio voice (public domain), so each cue is under a second
   instead of up to one and a half. The music is held down for 1.8 s instead of 2.5 s to match.
@@ -491,7 +495,7 @@ Playback:
 ## Source code
 
 SimpMusic is licensed under the GNU General Public License v3.0 (see [LICENSE](LICENSE)).
-[SimpMusic-source-cda6923.zip](SimpMusic-source-cda6923.zip) is the complete source code this build was
-made from, including the changes above: the app at commit `cda6923` and its `core` module at `931d86d`.
+[SimpMusic-source-43e3350.zip](SimpMusic-source-43e3350.zip) is the complete source code this build was
+made from, including the changes above: the app at commit `43e3350` and its `core` module at `72d2de0`.
 Build it with `./gradlew :androidApp:assembleOptimized` (an unsigned release-type APK, to sign with
 your own key) or `./gradlew :androidApp:assembleDebug` (Android SDK and JDK 21 required).
