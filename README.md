@@ -27,14 +27,26 @@ a throwaway test key, not the SimpMusic developers' key.
 
 New in this update:
 
+- **The app updates itself.** "Check for update" now downloads the new test build inside the app and hands
+  it to Android's installer — no browser, no copy-pasting a link. It shows how far the download has got,
+  and Android still asks you to confirm the install, as it must for any app. On the desktop, the download
+  page still opens in the browser.
+- **Download speed in the player.** Next to where the song comes from, the player now shows how fast it is
+  coming in, e.g. `YouTube · OPUS 160 kbps · 2.4 MB/s`. The bitrate was already there; the speed is new.
+- **Monochrome shows in the source list.** It is now listed like the Internet Archive — shown while the
+  search runs, and as not found when it has nothing — instead of only appearing once a file was found.
+- **A spoken cue for the MOMENTUM 4.** When the app changes the noise mode, it says which one through the
+  headphones ("Noise cancelling", "Adaptive noise cancelling", "Transparency", "Noise cancelling off"),
+  because the headset's own tone barely differs between modes. Android's text to speech, in English.
+
+Earlier updates:
+
 - **Monochrome as a lossless source.** With Hi-Fi sound on, the app now also looks for the same recording
   as a lossless FLAC on Monochrome (TIDAL's catalog, streamed through `tracks.monochrome.st`), beside the
   Internet Archive. The two are searched at the same time and the first to answer wins, so a slow
   archive.org search no longer holds back a file that is ready. Every stream is read before it is used: one
   that does not answer with FLAC is skipped and the song carries on as before. It has its own switch in
   Settings → Playback, next to the Internet Archive's.
-
-Earlier updates:
 
 - **Each noise mode now has its own icon.** With the Sennheiser MOMENTUM 4 connected, the button in the
   player notification, the lock screen and Android's media controls showed the same icon for "Noise
@@ -362,7 +374,7 @@ Playback:
 ## Source code
 
 SimpMusic is licensed under the GNU General Public License v3.0 (see [LICENSE](LICENSE)).
-[SimpMusic-source-8fe4a34.zip](SimpMusic-source-8fe4a34.zip) is the complete source code this build was
-made from, including the changes above: the app at commit `8fe4a34` and its `core` module at `2d2444d`.
+[SimpMusic-source-a287ae2.zip](SimpMusic-source-a287ae2.zip) is the complete source code this build was
+made from, including the changes above: the app at commit `a287ae2` and its `core` module at `b5bb061`.
 Build it with `./gradlew :androidApp:assembleOptimized` (an unsigned release-type APK, to sign with
 your own key) or `./gradlew :androidApp:assembleDebug` (Android SDK and JDK 21 required).
