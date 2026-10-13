@@ -27,6 +27,17 @@ a throwaway test key, not the SimpMusic developers' key.
 
 New in this update:
 
+- **Each noise mode now has its own icon.** With the Sennheiser MOMENTUM 4 connected, the button in the
+  player notification, the lock screen and Android's media controls showed the same icon for "Noise
+  cancelling" and "Adaptive ANC", so you could not tell them apart at a glance. Adaptive ANC now has its
+  own icon, beside the ones Noise cancelling, Transparency and Off already had. The player's own badge
+  and the mode picker show it too.
+- **Updates come from this repository.** "Check for update" and the check at startup now look here for the
+  newest test build and download its APK from the release, instead of opening the official SimpMusic
+  download page. The check at startup follows the app's "auto check for updates" setting (on by default).
+
+Earlier updates:
+
 - **A Podcasts tab.** Paste an address in the field at the top to follow a podcast. It can be:
   - an RSS feed, such as `https://darknetdiaries.com/feedfree.xml`;
   - a podcast's web page (the app finds its feed);
@@ -52,8 +63,6 @@ New in this update:
   automatically: lossless first, then Audius, then YouTube.
 - **Analytics' back arrow, refined.** It is hidden when Analytics is opened from the tab bar, and shown when
   you reach it from another screen.
-
-Earlier updates:
 
 - **Lossless and Audius songs play to the end.** The player read every song in 5 MB pieces. For the
   Internet Archive's FLAC files and Audius's MP3s, the end of a piece looked like the end of the song.
@@ -346,7 +355,7 @@ Playback:
 ## Source code
 
 SimpMusic is licensed under the GNU General Public License v3.0 (see [LICENSE](LICENSE)).
-[SimpMusic-source-ae589e1.zip](SimpMusic-source-ae589e1.zip) is the complete source code this build was
-made from, including the changes above: the app at commit `ae589e1` and its `core` module at `c7c96b7`.
+[SimpMusic-source-418926f.zip](SimpMusic-source-418926f.zip) is the complete source code this build was
+made from, including the changes above: the app at commit `418926f` and its `core` module at `2a02511`.
 Build it with `./gradlew :androidApp:assembleOptimized` (an unsigned release-type APK, to sign with
 your own key) or `./gradlew :androidApp:assembleDebug` (Android SDK and JDK 21 required).
