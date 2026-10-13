@@ -27,6 +27,15 @@ a throwaway test key, not the SimpMusic developers' key.
 
 New in this update:
 
+- **The spoken mode cue was being drowned by the music, and now isn't.** The app's own player holds
+  one audio-focus request and is built not to duck on focus, so asking for focus never lowered the
+  music - the mode's name was said underneath it at full volume. The app's own player is now asked to
+  duck directly (the same gain the sleep timer fades with, so the user's volume is untouched and the
+  slider does not move), the name is said 300 ms later over a quiet music bed, and the volume is put
+  back after 2.5 s. For the first three cues of a run a one-line message also says what happened
+  (which change, what was said, whether a voice is installed), so a silent cue can be reported without
+  reading the log.
+- **The update dialog's percentage sits on the same line as Cancel**, instead of riding high beside it.
 - **The headphones' spoken mode cue is being chased down.** If you only ever hear the headset's own
   tone, this build now writes what the cue does to Settings -> App log at Info level (search
   "HeadsetCue"): whether the speech engine came up, whether the headset reported the change, and
@@ -470,7 +479,7 @@ Playback:
 ## Source code
 
 SimpMusic is licensed under the GNU General Public License v3.0 (see [LICENSE](LICENSE)).
-[SimpMusic-source-ecd64ed.zip](SimpMusic-source-ecd64ed.zip) is the complete source code this build was
-made from, including the changes above: the app at commit `ecd64ed` and its `core` module at `60c3409`.
+[SimpMusic-source-828236b.zip](SimpMusic-source-828236b.zip) is the complete source code this build was
+made from, including the changes above: the app at commit `828236b` and its `core` module at `7f758e3`.
 Build it with `./gradlew :androidApp:assembleOptimized` (an unsigned release-type APK, to sign with
 your own key) or `./gradlew :androidApp:assembleDebug` (Android SDK and JDK 21 required).
