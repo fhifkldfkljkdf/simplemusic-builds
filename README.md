@@ -27,11 +27,16 @@ a throwaway test key, not the SimpMusic developers' key.
 
 New in this update:
 
-- **The headphones now say which noise mode is on.** Switching ANC / Transparency on a MOMENTUM 4 now
-  speaks the mode's name (for example "Noise cancelling"), whether you switch from the app or from the
-  headset's own button. Previously it only spoke when the app changed the mode, so the headset's button
-  said nothing. It also falls back to the device's default voice if no English voice is installed, and
-  writes what it said to Settings → App log so a silent cue can be diagnosed.
+- **The update installer is fixed.** The app kept the APK it had downloaded before and offered to install
+  *that* file instead of fetching the new release — and installing an older APK over the app is exactly what
+  Android refuses with its bare "App not installed". Every APK is now checked before it is offered or handed
+  to the installer: it must be a complete, readable APK, for this app, signed with the same key as the
+  installed app, and newer than the installed version. A file that fails is dropped, and the real reason
+  (stale file, different signing key, incomplete download) is shown in the dialog instead of "App not
+  installed".
+- **The headphones say the mode as soon as it changes.** The cue now speaks the moment the app switches ANC,
+  and also when the headset reports a change the app did not make (its own ANC button). A report of a change
+  the app just made is not spoken twice.
 
 Earlier updates:
 
@@ -459,7 +464,7 @@ Playback:
 ## Source code
 
 SimpMusic is licensed under the GNU General Public License v3.0 (see [LICENSE](LICENSE)).
-[SimpMusic-source-97eb8f3.zip](SimpMusic-source-97eb8f3.zip) is the complete source code this build was
-made from, including the changes above: the app at commit `97eb8f3` and its `core` module at `66e79e7`.
+[SimpMusic-source-3f1867e.zip](SimpMusic-source-3f1867e.zip) is the complete source code this build was
+made from, including the changes above: the app at commit `3f1867e` and its `core` module at `ac1f941`.
 Build it with `./gradlew :androidApp:assembleOptimized` (an unsigned release-type APK, to sign with
 your own key) or `./gradlew :androidApp:assembleDebug` (Android SDK and JDK 21 required).
