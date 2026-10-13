@@ -27,6 +27,13 @@ a throwaway test key, not the SimpMusic developers' key.
 
 New in this update:
 
+- **Statistics graphs.** Settings → Statistics now has two line charts: the connected headphones' battery
+  over time (drawn from the readings the app already saves), and the download speed over time (the player
+  samples it while playing). Everything stays on the device. Each shows a peak; with too little history yet
+  it says so rather than drawing a guess.
+
+Earlier updates:
+
 - **The notification line shows the bitrate and the time left, not the download speed.** It now reads, for
   example, `FLAC 16/44.1 · 80% · ~12h`: the song's quality and bitrate, the headphones' battery, and an
   estimate of how long they will last. (The download speed is gone from it.)
@@ -34,8 +41,6 @@ New in this update:
   and the song's length), e.g. `FLAC 1100 kbps`, instead of just `FLAC`.
 - **The MOMENTUM 4 cue starts sooner.** The speech engine is prepared as soon as the headphones connect, so
   the spoken mode name is not missed on the first switch.
-
-Earlier updates:
 
 - **The stats line reaches more Android versions.** The quality/speed/battery line is now written to the
   session metadata's subtitle as well as its artist, so whichever field your Android build's media player
@@ -438,7 +443,7 @@ Playback:
 ## Source code
 
 SimpMusic is licensed under the GNU General Public License v3.0 (see [LICENSE](LICENSE)).
-[SimpMusic-source-7ebedb5.zip](SimpMusic-source-7ebedb5.zip) is the complete source code this build was
-made from, including the changes above: the app at commit `7ebedb5` and its `core` module at `ae5a94e`.
+[SimpMusic-source-08d56eb.zip](SimpMusic-source-08d56eb.zip) is the complete source code this build was
+made from, including the changes above: the app at commit `08d56eb` and its `core` module at `62f4fb0`.
 Build it with `./gradlew :androidApp:assembleOptimized` (an unsigned release-type APK, to sign with
 your own key) or `./gradlew :androidApp:assembleDebug` (Android SDK and JDK 21 required).
