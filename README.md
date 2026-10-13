@@ -27,12 +27,22 @@ a throwaway test key, not the SimpMusic developers' key.
 
 New in this update:
 
+- **Fix: the app could crash on launch (2.4.5).** The Statistics screen's navigation route was missing the
+  serialization marker AndroidX Navigation needs, and the app builds its routes at startup — so 2.4.5 could
+  die before showing anything, with "An unexpected error occurred". Fixed. If you are on 2.4.5, install this
+  over it.
+- **The self-update is more reliable.** A download now goes to a temporary file, is checked to be a real APK,
+  and only then replaces the last one — so a download that failed halfway can no longer look like a ready
+  update that the installer rejects. If you have not allowed this app to install updates, it now opens that
+  setting instead of silently doing nothing. A failed download or install is shown in the dialog, which stays
+  open, rather than closing as if it worked.
+
+Earlier updates:
+
 - **Statistics graphs.** Settings → Statistics now has two line charts: the connected headphones' battery
   over time (drawn from the readings the app already saves), and the download speed over time (the player
   samples it while playing). Everything stays on the device. Each shows a peak; with too little history yet
   it says so rather than drawing a guess.
-
-Earlier updates:
 
 - **The notification line shows the bitrate and the time left, not the download speed.** It now reads, for
   example, `FLAC 16/44.1 · 80% · ~12h`: the song's quality and bitrate, the headphones' battery, and an
@@ -443,7 +453,7 @@ Playback:
 ## Source code
 
 SimpMusic is licensed under the GNU General Public License v3.0 (see [LICENSE](LICENSE)).
-[SimpMusic-source-08d56eb.zip](SimpMusic-source-08d56eb.zip) is the complete source code this build was
-made from, including the changes above: the app at commit `08d56eb` and its `core` module at `62f4fb0`.
+[SimpMusic-source-2e4ec56.zip](SimpMusic-source-2e4ec56.zip) is the complete source code this build was
+made from, including the changes above: the app at commit `2e4ec56` and its `core` module at `a3ce545`.
 Build it with `./gradlew :androidApp:assembleOptimized` (an unsigned release-type APK, to sign with
 your own key) or `./gradlew :androidApp:assembleDebug` (Android SDK and JDK 21 required).
