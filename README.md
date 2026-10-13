@@ -27,6 +27,12 @@ a throwaway test key, not the SimpMusic developers' key.
 
 New in this update:
 
+- **The spoken mode cue is shorter and clearer.** It now says just the mode - "ANC", "Adaptive",
+  "Transparency", "Off" - in a cleaner studio voice (public domain), so each cue is under a second
+  instead of up to one and a half. The music is held down for 1.8 s instead of 2.5 s to match.
+- **The update dialog's progress is on the same line as Cancel.** The number now sits inside the same
+  row as the Cancel button, so it cannot drift from it, and the duplicate number under the progress
+  bar is gone - one number instead of two.
 - **The spoken mode cue no longer needs the phone's text to speech.** The cue was silent because this
   phone has no speech engine installed at all - so every earlier attempt to say the mode name was
   silence, however it was triggered. The four names now ship inside the app as small audio clips (a
@@ -485,7 +491,7 @@ Playback:
 ## Source code
 
 SimpMusic is licensed under the GNU General Public License v3.0 (see [LICENSE](LICENSE)).
-[SimpMusic-source-a1f344b.zip](SimpMusic-source-a1f344b.zip) is the complete source code this build was
-made from, including the changes above: the app at commit `a1f344b` and its `core` module at `3203a6d`.
+[SimpMusic-source-cda6923.zip](SimpMusic-source-cda6923.zip) is the complete source code this build was
+made from, including the changes above: the app at commit `cda6923` and its `core` module at `931d86d`.
 Build it with `./gradlew :androidApp:assembleOptimized` (an unsigned release-type APK, to sign with
 your own key) or `./gradlew :androidApp:assembleDebug` (Android SDK and JDK 21 required).
