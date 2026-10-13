@@ -27,11 +27,15 @@ a throwaway test key, not the SimpMusic developers' key.
 
 New in this update:
 
+- **Find a podcast by name.** The Podcasts tab can now search Apple's public podcast directory: type a name
+  in the new search field and tap a result to follow it, instead of only pasting an RSS feed or a YouTube
+  link.
+
+Earlier updates:
+
 - **Cleaner buttons in the player.** The two pills under the seek bar — the headphones' noise control and the
   song's source — now share one shape: a full rounded pill with a hairline border and a slightly larger icon,
   so they read as a matching pair rather than two different badges.
-
-Earlier updates:
 
 - **How long the headphones have left.** The player's headset pill now shows an estimated play time next to
   the battery percentage (e.g. `80% · ~12h`). Headsets report only a percentage, so the time is learned from
@@ -399,7 +403,7 @@ Playback:
 ## Source code
 
 SimpMusic is licensed under the GNU General Public License v3.0 (see [LICENSE](LICENSE)).
-[SimpMusic-source-ace6e54.zip](SimpMusic-source-ace6e54.zip) is the complete source code this build was
-made from, including the changes above: the app at commit `ace6e54` and its `core` module at `3434621`.
+[SimpMusic-source-1b5cca1.zip](SimpMusic-source-1b5cca1.zip) is the complete source code this build was
+made from, including the changes above: the app at commit `1b5cca1` and its `core` module at `5476b53`.
 Build it with `./gradlew :androidApp:assembleOptimized` (an unsigned release-type APK, to sign with
 your own key) or `./gradlew :androidApp:assembleDebug` (Android SDK and JDK 21 required).
