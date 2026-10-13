@@ -27,11 +27,16 @@ a throwaway test key, not the SimpMusic developers' key.
 
 New in this update:
 
+- **How long the headphones have left.** The player's headset pill now shows an estimated play time next to
+  the battery percentage (e.g. `80% · ~12h`). Headsets report only a percentage, so the time is learned from
+  how that percentage falls over time on this phone; it appears once there is enough history to trust it (at
+  least about half an hour and a few percent of drop), and says nothing before that.
+
+Earlier updates:
+
 - **Less work in the background.** The download-speed figure in the notification is now refreshed only when
   it actually changes, and every 10 seconds rather than every 5, so the notification is re-posted far less
   while a song plays. The figure inside the app updates every 2 seconds instead of every second.
-
-Earlier updates:
 
 - **Lyrics no longer tell a third party what you play.** The default lyrics provider is now LRCLIB (a
   public, account-free lyrics database) instead of the SimpMusic server. The SimpMusic provider is still
@@ -390,7 +395,7 @@ Playback:
 ## Source code
 
 SimpMusic is licensed under the GNU General Public License v3.0 (see [LICENSE](LICENSE)).
-[SimpMusic-source-edb4d00.zip](SimpMusic-source-edb4d00.zip) is the complete source code this build was
-made from, including the changes above: the app at commit `edb4d00` and its `core` module at `73cfa15`.
+[SimpMusic-source-e6f7ec4.zip](SimpMusic-source-e6f7ec4.zip) is the complete source code this build was
+made from, including the changes above: the app at commit `e6f7ec4` and its `core` module at `3434621`.
 Build it with `./gradlew :androidApp:assembleOptimized` (an unsigned release-type APK, to sign with
 your own key) or `./gradlew :androidApp:assembleDebug` (Android SDK and JDK 21 required).
