@@ -27,6 +27,15 @@ a throwaway test key, not the SimpMusic developers' key.
 
 New in this update:
 
+- **The download speed in the notification now updates.** It follows the bytes actually being downloaded
+  (over the last two seconds) rather than the player's slow long-window average, so it moves while a song
+  loads and drops away when nothing is being fetched. It is refreshed every 3 seconds while playing.
+- **The insights now show on Android 13+ too (including Android 17).** On those versions the media player is
+  drawn from the session metadata, not the notification text, so the quality, speed and battery are now put
+  on the metadata's second line — where the lock screen and quick-settings player actually read them.
+
+Earlier updates:
+
 - **Insights in the notification.** The Android media notification (lock screen and quick-settings player)
   now shows the stream's quality, the download speed and the headphones' battery on its second line, e.g.
   `Queen · FLAC 16/44.1 · 2.4 MB/s · 80%`.
@@ -35,8 +44,6 @@ New in this update:
 - **Finish an update later.** A downloaded update is kept, so if you leave the installer (or the dialog) you
   can install it without downloading again: the update dialog says "Install", and Settings has an "Install
   downloaded update" entry.
-
-Earlier updates:
 
 - **Podcasts get their own playback speed.** The speed sheet now has a separate "Podcast speed" next to the
   song speed, so an episode can be sped up without changing how songs play. The player picks the right one
@@ -419,7 +426,7 @@ Playback:
 ## Source code
 
 SimpMusic is licensed under the GNU General Public License v3.0 (see [LICENSE](LICENSE)).
-[SimpMusic-source-fa28478.zip](SimpMusic-source-fa28478.zip) is the complete source code this build was
-made from, including the changes above: the app at commit `fa28478` and its `core` module at `4dd8589`.
+[SimpMusic-source-abcc783.zip](SimpMusic-source-abcc783.zip) is the complete source code this build was
+made from, including the changes above: the app at commit `abcc783` and its `core` module at `2874dd6`.
 Build it with `./gradlew :androidApp:assembleOptimized` (an unsigned release-type APK, to sign with
 your own key) or `./gradlew :androidApp:assembleDebug` (Android SDK and JDK 21 required).
