@@ -27,12 +27,16 @@ a throwaway test key, not the SimpMusic developers' key.
 
 New in this update:
 
+- **Less work in the background.** The download-speed figure in the notification is now refreshed only when
+  it actually changes, and every 10 seconds rather than every 5, so the notification is re-posted far less
+  while a song plays. The figure inside the app updates every 2 seconds instead of every second.
+
+Earlier updates:
+
 - **Lyrics no longer tell a third party what you play.** The default lyrics provider is now LRCLIB (a
   public, account-free lyrics database) instead of the SimpMusic server. The SimpMusic provider is still
   available in Settings if you want it. An audit for this build found no advertising or analytics code at
   all, and no playback reporting.
-
-Earlier updates:
 
 - **The download speed is in the notification too.** The speed that was only inside the app now shows on the
   second line of the Android media notification (the lock screen and the quick-settings player), next to the
@@ -386,7 +390,7 @@ Playback:
 ## Source code
 
 SimpMusic is licensed under the GNU General Public License v3.0 (see [LICENSE](LICENSE)).
-[SimpMusic-source-5902b91.zip](SimpMusic-source-5902b91.zip) is the complete source code this build was
-made from, including the changes above: the app at commit `5902b91` and its `core` module at `acd4c20`.
+[SimpMusic-source-edb4d00.zip](SimpMusic-source-edb4d00.zip) is the complete source code this build was
+made from, including the changes above: the app at commit `edb4d00` and its `core` module at `73cfa15`.
 Build it with `./gradlew :androidApp:assembleOptimized` (an unsigned release-type APK, to sign with
 your own key) or `./gradlew :androidApp:assembleDebug` (Android SDK and JDK 21 required).
