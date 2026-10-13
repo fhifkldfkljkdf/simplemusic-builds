@@ -27,14 +27,19 @@ a throwaway test key, not the SimpMusic developers' key.
 
 New in this update:
 
+- **Lyrics no longer tell a third party what you play.** The default lyrics provider is now LRCLIB (a
+  public, account-free lyrics database) instead of the SimpMusic server. The SimpMusic provider is still
+  available in Settings if you want it. An audit for this build found no advertising or analytics code at
+  all, and no playback reporting.
+
+Earlier updates:
+
 - **The download speed is in the notification too.** The speed that was only inside the app now shows on the
   second line of the Android media notification (the lock screen and the quick-settings player), next to the
   artist, e.g. `Queen · 2.4 MB/s`, refreshed while the song plays.
 - **The MOMENTUM 4 cue is now audible over music.** The spoken mode name is played as media audio, so it
   comes out of the headphones rather than the phone's speaker, and the music is ducked for it, so it can be
   heard over a song that is playing.
-
-Earlier updates:
 
 - **The app updates itself.** "Check for update" now downloads the new test build inside the app and hands
   it to Android's installer — no browser, no copy-pasting a link. It shows how far the download has got,
@@ -381,7 +386,7 @@ Playback:
 ## Source code
 
 SimpMusic is licensed under the GNU General Public License v3.0 (see [LICENSE](LICENSE)).
-[SimpMusic-source-7d03c16.zip](SimpMusic-source-7d03c16.zip) is the complete source code this build was
-made from, including the changes above: the app at commit `7d03c16` and its `core` module at `063e0bc`.
+[SimpMusic-source-5902b91.zip](SimpMusic-source-5902b91.zip) is the complete source code this build was
+made from, including the changes above: the app at commit `5902b91` and its `core` module at `acd4c20`.
 Build it with `./gradlew :androidApp:assembleOptimized` (an unsigned release-type APK, to sign with
 your own key) or `./gradlew :androidApp:assembleDebug` (Android SDK and JDK 21 required).
