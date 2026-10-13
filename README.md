@@ -27,14 +27,18 @@ a throwaway test key, not the SimpMusic developers' key.
 
 New in this update:
 
+- **The stats line reaches more Android versions.** The quality/speed/battery line is now written to the
+  session metadata's subtitle as well as its artist, so whichever field your Android build's media player
+  reads (the lock screen and quick-settings player draw from the session metadata on Android 13+), it shows.
+
+Earlier updates:
+
 - **The download speed in the notification now updates.** It follows the bytes actually being downloaded
   (over the last two seconds) rather than the player's slow long-window average, so it moves while a song
   loads and drops away when nothing is being fetched. It is refreshed every 3 seconds while playing.
 - **The insights now show on Android 13+ too (including Android 17).** On those versions the media player is
   drawn from the session metadata, not the notification text, so the quality, speed and battery are now put
   on the metadata's second line — where the lock screen and quick-settings player actually read them.
-
-Earlier updates:
 
 - **Insights in the notification.** The Android media notification (lock screen and quick-settings player)
   now shows the stream's quality, the download speed and the headphones' battery on its second line, e.g.
@@ -426,7 +430,7 @@ Playback:
 ## Source code
 
 SimpMusic is licensed under the GNU General Public License v3.0 (see [LICENSE](LICENSE)).
-[SimpMusic-source-abcc783.zip](SimpMusic-source-abcc783.zip) is the complete source code this build was
-made from, including the changes above: the app at commit `abcc783` and its `core` module at `2874dd6`.
+[SimpMusic-source-b807850.zip](SimpMusic-source-b807850.zip) is the complete source code this build was
+made from, including the changes above: the app at commit `b807850` and its `core` module at `f7f7492`.
 Build it with `./gradlew :androidApp:assembleOptimized` (an unsigned release-type APK, to sign with
 your own key) or `./gradlew :androidApp:assembleDebug` (Android SDK and JDK 21 required).
