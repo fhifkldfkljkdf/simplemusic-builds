@@ -27,6 +27,15 @@ a throwaway test key, not the SimpMusic developers' key.
 
 New in this update:
 
+- **The download speed is in the notification too.** The speed that was only inside the app now shows on the
+  second line of the Android media notification (the lock screen and the quick-settings player), next to the
+  artist, e.g. `Queen · 2.4 MB/s`, refreshed while the song plays.
+- **The MOMENTUM 4 cue is now audible over music.** The spoken mode name is played as media audio, so it
+  comes out of the headphones rather than the phone's speaker, and the music is ducked for it, so it can be
+  heard over a song that is playing.
+
+Earlier updates:
+
 - **The app updates itself.** "Check for update" now downloads the new test build inside the app and hands
   it to Android's installer — no browser, no copy-pasting a link. It shows how far the download has got,
   and Android still asks you to confirm the install, as it must for any app. On the desktop, the download
@@ -38,8 +47,6 @@ New in this update:
 - **A spoken cue for the MOMENTUM 4.** When the app changes the noise mode, it says which one through the
   headphones ("Noise cancelling", "Adaptive noise cancelling", "Transparency", "Noise cancelling off"),
   because the headset's own tone barely differs between modes. Android's text to speech, in English.
-
-Earlier updates:
 
 - **Monochrome as a lossless source.** With Hi-Fi sound on, the app now also looks for the same recording
   as a lossless FLAC on Monochrome (TIDAL's catalog, streamed through `tracks.monochrome.st`), beside the
@@ -374,7 +381,7 @@ Playback:
 ## Source code
 
 SimpMusic is licensed under the GNU General Public License v3.0 (see [LICENSE](LICENSE)).
-[SimpMusic-source-a287ae2.zip](SimpMusic-source-a287ae2.zip) is the complete source code this build was
-made from, including the changes above: the app at commit `a287ae2` and its `core` module at `b5bb061`.
+[SimpMusic-source-7d03c16.zip](SimpMusic-source-7d03c16.zip) is the complete source code this build was
+made from, including the changes above: the app at commit `7d03c16` and its `core` module at `063e0bc`.
 Build it with `./gradlew :androidApp:assembleOptimized` (an unsigned release-type APK, to sign with
 your own key) or `./gradlew :androidApp:assembleDebug` (Android SDK and JDK 21 required).
