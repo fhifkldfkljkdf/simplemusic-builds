@@ -27,6 +27,12 @@ a throwaway test key, not the SimpMusic developers' key.
 
 New in this update:
 
+- **The spoken mode cue no longer needs the phone's text to speech.** The cue was silent because this
+  phone has no speech engine installed at all - so every earlier attempt to say the mode name was
+  silence, however it was triggered. The four names now ship inside the app as small audio clips (a
+  public-domain voice, generated offline), played through the same audio path as the music: no engine,
+  no voice download, no permission. The music is still briefly turned down so the name is heard over
+  it.
 - **The spoken mode cue was being drowned by the music, and now isn't.** The app's own player holds
   one audio-focus request and is built not to duck on focus, so asking for focus never lowered the
   music - the mode's name was said underneath it at full volume. The app's own player is now asked to
@@ -479,7 +485,7 @@ Playback:
 ## Source code
 
 SimpMusic is licensed under the GNU General Public License v3.0 (see [LICENSE](LICENSE)).
-[SimpMusic-source-828236b.zip](SimpMusic-source-828236b.zip) is the complete source code this build was
-made from, including the changes above: the app at commit `828236b` and its `core` module at `7f758e3`.
+[SimpMusic-source-a1f344b.zip](SimpMusic-source-a1f344b.zip) is the complete source code this build was
+made from, including the changes above: the app at commit `a1f344b` and its `core` module at `3203a6d`.
 Build it with `./gradlew :androidApp:assembleOptimized` (an unsigned release-type APK, to sign with
 your own key) or `./gradlew :androidApp:assembleDebug` (Android SDK and JDK 21 required).
