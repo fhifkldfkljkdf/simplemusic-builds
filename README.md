@@ -1,6 +1,6 @@
 # SimpMusic test builds (unofficial)
 
-<img src="icon.png" width="96" alt="The test build's app icon: a pixel-art white play triangle with a staircase sound wave under it, on a flat blue background">
+<img src="icon.png" width="96" alt="The test build's app icon: a pixel-art white play triangle on a black background">
 
 An unofficial test build of [SimpMusic](https://github.com/maxrave-dev/SimpMusic), the YouTube Music
 client by maxrave-dev. It is not made or supported by the SimpMusic developers, so please don't report
@@ -27,6 +27,13 @@ a throwaway test key, not the SimpMusic developers' key.
 
 New in this update:
 
+- **The New releases row is off the home page.** It was YouTube's own shelf on the home feed - the
+  same page for every account - so it never read as yours, whatever order we put its items in. It is
+  dropped now, and so is the feed's Music videos row. (If you want a new-release row built from your
+  own artists later, that would have to be a row the app assembles itself, not one YouTube sends.)
+- **A black-and-white pixel-art icon.** A chunky pixel play triangle, 9 x 10 pixels on a 16 x 16
+  grid, white on black - nothing else. Themed, notification, Android Auto, in-app and Desktop icons
+  are the same pixel mark.
 - **Updates download themselves.** The APK is fetched as soon as a newer build is found - over Wi-Fi
   or Ethernet only, so a metered plan is left alone - which leaves a single **Install** tap with
   nothing to wait for. Android's own "Install?" prompt is the one confirmation left: no app can skip
@@ -545,7 +552,7 @@ Playback:
 ## Source code
 
 SimpMusic is licensed under the GNU General Public License v3.0 (see [LICENSE](LICENSE)).
-[SimpMusic-source-980978a.zip](SimpMusic-source-980978a.zip) is the complete source code this build was
-made from, including the changes above: the app at commit `980978a` and its `core` module at `53fbf75`.
+[SimpMusic-source-15127ad.zip](SimpMusic-source-15127ad.zip) is the complete source code this build was
+made from, including the changes above: the app at commit `15127ad` and its `core` module at `aaa85f3`.
 Build it with `./gradlew :androidApp:assembleOptimized` (an unsigned release-type APK, to sign with
 your own key) or `./gradlew :androidApp:assembleDebug` (Android SDK and JDK 21 required).
