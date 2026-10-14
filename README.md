@@ -27,6 +27,16 @@ a throwaway test key, not the SimpMusic developers' key.
 
 New in this update:
 
+- **New releases are the ones you'd want.** The "New releases" row came from YouTube's
+  `FEmusic_new_releases` page, which is the same for every account - so nothing on it was chosen from
+  what you listen to. It is now put in this phone's own order: releases by artists you have played in
+  the last 180 days come first, most played first, and when there are six or more of those the
+  unrelated ones are dropped, so the row really is "new from your artists". Fewer than six: they lead
+  and the rest stays below. With no play history the row is left exactly as YouTube sent it. All of
+  this is local; nothing leaves the phone.
+- **The ANC strength slider reads like Sennheiser's own.** The track is now a ramp from soft to full
+  instead of a bar that fills up, so which end is stronger is visible at a glance, with the "aware"
+  and full-ANC glyphs marking the ends, lined up with the knob's travel.
 - **A better voice for the spoken mode cue, and no more on-screen messages.** The cue says
   "Noise cancelling" (words, not the letters A-N-C), "Adaptive", "Transparency" and "Off" in a
   smoother high-quality voice (Piper's `en_GB-cori-high`, public domain). The one-off messages that
@@ -58,19 +68,19 @@ New in this update:
   what was said. The cue also no longer waits on the app's read-back of the write (a write can land
   and still read back oddly), the mode is said 400 ms after the music starts ducking instead of into
   the first beat of it, and a speech engine that failed to start is no longer permanent.
-- **The update installer is fixed.** The app kept the APK it had downloaded before and offered to install
-  *that* file instead of fetching the new release — and installing an older APK over the app is exactly what
-  Android refuses with its bare "App not installed". Every APK is now checked before it is offered or handed
-  to the installer: it must be a complete, readable APK, for this app, signed with the same key as the
-  installed app, and newer than the installed version. A file that fails is dropped, and the real reason
-  (stale file, different signing key, incomplete download) is shown in the dialog instead of "App not
-  installed".
-- **The headphones say the mode as soon as it changes.** The cue now speaks the moment the app switches ANC,
-  and also when the headset reports a change the app did not make (its own ANC button). A report of a change
-  the app just made is not spoken twice.
 
 Earlier updates:
 
+- **The headphones say the mode as soon as it changes (2.4.6).** The cue now speaks the moment the app
+  switches ANC, and also when the headset reports a change the app did not make (its own ANC button). A
+  report of a change the app just made is not spoken twice.
+- **The update installer is fixed (2.4.8).** The app kept the APK it had downloaded before and offered to
+  install *that* file instead of fetching the new release — and installing an older APK over the app is
+  exactly what Android refuses with its bare "App not installed". Every APK is now checked before it is
+  offered or handed to the installer: it must be a complete, readable APK, for this app, signed with the
+  same key as the installed app, and newer than the installed version. A file that fails is dropped, and
+  the real reason (stale file, different signing key, incomplete download) is shown in the dialog instead
+  of "App not installed".
 - **Fix: the app could crash on launch (2.4.5).** The Statistics screen's navigation route was missing the
   serialization marker AndroidX Navigation needs, and the app builds its routes at startup — so 2.4.5 could
   die before showing anything, with "An unexpected error occurred". Fixed. If you are on 2.4.5, install this
@@ -495,7 +505,7 @@ Playback:
 ## Source code
 
 SimpMusic is licensed under the GNU General Public License v3.0 (see [LICENSE](LICENSE)).
-[SimpMusic-source-43e3350.zip](SimpMusic-source-43e3350.zip) is the complete source code this build was
-made from, including the changes above: the app at commit `43e3350` and its `core` module at `72d2de0`.
+[SimpMusic-source-5c3421c.zip](SimpMusic-source-5c3421c.zip) is the complete source code this build was
+made from, including the changes above: the app at commit `5c3421c` and its `core` module at `9d2613b`.
 Build it with `./gradlew :androidApp:assembleOptimized` (an unsigned release-type APK, to sign with
 your own key) or `./gradlew :androidApp:assembleDebug` (Android SDK and JDK 21 required).
