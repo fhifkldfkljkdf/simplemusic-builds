@@ -27,6 +27,17 @@ a throwaway test key, not the SimpMusic developers' key.
 
 New in this update:
 
+- **One bar in Podcasts, not two.** The tab had a field to search Apple's directory by name and
+  another to paste an address. There is now one: type a name and it searches as you type; paste a
+  link - an RSS feed, a podcast page, a YouTube channel or playlist - and the lens turns into a
+  **+**, which follows that address. The same field does both, so there is no guessing which bar a
+  link belongs in.
+- **New releases: the ranking now reads a second history store.** The ranking added in 2.4.16 read
+  the playback events, which are only kept while **local tracking** is on - so with it off, the row
+  stayed exactly as YouTube sent it. It now also reads the local library's own play counter
+  (all-time, kept whatever that setting says), and it writes what it found to Settings -> App log
+  (search `NewReleases`: how many artists were found and how many shelf items were kept), so this
+  can be checked rather than guessed.
 - **New releases are the ones you'd want.** The "New releases" row came from YouTube's
   `FEmusic_new_releases` page, which is the same for every account - so nothing on it was chosen from
   what you listen to. It is now put in this phone's own order: releases by artists you have played in
@@ -61,19 +72,16 @@ New in this update:
   back after 2.5 s. For the first three cues of a run a one-line message also says what happened
   (which change, what was said, whether a voice is installed), so a silent cue can be reported without
   reading the log.
-- **The update dialog's percentage sits on the same line as Cancel**, instead of riding high beside it.
-- **The headphones' spoken mode cue is being chased down.** If you only ever hear the headset's own
+
+Earlier updates:
+
+- **The update dialog's percentage sits on the same line as Cancel (2.4.11)**, instead of riding high beside it.
+- **The headphones' spoken mode cue is being chased down (2.4.10).** If you only ever hear the headset's own
   tone, this build now writes what the cue does to Settings -> App log at Info level (search
   "HeadsetCue"): whether the speech engine came up, whether the headset reported the change, and
   what was said. The cue also no longer waits on the app's read-back of the write (a write can land
   and still read back oddly), the mode is said 400 ms after the music starts ducking instead of into
   the first beat of it, and a speech engine that failed to start is no longer permanent.
-
-Earlier updates:
-
-- **The headphones say the mode as soon as it changes (2.4.6).** The cue now speaks the moment the app
-  switches ANC, and also when the headset reports a change the app did not make (its own ANC button). A
-  report of a change the app just made is not spoken twice.
 - **The update installer is fixed (2.4.8).** The app kept the APK it had downloaded before and offered to
   install *that* file instead of fetching the new release — and installing an older APK over the app is
   exactly what Android refuses with its bare "App not installed". Every APK is now checked before it is
@@ -81,6 +89,9 @@ Earlier updates:
   same key as the installed app, and newer than the installed version. A file that fails is dropped, and
   the real reason (stale file, different signing key, incomplete download) is shown in the dialog instead
   of "App not installed".
+- **The headphones say the mode as soon as it changes (2.4.6).** The cue now speaks the moment the app
+  switches ANC, and also when the headset reports a change the app did not make (its own ANC button). A
+  report of a change the app just made is not spoken twice.
 - **Fix: the app could crash on launch (2.4.5).** The Statistics screen's navigation route was missing the
   serialization marker AndroidX Navigation needs, and the app builds its routes at startup — so 2.4.5 could
   die before showing anything, with "An unexpected error occurred". Fixed. If you are on 2.4.5, install this
@@ -505,7 +516,7 @@ Playback:
 ## Source code
 
 SimpMusic is licensed under the GNU General Public License v3.0 (see [LICENSE](LICENSE)).
-[SimpMusic-source-5c3421c.zip](SimpMusic-source-5c3421c.zip) is the complete source code this build was
-made from, including the changes above: the app at commit `5c3421c` and its `core` module at `9d2613b`.
+[SimpMusic-source-2f2b0f1.zip](SimpMusic-source-2f2b0f1.zip) is the complete source code this build was
+made from, including the changes above: the app at commit `2f2b0f1` and its `core` module at `fecef1d`.
 Build it with `./gradlew :androidApp:assembleOptimized` (an unsigned release-type APK, to sign with
 your own key) or `./gradlew :androidApp:assembleDebug` (Android SDK and JDK 21 required).
