@@ -1,6 +1,6 @@
 # SimpMusic test builds (unofficial)
 
-<img src="icon.png" width="96" alt="The test build's app icon: a white play button cut through by a sound wave, on a blue-to-violet background">
+<img src="icon.png" width="96" alt="The test build's app icon: a flat white play button cut through by a sound wave, on a flat blue background">
 
 An unofficial test build of [SimpMusic](https://github.com/maxrave-dev/SimpMusic), the YouTube Music
 client by maxrave-dev. It is not made or supported by the SimpMusic developers, so please don't report
@@ -9,7 +9,7 @@ problems with it to them.
 ## Download
 
 **[SimpMusic-dev-listen-together-arm64.apk](https://github.com/fhifkldfkljkdf/simplemusic-builds/raw/main/SimpMusic-dev-listen-together-arm64.apk)**
-(28.3 MB, for 64-bit Android phones)
+(28.2 MB, for 64-bit Android phones)
 
 1. Open the link on your phone. No GitHub account is needed.
 2. Open the downloaded file. The first time, Android asks you to allow installing apps from your browser.
@@ -27,10 +27,17 @@ a throwaway test key, not the SimpMusic developers' key.
 
 New in this update:
 
+- **A minimalist app icon.** The icon is now in the monochrome mark's own terms: one flat blue behind
+  (`#2B50F2`), one flat white glyph - no gradient, no glow, no shadow. The launcher, themed
+  (monochrome), notification, Android Auto, in-app and Desktop icons are all the same flat mark.
+- **The new-release row on the home feed is now the one that is ranked.** That row under Quick picks
+  is YouTube's own shelf on the home feed, and nothing touched it: the app's ranked shelf is drawn
+  much further down the page. The feed's shelf is now ranked as well, recognised whatever the app's
+  language (by its title or by the page its "More" opens). Artists you **follow** count as history
+  too, so the row has something to go on even before there is play history.
 - **A modern app icon.** The play-and-wave mark has been redrawn: one confident wave through the
-  button instead of two tight squiggles (so it still reads at launcher size), a deeper blue-to-violet
-  gradient, and a soft shadow under the glyph for depth. The themed (monochrome) icon, the in-app
-  logo, the notification icon and the Desktop icons are all the same new mark.
+  button instead of two tight squiggles, so it still reads at launcher size. The themed (monochrome)
+  icon, the in-app logo, the notification icon and the Desktop icons are all the same new mark.
 - **New releases: matched by name as well as channel id.** YouTube sends many of the releases on that
   shelf without the artist's channel id, and such a release could never match your history - which is
   why the row could still read as random. A release now also matches when one of its artist names is
@@ -58,16 +65,16 @@ New in this update:
 - **The ANC strength slider reads like Sennheiser's own.** The track is now a ramp from soft to full
   instead of a bar that fills up, so which end is stronger is visible at a glance, with the "aware"
   and full-ANC glyphs marking the ends, lined up with the knob's travel.
-- **A better voice for the spoken mode cue, and no more on-screen messages.** The cue says
-  "Noise cancelling" (words, not the letters A-N-C), "Adaptive", "Transparency" and "Off" in a
-  smoother high-quality voice (Piper's `en_GB-cori-high`, public domain). The one-off messages that
-  were added to diagnose the silent cue are gone - it works, and it is logged in Settings -> App log.
-- **The spoken mode cue is shorter and clearer.** It now says just the mode - "ANC", "Adaptive",
-  "Transparency", "Off" - in a cleaner studio voice (public domain), so each cue is under a second
-  instead of up to one and a half. The music is held down for 1.8 s instead of 2.5 s to match.
 
 Earlier updates:
 
+- **A better voice for the spoken mode cue, and no more on-screen messages (2.4.15).** The cue says
+  "Noise cancelling" (words, not the letters A-N-C), "Adaptive", "Transparency" and "Off" in a
+  smoother high-quality voice (Piper's `en_GB-cori-high`, public domain). The one-off messages that
+  were added to diagnose the silent cue are gone - it works, and it is logged in Settings -> App log.
+- **The spoken mode cue is shorter and clearer (2.4.14).** It now says just the mode - "ANC", "Adaptive",
+  "Transparency", "Off" - in a cleaner studio voice (public domain), so each cue is under a second
+  instead of up to one and a half. The music is held down for 1.8 s instead of 2.5 s to match.
 - **The update dialog's progress is on the same line as Cancel (2.4.14).** The number now sits inside the same
   row as the Cancel button, so it cannot drift from it, and the duplicate number under the progress
   bar is gone - one number instead of two.
@@ -526,7 +533,7 @@ Playback:
 ## Source code
 
 SimpMusic is licensed under the GNU General Public License v3.0 (see [LICENSE](LICENSE)).
-[SimpMusic-source-d252d10.zip](SimpMusic-source-d252d10.zip) is the complete source code this build was
-made from, including the changes above: the app at commit `d252d10` and its `core` module at `2bf7129`.
+[SimpMusic-source-d658748.zip](SimpMusic-source-d658748.zip) is the complete source code this build was
+made from, including the changes above: the app at commit `d658748` and its `core` module at `53fbf75`.
 Build it with `./gradlew :androidApp:assembleOptimized` (an unsigned release-type APK, to sign with
 your own key) or `./gradlew :androidApp:assembleDebug` (Android SDK and JDK 21 required).
