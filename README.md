@@ -1,6 +1,6 @@
 # SimpMusic test builds (unofficial)
 
-<img src="icon.png" width="96" alt="The test build's app icon: a pixel-art white play triangle on a black background">
+<img src="icon.png" width="96" alt="The test build's app icon: a pixel-art white S on a black background">
 
 An unofficial test build of [SimpMusic](https://github.com/maxrave-dev/SimpMusic), the YouTube Music
 client by maxrave-dev. It is not made or supported by the SimpMusic developers, so please don't report
@@ -27,6 +27,9 @@ a throwaway test key, not the SimpMusic developers' key.
 
 New in this update:
 
+- **A pixel-art "S"** - SimpMusic's own initial, which also reads as a sound wave. Unique this time:
+  nothing is copied from anywhere. Black and white only, on a 16 x 16 pixel grid, white on black.
+  Themed, notification, Android Auto, in-app and Desktop icons are the same mark.
 - **The icon is Monochrome's own mark now** - their exact 3 x 3 pattern, the diagonal cells empty, white
   on black, at your request. Worth knowing: it is another app's logo, and this build uses their service
   as a music source, so if it ever has to change back, our own play mark is one edit away.
@@ -558,7 +561,7 @@ Playback:
 ## Source code
 
 SimpMusic is licensed under the GNU General Public License v3.0 (see [LICENSE](LICENSE)).
-[SimpMusic-source-b6d5260.zip](SimpMusic-source-b6d5260.zip) is the complete source code this build was
-made from, including the changes above: the app at commit `b6d5260` and its `core` module at `aaa85f3`.
+[SimpMusic-source-3aad658.zip](SimpMusic-source-3aad658.zip) is the complete source code this build was
+made from, including the changes above: the app at commit `3aad658` and its `core` module at `aaa85f3`.
 Build it with `./gradlew :androidApp:assembleOptimized` (an unsigned release-type APK, to sign with
 your own key) or `./gradlew :androidApp:assembleDebug` (Android SDK and JDK 21 required).
