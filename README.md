@@ -27,6 +27,16 @@ a throwaway test key, not the SimpMusic developers' key.
 
 New in this update:
 
+- **A modern app icon.** The play-and-wave mark has been redrawn: one confident wave through the
+  button instead of two tight squiggles (so it still reads at launcher size), a deeper blue-to-violet
+  gradient, and a soft shadow under the glyph for depth. The themed (monochrome) icon, the in-app
+  logo, the notification icon and the Desktop icons are all the same new mark.
+- **New releases: matched by name as well as channel id.** YouTube sends many of the releases on that
+  shelf without the artist's channel id, and such a release could never match your history - which is
+  why the row could still read as random. A release now also matches when one of its artist names is
+  an artist you play (case, spacing and a " - Topic" suffix ignored). The log line (Settings -> App
+  log, search `NewReleases`) now also samples the first artist names from your history and from the
+  shelf, so a mismatch can be seen at a glance rather than guessed at.
 - **One bar in Podcasts, not two.** The tab had a field to search Apple's directory by name and
   another to paste an address. There is now one: type a name and it searches as you type; paste a
   link - an RSS feed, a podcast page, a YouTube channel or playlist - and the lens turns into a
@@ -55,16 +65,19 @@ New in this update:
 - **The spoken mode cue is shorter and clearer.** It now says just the mode - "ANC", "Adaptive",
   "Transparency", "Off" - in a cleaner studio voice (public domain), so each cue is under a second
   instead of up to one and a half. The music is held down for 1.8 s instead of 2.5 s to match.
-- **The update dialog's progress is on the same line as Cancel.** The number now sits inside the same
+
+Earlier updates:
+
+- **The update dialog's progress is on the same line as Cancel (2.4.14).** The number now sits inside the same
   row as the Cancel button, so it cannot drift from it, and the duplicate number under the progress
   bar is gone - one number instead of two.
-- **The spoken mode cue no longer needs the phone's text to speech.** The cue was silent because this
+- **The spoken mode cue no longer needs the phone's text to speech (2.4.13).** The cue was silent because this
   phone has no speech engine installed at all - so every earlier attempt to say the mode name was
   silence, however it was triggered. The four names now ship inside the app as small audio clips (a
   public-domain voice, generated offline), played through the same audio path as the music: no engine,
   no voice download, no permission. The music is still briefly turned down so the name is heard over
   it.
-- **The spoken mode cue was being drowned by the music, and now isn't.** The app's own player holds
+- **The spoken mode cue was being drowned by the music, and now isn't (2.4.12).** The app's own player holds
   one audio-focus request and is built not to duck on focus, so asking for focus never lowered the
   music - the mode's name was said underneath it at full volume. The app's own player is now asked to
   duck directly (the same gain the sleep timer fades with, so the user's volume is untouched and the
@@ -72,9 +85,6 @@ New in this update:
   back after 2.5 s. For the first three cues of a run a one-line message also says what happened
   (which change, what was said, whether a voice is installed), so a silent cue can be reported without
   reading the log.
-
-Earlier updates:
-
 - **The update dialog's percentage sits on the same line as Cancel (2.4.11)**, instead of riding high beside it.
 - **The headphones' spoken mode cue is being chased down (2.4.10).** If you only ever hear the headset's own
   tone, this build now writes what the cue does to Settings -> App log at Info level (search
@@ -516,7 +526,7 @@ Playback:
 ## Source code
 
 SimpMusic is licensed under the GNU General Public License v3.0 (see [LICENSE](LICENSE)).
-[SimpMusic-source-2f2b0f1.zip](SimpMusic-source-2f2b0f1.zip) is the complete source code this build was
-made from, including the changes above: the app at commit `2f2b0f1` and its `core` module at `fecef1d`.
+[SimpMusic-source-d252d10.zip](SimpMusic-source-d252d10.zip) is the complete source code this build was
+made from, including the changes above: the app at commit `d252d10` and its `core` module at `2bf7129`.
 Build it with `./gradlew :androidApp:assembleOptimized` (an unsigned release-type APK, to sign with
 your own key) or `./gradlew :androidApp:assembleDebug` (Android SDK and JDK 21 required).
