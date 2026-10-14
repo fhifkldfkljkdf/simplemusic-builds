@@ -1,6 +1,6 @@
 # SimpMusic test builds (unofficial)
 
-<img src="icon.png" width="96" alt="The test build's app icon: a flat white play button cut through by a sound wave, on a flat blue background">
+<img src="icon.png" width="96" alt="The test build's app icon: a pixel-art white play triangle with a staircase sound wave under it, on a flat blue background">
 
 An unofficial test build of [SimpMusic](https://github.com/maxrave-dev/SimpMusic), the YouTube Music
 client by maxrave-dev. It is not made or supported by the SimpMusic developers, so please don't report
@@ -27,6 +27,18 @@ a throwaway test key, not the SimpMusic developers' key.
 
 New in this update:
 
+- **Updates download themselves.** The APK is fetched as soon as a newer build is found - over Wi-Fi
+  or Ethernet only, so a metered plan is left alone - which leaves a single **Install** tap with
+  nothing to wait for. Android's own "Install?" prompt is the one confirmation left: no app can skip
+  it, and F-Droid behaves the same. Waving an update away is remembered for that version, so it
+  stops asking on every launch; Settings -> Install downloaded update is still there.
+- **Two duplicate rows are gone from the home page.** The app's own "New releases" and "Music
+  videos" shelves - the ones that sat above Moods & Moments - are no longer drawn. The home feed has
+  a new-release row of its own, and that is the one ranked by what you listen to.
+- **A pixel-art icon**, in the spirit of monochrome.st's mark: a chunky play triangle with a
+  staircase sound wave under it, on a 16 x 16 pixel grid - one flat blue behind, one flat white
+  glyph. Launcher, themed (monochrome), notification, Android Auto, in-app and Desktop icons are all
+  the same pixel mark.
 - **A minimalist app icon.** The icon is now in the monochrome mark's own terms: one flat blue behind
   (`#2B50F2`), one flat white glyph - no gradient, no glow, no shadow. The launcher, themed
   (monochrome), notification, Android Auto, in-app and Desktop icons are all the same flat mark.
@@ -533,7 +545,7 @@ Playback:
 ## Source code
 
 SimpMusic is licensed under the GNU General Public License v3.0 (see [LICENSE](LICENSE)).
-[SimpMusic-source-d658748.zip](SimpMusic-source-d658748.zip) is the complete source code this build was
-made from, including the changes above: the app at commit `d658748` and its `core` module at `53fbf75`.
+[SimpMusic-source-980978a.zip](SimpMusic-source-980978a.zip) is the complete source code this build was
+made from, including the changes above: the app at commit `980978a` and its `core` module at `53fbf75`.
 Build it with `./gradlew :androidApp:assembleOptimized` (an unsigned release-type APK, to sign with
 your own key) or `./gradlew :androidApp:assembleDebug` (Android SDK and JDK 21 required).
