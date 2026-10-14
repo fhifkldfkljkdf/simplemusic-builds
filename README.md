@@ -27,6 +27,9 @@ a throwaway test key, not the SimpMusic developers' key.
 
 New in this update:
 
+- **The icon is a 3 x 3 pixel mark now**, in the same spirit as monochrome.st's own: a tiny
+  black-and-white pixel pattern - a play triangle here, not their diagonal - white on black, nothing
+  else. Themed, notification, Android Auto, in-app and Desktop icons are the same mark.
 - **The New releases row is off the home page.** It was YouTube's own shelf on the home feed - the
   same page for every account - so it never read as yours, whatever order we put its items in. It is
   dropped now, and so is the feed's Music videos row. (If you want a new-release row built from your
@@ -552,7 +555,7 @@ Playback:
 ## Source code
 
 SimpMusic is licensed under the GNU General Public License v3.0 (see [LICENSE](LICENSE)).
-[SimpMusic-source-15127ad.zip](SimpMusic-source-15127ad.zip) is the complete source code this build was
-made from, including the changes above: the app at commit `15127ad` and its `core` module at `aaa85f3`.
+[SimpMusic-source-c861b88.zip](SimpMusic-source-c861b88.zip) is the complete source code this build was
+made from, including the changes above: the app at commit `c861b88` and its `core` module at `aaa85f3`.
 Build it with `./gradlew :androidApp:assembleOptimized` (an unsigned release-type APK, to sign with
 your own key) or `./gradlew :androidApp:assembleDebug` (Android SDK and JDK 21 required).
