@@ -27,6 +27,9 @@ a throwaway test key, not the SimpMusic developers' key.
 
 New in this update:
 
+- **The icon is Monochrome's own mark now** - their exact 3 x 3 pattern, the diagonal cells empty, white
+  on black, at your request. Worth knowing: it is another app's logo, and this build uses their service
+  as a music source, so if it ever has to change back, our own play mark is one edit away.
 - **The icon is a 3 x 3 pixel mark now**, in the same spirit as monochrome.st's own: a tiny
   black-and-white pixel pattern - a play triangle here, not their diagonal - white on black, nothing
   else. Themed, notification, Android Auto, in-app and Desktop icons are the same mark.
@@ -555,7 +558,7 @@ Playback:
 ## Source code
 
 SimpMusic is licensed under the GNU General Public License v3.0 (see [LICENSE](LICENSE)).
-[SimpMusic-source-c861b88.zip](SimpMusic-source-c861b88.zip) is the complete source code this build was
-made from, including the changes above: the app at commit `c861b88` and its `core` module at `aaa85f3`.
+[SimpMusic-source-b6d5260.zip](SimpMusic-source-b6d5260.zip) is the complete source code this build was
+made from, including the changes above: the app at commit `b6d5260` and its `core` module at `aaa85f3`.
 Build it with `./gradlew :androidApp:assembleOptimized` (an unsigned release-type APK, to sign with
 your own key) or `./gradlew :androidApp:assembleDebug` (Android SDK and JDK 21 required).
