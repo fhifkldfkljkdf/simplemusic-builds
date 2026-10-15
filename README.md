@@ -1,6 +1,6 @@
 # SimpMusic test builds (unofficial)
 
-<img src="icon.png" width="96" alt="The test build's app icon: a pixel-art white S on a black background">
+<img src="icon.png" width="96" alt="The test build's app icon: a pixel-art white sound wave on a black background">
 
 An unofficial test build of [SimpMusic](https://github.com/maxrave-dev/SimpMusic), the YouTube Music
 client by maxrave-dev. It is not made or supported by the SimpMusic developers, so please don't report
@@ -27,6 +27,11 @@ a throwaway test key, not the SimpMusic developers' key.
 
 New in this update:
 
+- **The icon is a sound wave made of pixels.** One flat black behind, one flat white glyph, nothing else:
+  twenty-two columns of 3 units, each an odd number of cells tall about the axis, in four bursts whose shoulders
+  step in twos - a one-cell line the whole way with peaks on it, not a smooth envelope. (The first attempt kept it
+  mirror-symmetric, which read as a lens with a pupil in the middle, so the mirror is gone.) The launcher, themed,
+  notification, Android Auto, in-app and Desktop icons are all the same mark.
 - **A pixel-art "S"** - SimpMusic's own initial, which also reads as a sound wave. Unique this time:
   nothing is copied from anywhere. Black and white only, on a 16 x 16 pixel grid, white on black.
   Themed, notification, Android Auto, in-app and Desktop icons are the same mark.
@@ -561,7 +566,7 @@ Playback:
 ## Source code
 
 SimpMusic is licensed under the GNU General Public License v3.0 (see [LICENSE](LICENSE)).
-[SimpMusic-source-3aad658.zip](SimpMusic-source-3aad658.zip) is the complete source code this build was
-made from, including the changes above: the app at commit `3aad658` and its `core` module at `aaa85f3`.
+[SimpMusic-source-9c20449.zip](SimpMusic-source-9c20449.zip) is the complete source code this build was
+made from, including the changes above: the app at commit `9c20449` and its `core` module at `aaa85f3`.
 Build it with `./gradlew :androidApp:assembleOptimized` (an unsigned release-type APK, to sign with
 your own key) or `./gradlew :androidApp:assembleDebug` (Android SDK and JDK 21 required).
