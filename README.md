@@ -27,6 +27,14 @@ a throwaway test key, not the SimpMusic developers' key.
 
 New in this update:
 
+- **A downloaded song can be upgraded to a better copy.** The quality pill on the Now Playing screen opens
+  the sources sheet - what the song could come from, with the quality of each - and every row there (Monochrome's
+  FLAC, the Internet Archive, Audius' 320 kbps upload, the SoundCloud backup, YouTube) now has a download button.
+  Tapping one downloads the song from *that* source, and a copy already on the phone is replaced by the new one:
+  that is the upgrade - a downloaded song moves from YouTube's stream to a lossless FLAC, keeping its place in the
+  library, its likes and its playlists. The switches that turn a source off for playback (Hi-Fi sound, and each
+  source's own switch) turn it off here too, and the row says so rather than failing; a source that has nothing for
+  the song falls back to YouTube's copy, so the download still lands.
 - **The icon is a sound wave made of pixels.** One flat black behind, one flat white glyph, nothing else:
   twenty-two columns of 3 units, each an odd number of cells tall about the axis, in four bursts whose shoulders
   step in twos - a one-cell line the whole way with peaks on it, not a smooth envelope. (The first attempt kept it
@@ -566,7 +574,7 @@ Playback:
 ## Source code
 
 SimpMusic is licensed under the GNU General Public License v3.0 (see [LICENSE](LICENSE)).
-[SimpMusic-source-9c20449.zip](SimpMusic-source-9c20449.zip) is the complete source code this build was
-made from, including the changes above: the app at commit `9c20449` and its `core` module at `aaa85f3`.
+[SimpMusic-source-547354d.zip](SimpMusic-source-547354d.zip) is the complete source code this build was
+made from, including the changes above: the app at commit `547354d` and its `core` module at `d25c518`.
 Build it with `./gradlew :androidApp:assembleOptimized` (an unsigned release-type APK, to sign with
 your own key) or `./gradlew :androidApp:assembleDebug` (Android SDK and JDK 21 required).
