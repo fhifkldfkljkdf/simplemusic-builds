@@ -27,6 +27,10 @@ a throwaway test key, not the SimpMusic developers' key.
 
 New in this update:
 
+- **The downloads that lost their sound come back by themselves.** Songs an earlier build downloaded from a
+  better source could be left short - playing their opening and then nothing. About twenty seconds after the app
+  opens, each such copy is measured against the size its source declares and, if it does not measure up, downloaded
+  again from YouTube's whole stream. Nothing to tap: it settles in one pass and touches only those copies.
 - **Upgrading over mobile data is allowed, and asked for.** Settings' "Upgrade downloads" on a metered
   connection says what it will cost in data and its **Upgrade** now really runs there - the flag reaches the work
   (2.4.34 announced this and did not carry it; this build does).
@@ -618,7 +622,7 @@ Playback:
 ## Source code
 
 SimpMusic is licensed under the GNU General Public License v3.0 (see [LICENSE](LICENSE)).
-[SimpMusic-source-102b598.zip](SimpMusic-source-102b598.zip) is the complete source code this build was
-made from, including the changes above: the app at commit `102b598` and its `core` module at `2594cb2`.
+[SimpMusic-source-85dbc04.zip](SimpMusic-source-85dbc04.zip) is the complete source code this build was
+made from, including the changes above: the app at commit `85dbc04` and its `core` module at `62744a6`.
 Build it with `./gradlew :androidApp:assembleOptimized` (an unsigned release-type APK, to sign with
 your own key) or `./gradlew :androidApp:assembleDebug` (Android SDK and JDK 21 required).
