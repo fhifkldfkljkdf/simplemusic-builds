@@ -27,6 +27,11 @@ a throwaway test key, not the SimpMusic developers' key.
 
 New in this update:
 
+- **The Stats screen shows the requests the app made (temporary).** The Stats page - the headphone battery and
+  download speed graphs - now ends with the last 200 requests this app sent: method, address, status and how
+  long each took, with the failure written down when there was no answer, and a Clear button. It is meant to be
+  temporary: something to read off the phone while the app is being worked on, and it comes out the same way it
+  went in. In memory only, nothing on disk, nothing sent anywhere.
 - **A downloaded song can be upgraded to a better copy.** The quality pill on the Now Playing screen opens
   the sources sheet - what the song could come from, with the quality of each - and every row there (Monochrome's
   FLAC, the Internet Archive, Audius' 320 kbps upload, the SoundCloud backup, YouTube) now has a download button.
@@ -574,7 +579,7 @@ Playback:
 ## Source code
 
 SimpMusic is licensed under the GNU General Public License v3.0 (see [LICENSE](LICENSE)).
-[SimpMusic-source-547354d.zip](SimpMusic-source-547354d.zip) is the complete source code this build was
-made from, including the changes above: the app at commit `547354d` and its `core` module at `d25c518`.
+[SimpMusic-source-458ac76.zip](SimpMusic-source-458ac76.zip) is the complete source code this build was
+made from, including the changes above: the app at commit `458ac76` and its `core` module at `dea382a`.
 Build it with `./gradlew :androidApp:assembleOptimized` (an unsigned release-type APK, to sign with
 your own key) or `./gradlew :androidApp:assembleDebug` (Android SDK and JDK 21 required).
