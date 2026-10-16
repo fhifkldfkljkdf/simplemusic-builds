@@ -27,6 +27,10 @@ a throwaway test key, not the SimpMusic developers' key.
 
 New in this update:
 
+- **A downloaded song says what it takes up.** Beside the downloaded badge in a track row - the Library's
+  Downloaded list, and every playlist and album - the size of the copy is printed ("8.4 MB"), and a song's
+  action sheet now says "Downloaded · 8.4 MB" instead of just "Downloaded". It measures the download itself
+  rather than remembering a number, so one still arriving shows how much has really come down.
 - **The Stats screen shows the requests the app made (temporary).** The Stats page - the headphone battery and
   download speed graphs - now ends with the last 200 requests this app sent: method, address, status and how
   long each took, with the failure written down when there was no answer, and a Clear button. It is meant to be
@@ -579,7 +583,7 @@ Playback:
 ## Source code
 
 SimpMusic is licensed under the GNU General Public License v3.0 (see [LICENSE](LICENSE)).
-[SimpMusic-source-458ac76.zip](SimpMusic-source-458ac76.zip) is the complete source code this build was
-made from, including the changes above: the app at commit `458ac76` and its `core` module at `dea382a`.
+[SimpMusic-source-b30db92.zip](SimpMusic-source-b30db92.zip) is the complete source code this build was
+made from, including the changes above: the app at commit `b30db92` and its `core` module at `18f654c`.
 Build it with `./gradlew :androidApp:assembleOptimized` (an unsigned release-type APK, to sign with
 your own key) or `./gradlew :androidApp:assembleDebug` (Android SDK and JDK 21 required).
