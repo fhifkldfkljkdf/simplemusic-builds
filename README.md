@@ -27,9 +27,11 @@ a throwaway test key, not the SimpMusic developers' key.
 
 New in this update:
 
-- **On mobile data the upgrade is your call.** Settings' "Upgrade downloads" asks instead of waiting for
-  Wi-Fi: it says what the upgrade will cost in data and offers **Upgrade now** (which runs it) or **Wait for
-  Wi-Fi** (which does nothing). The build before this one only carried the words for it - sorry.
+- **Upgrading over mobile data is allowed, and asked for.** Settings' "Upgrade downloads" on a metered
+  connection says what it will cost in data and its **Upgrade** now really runs there - the flag reaches the work
+  (2.4.34 announced this and did not carry it; this build does).
+- **Ask on mobile (words only).** The dialog text for the metered question landed here; the behaviour itself
+  arrived in 2.4.35.
 - **No user-visible change** (the strings for the next build; the metered question itself arrived in 2.4.34).
 - **Downloads from Monochrome, the Internet Archive, Audius and SoundCloud are back.** But only from a source
   that **declares how big its file is** - that length is what makes a streamer answering with part of a song
@@ -616,7 +618,7 @@ Playback:
 ## Source code
 
 SimpMusic is licensed under the GNU General Public License v3.0 (see [LICENSE](LICENSE)).
-[SimpMusic-source-aebe403.zip](SimpMusic-source-aebe403.zip) is the complete source code this build was
-made from, including the changes above: the app at commit `aebe403` and its `core` module at `2594cb2`.
+[SimpMusic-source-102b598.zip](SimpMusic-source-102b598.zip) is the complete source code this build was
+made from, including the changes above: the app at commit `102b598` and its `core` module at `2594cb2`.
 Build it with `./gradlew :androidApp:assembleOptimized` (an unsigned release-type APK, to sign with
 your own key) or `./gradlew :androidApp:assembleDebug` (Android SDK and JDK 21 required).
