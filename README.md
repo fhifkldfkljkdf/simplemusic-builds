@@ -27,6 +27,8 @@ a throwaway test key, not the SimpMusic developers' key.
 
 New in this update:
 
+- **On mobile data the upgrade is your call.** Settings' "Upgrade downloads" no longer just waits for Wi-Fi: on a
+  metered connection it says what the upgrade will cost in data and offers **Upgrade now** or **Wait for Wi-Fi**.
 - **Downloads from Monochrome, the Internet Archive, Audius and SoundCloud are back.** But only from a source
   that **declares how big its file is** - that length is what makes a streamer answering with part of a song
   *fail* the download rather than "complete" it, which is how the last attempt left copies that played only their
@@ -612,7 +614,7 @@ Playback:
 ## Source code
 
 SimpMusic is licensed under the GNU General Public License v3.0 (see [LICENSE](LICENSE)).
-[SimpMusic-source-3477055.zip](SimpMusic-source-3477055.zip) is the complete source code this build was
-made from, including the changes above: the app at commit `3477055` and its `core` module at `2594cb2`.
+[SimpMusic-source-d831b05.zip](SimpMusic-source-d831b05.zip) is the complete source code this build was
+made from, including the changes above: the app at commit `d831b05` and its `core` module at `2594cb2`.
 Build it with `./gradlew :androidApp:assembleOptimized` (an unsigned release-type APK, to sign with
 your own key) or `./gradlew :androidApp:assembleDebug` (Android SDK and JDK 21 required).
