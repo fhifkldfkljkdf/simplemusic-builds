@@ -27,6 +27,13 @@ a throwaway test key, not the SimpMusic developers' key.
 
 New in this update:
 
+- **Downloads are YouTube's again, for now.** Downloading a song from Monochrome, the Internet Archive,
+  Audius or SoundCloud is switched off in this build: the last one could leave a copy that played only its start,
+  because those files are not always a whole, plain stream - a FLAC's audio can begin after a large metadata block,
+  and a streamer can answer with less than the file - and nothing checked the copy before it replaced the old one.
+  The per-song download button in the sources sheet (except YouTube's) and Settings' "Upgrade downloads" are gone
+  until a copy can be verified and the audio offset honoured. A song that was upgraded badly is fixed by tapping
+  **Downloaded** in its sheet (which removes the copy) and then **Download** again.
 - **Upgrade every download from Settings.** In Settings → Storage, beside the downloaded cache: each downloaded
   song is looked up on the better sources and, when one has it, fetched again and the copy on the phone replaced —
   Monochrome's FLAC instead of YouTube's stream, for the whole library in one tap. Songs with nothing better are
@@ -599,7 +606,7 @@ Playback:
 ## Source code
 
 SimpMusic is licensed under the GNU General Public License v3.0 (see [LICENSE](LICENSE)).
-[SimpMusic-source-2409b84.zip](SimpMusic-source-2409b84.zip) is the complete source code this build was
-made from, including the changes above: the app at commit `2409b84` and its `core` module at `036f24c`.
+[SimpMusic-source-ee2867c.zip](SimpMusic-source-ee2867c.zip) is the complete source code this build was
+made from, including the changes above: the app at commit `ee2867c` and its `core` module at `4538f93`.
 Build it with `./gradlew :androidApp:assembleOptimized` (an unsigned release-type APK, to sign with
 your own key) or `./gradlew :androidApp:assembleDebug` (Android SDK and JDK 21 required).
