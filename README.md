@@ -27,6 +27,12 @@ a throwaway test key, not the SimpMusic developers' key.
 
 New in this update:
 
+- **Downloads from Monochrome, the Internet Archive, Audius and SoundCloud are back.** But only from a source
+  that **declares how big its file is** - that length is what makes a streamer answering with part of a song
+  *fail* the download rather than "complete" it, which is how the last attempt left copies that played only their
+  start. A source that will not say is skipped for YouTube's stream. The old copy stays on the phone until the new
+  download completes, so a failed upgrade cannot leave a song without one; the sources sheet's per-song download
+  and Settings' "Upgrade downloads" come back with it.
 - **Downloads are YouTube's again, for now.** Downloading a song from Monochrome, the Internet Archive,
   Audius or SoundCloud is switched off in this build: the last one could leave a copy that played only its start,
   because those files are not always a whole, plain stream - a FLAC's audio can begin after a large metadata block,
@@ -606,7 +612,7 @@ Playback:
 ## Source code
 
 SimpMusic is licensed under the GNU General Public License v3.0 (see [LICENSE](LICENSE)).
-[SimpMusic-source-ee2867c.zip](SimpMusic-source-ee2867c.zip) is the complete source code this build was
-made from, including the changes above: the app at commit `ee2867c` and its `core` module at `4538f93`.
+[SimpMusic-source-3477055.zip](SimpMusic-source-3477055.zip) is the complete source code this build was
+made from, including the changes above: the app at commit `3477055` and its `core` module at `2594cb2`.
 Build it with `./gradlew :androidApp:assembleOptimized` (an unsigned release-type APK, to sign with
 your own key) or `./gradlew :androidApp:assembleDebug` (Android SDK and JDK 21 required).
