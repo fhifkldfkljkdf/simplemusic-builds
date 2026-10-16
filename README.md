@@ -27,6 +27,11 @@ a throwaway test key, not the SimpMusic developers' key.
 
 New in this update:
 
+- **The notification icon says whether the music is running.** The small icon at the top left of the media player -
+  in the shade, on the lock screen and in the quick settings player - is the pixel wave while it plays, and the same
+  wave flattened to its own centre line while it is paused. That is state rather than animation, deliberately: a
+  notification icon cannot animate (Android draws it statically, and re-posting it every second would flash the
+  shade, get throttled and drain the battery), so it changes with playback, not with the sound.
 - **A downloaded song says what it takes up.** Beside the downloaded badge in a track row - the Library's
   Downloaded list, and every playlist and album - the size of the copy is printed ("8.4 MB"), and a song's
   action sheet now says "Downloaded · 8.4 MB" instead of just "Downloaded". It measures the download itself
@@ -583,7 +588,7 @@ Playback:
 ## Source code
 
 SimpMusic is licensed under the GNU General Public License v3.0 (see [LICENSE](LICENSE)).
-[SimpMusic-source-b30db92.zip](SimpMusic-source-b30db92.zip) is the complete source code this build was
-made from, including the changes above: the app at commit `b30db92` and its `core` module at `18f654c`.
+[SimpMusic-source-d0f2e3f.zip](SimpMusic-source-d0f2e3f.zip) is the complete source code this build was
+made from, including the changes above: the app at commit `d0f2e3f` and its `core` module at `147dbc3`.
 Build it with `./gradlew :androidApp:assembleOptimized` (an unsigned release-type APK, to sign with
 your own key) or `./gradlew :androidApp:assembleDebug` (Android SDK and JDK 21 required).
