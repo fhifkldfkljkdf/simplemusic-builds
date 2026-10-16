@@ -27,6 +27,11 @@ a throwaway test key, not the SimpMusic developers' key.
 
 New in this update:
 
+- **A download from another source is taken only when the answer really is the song - YouTube's own downloads are
+  untouched.** The length rule now also requires the source to declare at least 64 kB: a playlist (SoundCloud's
+  HLS answers), an error page or a redirect stub declares a few kilobytes, and downloading that would have left
+  another copy with no sound. Anything under it is skipped and YouTube's whole stream is fetched instead, so a
+  download is either the whole song from the source or YouTube's file.
 - **"Download songs you like" now downloads the ones that are not on the phone.** Its sweep used to trust each
   song's row, and that flag outlives a copy - a download removed by hand, never finished, or left short by the
   first source-download attempt still read "downloaded", so switching the option on skipped exactly the favourites
@@ -627,7 +632,7 @@ Playback:
 ## Source code
 
 SimpMusic is licensed under the GNU General Public License v3.0 (see [LICENSE](LICENSE)).
-[SimpMusic-source-777dd91.zip](SimpMusic-source-777dd91.zip) is the complete source code this build was
-made from, including the changes above: the app at commit `777dd91` and its `core` module at `aafd25a`.
+[SimpMusic-source-f696977.zip](SimpMusic-source-f696977.zip) is the complete source code this build was
+made from, including the changes above: the app at commit `f696977` and its `core` module at `adbcfe7`.
 Build it with `./gradlew :androidApp:assembleOptimized` (an unsigned release-type APK, to sign with
 your own key) or `./gradlew :androidApp:assembleDebug` (Android SDK and JDK 21 required).
