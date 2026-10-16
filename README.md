@@ -27,6 +27,11 @@ a throwaway test key, not the SimpMusic developers' key.
 
 New in this update:
 
+- **"Download songs you like" now downloads the ones that are not on the phone.** Its sweep used to trust each
+  song's row, and that flag outlives a copy - a download removed by hand, never finished, or left short by the
+  first source-download attempt still read "downloaded", so switching the option on skipped exactly the favourites
+  it was asked for. It now asks the download cache itself, and queues whatever is missing; switching it on is the
+  catch-up, however many times you switch it.
 - **The downloads that lost their sound come back by themselves.** Songs an earlier build downloaded from a
   better source could be left short - playing their opening and then nothing. About twenty seconds after the app
   opens, each such copy is measured against the size its source declares and, if it does not measure up, downloaded
@@ -622,7 +627,7 @@ Playback:
 ## Source code
 
 SimpMusic is licensed under the GNU General Public License v3.0 (see [LICENSE](LICENSE)).
-[SimpMusic-source-85dbc04.zip](SimpMusic-source-85dbc04.zip) is the complete source code this build was
-made from, including the changes above: the app at commit `85dbc04` and its `core` module at `62744a6`.
+[SimpMusic-source-777dd91.zip](SimpMusic-source-777dd91.zip) is the complete source code this build was
+made from, including the changes above: the app at commit `777dd91` and its `core` module at `aafd25a`.
 Build it with `./gradlew :androidApp:assembleOptimized` (an unsigned release-type APK, to sign with
 your own key) or `./gradlew :androidApp:assembleDebug` (Android SDK and JDK 21 required).
