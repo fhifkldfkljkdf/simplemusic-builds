@@ -27,6 +27,17 @@ a throwaway test key, not the SimpMusic developers' key.
 
 New in this update:
 
+- **Upgrade every download from Settings.** In Settings → Storage, beside the downloaded cache: each downloaded
+  song is looked up on the better sources and, when one has it, fetched again and the copy on the phone replaced —
+  Monochrome's FLAC instead of YouTube's stream, for the whole library in one tap. Songs with nothing better are
+  left exactly as they are, and it waits for Wi-Fi rather than spending a metered plan. The row reads
+  "Upgrading 3 of 12…" while it runs.
+- **The download notification says what is happening.** While songs download it now reads "Song · 45% · 12.4 MB ·
+  1.2 MB/s · from Monochrome" — how far along, how much has come down, how fast, and which source it is coming
+  from (nothing for YouTube's own stream). A queue keeps its per-song list.
+- **The paused icon is a quiet wave.** Playing shows the pixel wave with its peaks; paused now shows the same wave
+  at a third of its amplitude — still a wave, visibly at rest. (The last build flattened it to a line, which read
+  as "no music at all" — this is what it should have been.)
 - **The notification icon says whether the music is running.** The small icon at the top left of the media player -
   in the shade, on the lock screen and in the quick settings player - is the pixel wave while it plays, and the same
   wave flattened to its own centre line while it is paused. That is state rather than animation, deliberately: a
@@ -588,7 +599,7 @@ Playback:
 ## Source code
 
 SimpMusic is licensed under the GNU General Public License v3.0 (see [LICENSE](LICENSE)).
-[SimpMusic-source-d0f2e3f.zip](SimpMusic-source-d0f2e3f.zip) is the complete source code this build was
-made from, including the changes above: the app at commit `d0f2e3f` and its `core` module at `147dbc3`.
+[SimpMusic-source-2409b84.zip](SimpMusic-source-2409b84.zip) is the complete source code this build was
+made from, including the changes above: the app at commit `2409b84` and its `core` module at `036f24c`.
 Build it with `./gradlew :androidApp:assembleOptimized` (an unsigned release-type APK, to sign with
 your own key) or `./gradlew :androidApp:assembleDebug` (Android SDK and JDK 21 required).
