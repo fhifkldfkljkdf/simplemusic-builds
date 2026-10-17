@@ -27,6 +27,20 @@ a throwaway test key, not the SimpMusic developers' key.
 
 New in this update:
 
+- **The finished-download notification can be turned off.** Settings → Storage has a "Download complete
+  notification" switch, and the notice has an entry of its own in Android's notification settings ("Download
+  complete"), so the progress notification and the finished one are controlled separately. A failed download still
+  notifies either way.
+- **A copy from a better source has to open like an audio file before it replaces anything.** Beside the size rule,
+  the first bytes of the fetched copy are checked (FLAC, Ogg, MP3, AAC, M4A, WebM); anything else — an error page, a
+  playlist, a redirect stub — is treated as a broken copy and never becomes the song's, so a download can no longer
+  leave a copy with no sound in it.
+- **The copies that lost their sound are found more reliably.** The check after start-up looks at the opening bytes
+  as well as the size, so a copy from the first source-download attempt that has no audio in it at all is fetched
+  again from YouTube's whole stream, not only the ones that came out short.
+- **The short-copy check no longer asks the sources about every source copy at every launch.** A copy that was
+  verified when it arrived carries the size it was checked against, so the pass that runs after start-up trusts it;
+  only copies from earlier builds cost a request.
 - **Upgrading a download now really downloads it.** A song already on the phone was never re-fetched: Media3
   answered the new download entirely from the copy it already had, so "Upgrade downloads" and the sources sheet's
   per-song download could finish instantly without touching the source — the copy stayed as it was. A source's copy
@@ -649,7 +663,7 @@ Playback:
 ## Source code
 
 SimpMusic is licensed under the GNU General Public License v3.0 (see [LICENSE](LICENSE)).
-[SimpMusic-source-a9faa82.zip](SimpMusic-source-a9faa82.zip) is the complete source code this build was
-made from, including the changes above: the app at commit `a9faa82` and its `core` module at `14e9aef`.
+[SimpMusic-source-bca1775.zip](SimpMusic-source-bca1775.zip) is the complete source code this build was
+made from, including the changes above: the app at commit `bca1775` and its `core` module at `9670fb2`.
 Build it with `./gradlew :androidApp:assembleOptimized` (an unsigned release-type APK, to sign with
 your own key) or `./gradlew :androidApp:assembleDebug` (Android SDK and JDK 21 required).
