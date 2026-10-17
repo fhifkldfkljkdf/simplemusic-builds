@@ -27,6 +27,15 @@ a throwaway test key, not the SimpMusic developers' key.
 
 New in this update:
 
+- **Songs downloaded from other sources play to the end.** A song downloaded from Monochrome, the Internet Archive,
+  Audius or SoundCloud played its first seconds (about 25 s of a hi-res FLAC) and then went quiet. The file itself was
+  whole; the player read downloaded songs in 5 MB pieces, which works for YouTube's own files but makes a FLAC or MP3
+  end at the first piece. Downloads from those sources are now read in one go and play to their last second, songs
+  downloaded earlier included. A download also stays on one file when the connection drops and it resumes, never
+  fills the rest with YouTube's audio, and is kept only when it matches the source's file exactly.
+- **The download button shows a circle with the percentage.** While a song downloads, the Download row in the song
+  menu shows a ring that fills up with the percentage inside. The sources sheet shows the same ring on the row of the
+  source being downloaded.
 - **Noise control keeps its place next to the heart in the phone's media controls.** The notification, lock screen
   and quick-settings player show two buttons beside play: the heart, then noise control. Noise control used to
   appear only once the app was talking to the headphones, so until then (most often because the Bluetooth
@@ -670,7 +679,7 @@ Playback:
 ## Source code
 
 SimpMusic is licensed under the GNU General Public License v3.0 (see [LICENSE](LICENSE)).
-[SimpMusic-source-d79b509.zip](SimpMusic-source-d79b509.zip) is the complete source code this build was
-made from, including the changes above: the app at commit `d79b509` and its `core` module at `0b5617b`.
+[SimpMusic-source-eab3f79.zip](SimpMusic-source-eab3f79.zip) is the complete source code this build was
+made from, including the changes above: the app at commit `eab3f79` and its `core` module at `26ca32c`.
 Build it with `./gradlew :androidApp:assembleOptimized` (an unsigned release-type APK, to sign with
 your own key) or `./gradlew :androidApp:assembleDebug` (Android SDK and JDK 21 required).
