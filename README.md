@@ -27,6 +27,22 @@ a throwaway test key, not the SimpMusic developers' key.
 
 New in this update:
 
+- **Downloads from other sources are checked to be the right song.** Monochrome was serving another recording
+  under some songs' names: for Pixies' "Where Is My Mind?" it handed out a 3:11 cover by another artist, so the
+  download (and Hi-Fi playback) was not the song. Every file from Monochrome or the Internet Archive is now checked
+  against the song by its real length, its ISRC and its own artist and title tags, before it is played or kept.
+  Earlier matches are looked up again, and downloads already on your phone that turn out to be another recording are
+  replaced with YouTube's copy at start-up.
+- **Downloaded songs say what they really are.** The player read the format of YouTube's stream for every downloaded
+  song, so a FLAC said "OPUS". It now reads the file itself: "Downloaded · FLAC 24/44.1", or "Downloaded · OPUS 134
+  kbps" for a YouTube copy. The number shown beside it was the speed of reading the file from the phone, not a
+  download; it no longer appears for downloaded songs.
+- **Picking a source in the sheet works for downloaded songs.** Choosing YouTube for a song downloaded from another
+  source now really plays YouTube's stream (it played the download again), and the downloaded copy stays in the list
+  so you can switch back to it.
+- **A plain download no longer takes SoundCloud.** When no lossless or Audius copy answers, a download now takes
+  YouTube's own stream instead of a SoundCloud re-upload, which was 128 kbps MP3 (below YouTube's quality) and the
+  likeliest to be another version of the song. SoundCloud can still be picked by hand in the sources sheet.
 - **Songs downloaded from other sources play to the end.** A song downloaded from Monochrome, the Internet Archive,
   Audius or SoundCloud played its first seconds (about 25 s of a hi-res FLAC) and then went quiet. The file itself was
   whole; the player read downloaded songs in 5 MB pieces, which works for YouTube's own files but makes a FLAC or MP3
@@ -679,7 +695,7 @@ Playback:
 ## Source code
 
 SimpMusic is licensed under the GNU General Public License v3.0 (see [LICENSE](LICENSE)).
-[SimpMusic-source-eab3f79.zip](SimpMusic-source-eab3f79.zip) is the complete source code this build was
-made from, including the changes above: the app at commit `eab3f79` and its `core` module at `26ca32c`.
+[SimpMusic-source-6cc28a3.zip](SimpMusic-source-6cc28a3.zip) is the complete source code this build was
+made from, including the changes above: the app at commit `6cc28a3` and its `core` module at `bc31279`.
 Build it with `./gradlew :androidApp:assembleOptimized` (an unsigned release-type APK, to sign with
 your own key) or `./gradlew :androidApp:assembleDebug` (Android SDK and JDK 21 required).
