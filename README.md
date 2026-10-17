@@ -27,6 +27,8 @@ a throwaway test key, not the SimpMusic developers' key.
 
 New in this update:
 
+- **A headphone's name too long for the noise-control sheet now scrolls.** The sheet's header used to cut the
+  name off with an ellipsis; it moves now, so the whole name can be read, with the battery still beside it.
 - **"Download songs you like" now downloads all of them, and finishes even if you leave Settings.** The catch-up
   used to run inside the settings screen: leaving it stopped the sweep half-way, so only the first few favourites
   were queued. It now runs in the background and queues three at a time, and it treats a song as downloaded only
@@ -707,7 +709,7 @@ Playback:
 ## Source code
 
 SimpMusic is licensed under the GNU General Public License v3.0 (see [LICENSE](LICENSE)).
-[SimpMusic-source-e99fb9e.zip](SimpMusic-source-e99fb9e.zip) is the complete source code this build was
-made from, including the changes above: the app at commit `e99fb9e` and its `core` module at `3111e35`.
+[SimpMusic-source-7815b06.zip](SimpMusic-source-7815b06.zip) is the complete source code this build was
+made from, including the changes above: the app at commit `7815b06` and its `core` module at `3111e35`.
 Build it with `./gradlew :androidApp:assembleOptimized` (an unsigned release-type APK, to sign with
 your own key) or `./gradlew :androidApp:assembleDebug` (Android SDK and JDK 21 required).
