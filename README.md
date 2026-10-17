@@ -27,6 +27,13 @@ a throwaway test key, not the SimpMusic developers' key.
 
 New in this update:
 
+- **Noise control keeps its place next to the heart in the phone's media controls.** The notification, lock screen
+  and quick-settings player show two buttons beside play: the heart, then noise control. Noise control used to
+  appear only once the app was talking to the headphones, so until then (most often because the Bluetooth
+  permission had never been granted) Shuffle took its place. The button is now there whenever supported headphones
+  are connected: "Allow ANC control" (tap it, then the notice it posts, and grant the permission), "ANC ·
+  connecting", or "ANC · tap to retry". Shuffle shows only without supported headphones, or with earbuds that have
+  no noise control.
 - **The finished-download notification has its own switch, in Android's notification settings.** The notice
   ("Song · 24.6 MB · from Monochrome") goes out on a channel of its own, listed as "Download complete" in Android's
   app notification settings, so it can be turned off there without muting the progress notification — and that is
@@ -663,7 +670,7 @@ Playback:
 ## Source code
 
 SimpMusic is licensed under the GNU General Public License v3.0 (see [LICENSE](LICENSE)).
-[SimpMusic-source-0d52391.zip](SimpMusic-source-0d52391.zip) is the complete source code this build was
-made from, including the changes above: the app at commit `0d52391` and its `core` module at `deb14bf`.
+[SimpMusic-source-d79b509.zip](SimpMusic-source-d79b509.zip) is the complete source code this build was
+made from, including the changes above: the app at commit `d79b509` and its `core` module at `0b5617b`.
 Build it with `./gradlew :androidApp:assembleOptimized` (an unsigned release-type APK, to sign with
 your own key) or `./gradlew :androidApp:assembleDebug` (Android SDK and JDK 21 required).
