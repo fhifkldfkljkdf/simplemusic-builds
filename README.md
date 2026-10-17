@@ -27,10 +27,10 @@ a throwaway test key, not the SimpMusic developers' key.
 
 New in this update:
 
-- **The finished-download notification can be turned off.** Settings → Storage has a "Download complete
-  notification" switch, and the notice has an entry of its own in Android's notification settings ("Download
-  complete"), so the progress notification and the finished one are controlled separately. A failed download still
-  notifies either way.
+- **The finished-download notification has its own switch, in Android's notification settings.** The notice
+  ("Song · 24.6 MB · from Monochrome") goes out on a channel of its own, listed as "Download complete" in Android's
+  app notification settings, so it can be turned off there without muting the progress notification — and that is
+  the only place the switch lives: there is deliberately no copy of it inside the app.
 - **A copy from a better source has to open like an audio file before it replaces anything.** Beside the size rule,
   the first bytes of the fetched copy are checked (FLAC, Ogg, MP3, AAC, M4A, WebM); anything else — an error page, a
   playlist, a redirect stub — is treated as a broken copy and never becomes the song's, so a download can no longer
@@ -663,7 +663,7 @@ Playback:
 ## Source code
 
 SimpMusic is licensed under the GNU General Public License v3.0 (see [LICENSE](LICENSE)).
-[SimpMusic-source-bca1775.zip](SimpMusic-source-bca1775.zip) is the complete source code this build was
-made from, including the changes above: the app at commit `bca1775` and its `core` module at `9670fb2`.
+[SimpMusic-source-0d52391.zip](SimpMusic-source-0d52391.zip) is the complete source code this build was
+made from, including the changes above: the app at commit `0d52391` and its `core` module at `deb14bf`.
 Build it with `./gradlew :androidApp:assembleOptimized` (an unsigned release-type APK, to sign with
 your own key) or `./gradlew :androidApp:assembleDebug` (Android SDK and JDK 21 required).
