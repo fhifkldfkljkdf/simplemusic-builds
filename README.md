@@ -27,6 +27,11 @@ a throwaway test key, not the SimpMusic developers' key.
 
 New in this update:
 
+- **"Download songs you like" now downloads all of them, and finishes even if you leave Settings.** The catch-up
+  used to run inside the settings screen: leaving it stopped the sweep half-way, so only the first few favourites
+  were queued. It now runs in the background and queues three at a time, and it treats a song as downloaded only
+  when the copy on the phone is whole — the partial file of a download that failed used to make it skip that song.
+  If some still cannot be downloaded, a toast says how many, and switching the option off and on again tries them.
 - **The "Download songs you like" catch-up says how far it has got.** Switching it on still queues every favourite
   that is not on the phone; the switch's row now reads "Downloading 4 of 12 liked songs…" until the last one lands,
   and the toast still names how many were queued.
@@ -702,7 +707,7 @@ Playback:
 ## Source code
 
 SimpMusic is licensed under the GNU General Public License v3.0 (see [LICENSE](LICENSE)).
-[SimpMusic-source-0c0a747.zip](SimpMusic-source-0c0a747.zip) is the complete source code this build was
-made from, including the changes above: the app at commit `0c0a747` and its `core` module at `7bab9d8`.
+[SimpMusic-source-e99fb9e.zip](SimpMusic-source-e99fb9e.zip) is the complete source code this build was
+made from, including the changes above: the app at commit `e99fb9e` and its `core` module at `3111e35`.
 Build it with `./gradlew :androidApp:assembleOptimized` (an unsigned release-type APK, to sign with
 your own key) or `./gradlew :androidApp:assembleDebug` (Android SDK and JDK 21 required).
