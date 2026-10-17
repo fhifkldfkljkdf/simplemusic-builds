@@ -27,6 +27,23 @@ a throwaway test key, not the SimpMusic developers' key.
 
 New in this update:
 
+- **Upgrading a download now really downloads it.** A song already on the phone was never re-fetched: Media3
+  answered the new download entirely from the copy it already had, so "Upgrade downloads" and the sources sheet's
+  per-song download could finish instantly without touching the source — the copy stayed as it was. A source's copy
+  is now fetched into a staging area beside the old one, measured against the size the source declared, and only a
+  whole copy replaces it; a short or failed one leaves the old copy as it is, and a first download with nothing to
+  fall back on takes YouTube's whole stream instead.
+- **A plain download is quality-first.** The ordinary Download button — song, album, playlist, "Download songs you
+  like" — now asks the sources first and takes the best copy that answers: Monochrome's or the Internet Archive's
+  FLAC, Audius' upload, or the SoundCloud backup, and YouTube's stream when none does. It does this on Wi-Fi and
+  other unmetered connections only; on mobile data a plain download takes YouTube as before, and the Settings
+  upgrade dialog is still where you choose to spend data on an upgrade. The source switches (Hi-Fi sound, each
+  source) still gate it, and a source button in the sources sheet still takes exactly that source.
+- **The finished-download notification says what arrived:** "Song · 24.6 MB · from Monochrome", and for an upgrade
+  only once its copy has been checked. A fetch that failed and kept the old copy no longer posts a failure notice.
+- **Short copies are actually repaired now.** The repair pass the last build announced looked in the list of
+  *active* downloads, so a finished (short) copy was never examined; it now reads the download records, so the
+  copies the first source-download attempt left behind are measured and taken again from YouTube.
 - **A download from another source is taken only when the answer really is the song - YouTube's own downloads are
   untouched.** The length rule now also requires the source to declare at least 64 kB: a playlist (SoundCloud's
   HLS answers), an error page or a redirect stub declares a few kilobytes, and downloading that would have left
@@ -632,7 +649,7 @@ Playback:
 ## Source code
 
 SimpMusic is licensed under the GNU General Public License v3.0 (see [LICENSE](LICENSE)).
-[SimpMusic-source-f696977.zip](SimpMusic-source-f696977.zip) is the complete source code this build was
-made from, including the changes above: the app at commit `f696977` and its `core` module at `adbcfe7`.
+[SimpMusic-source-a9faa82.zip](SimpMusic-source-a9faa82.zip) is the complete source code this build was
+made from, including the changes above: the app at commit `a9faa82` and its `core` module at `14e9aef`.
 Build it with `./gradlew :androidApp:assembleOptimized` (an unsigned release-type APK, to sign with
 your own key) or `./gradlew :androidApp:assembleDebug` (Android SDK and JDK 21 required).
