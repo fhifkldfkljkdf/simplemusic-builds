@@ -27,6 +27,13 @@ a throwaway test key, not the SimpMusic developers' key.
 
 New in this update:
 
+- **The "Download songs you like" catch-up says how far it has got.** Switching it on still queues every favourite
+  that is not on the phone; the switch's row now reads "Downloading 4 of 12 liked songs…" until the last one lands,
+  and the toast still names how many were queued.
+- **The sources sheet opens for a downloaded song.** Tapping the source pill right after a downloaded song started
+  showed no sheet at all — the sheet waited for the player to match its media item back to a queue row, which for a
+  downloaded song had not happened yet — and it appeared only once the next song started. It now works from the
+  song's own id and opens at once; if its list of sources is ever slow to arrive it asks again instead of spinning.
 - **Downloads from other sources are checked to be the right song.** Monochrome was serving another recording
   under some songs' names: for Pixies' "Where Is My Mind?" it handed out a 3:11 cover by another artist, so the
   download (and Hi-Fi playback) was not the song. Every file from Monochrome or the Internet Archive is now checked
@@ -695,7 +702,7 @@ Playback:
 ## Source code
 
 SimpMusic is licensed under the GNU General Public License v3.0 (see [LICENSE](LICENSE)).
-[SimpMusic-source-6cc28a3.zip](SimpMusic-source-6cc28a3.zip) is the complete source code this build was
-made from, including the changes above: the app at commit `6cc28a3` and its `core` module at `bc31279`.
+[SimpMusic-source-0c0a747.zip](SimpMusic-source-0c0a747.zip) is the complete source code this build was
+made from, including the changes above: the app at commit `0c0a747` and its `core` module at `7bab9d8`.
 Build it with `./gradlew :androidApp:assembleOptimized` (an unsigned release-type APK, to sign with
 your own key) or `./gradlew :androidApp:assembleDebug` (Android SDK and JDK 21 required).
