@@ -27,6 +27,13 @@ a throwaway test key, not the SimpMusic developers' key.
 
 New in this update:
 
+- **Home's "Take it easy" row is now a "For you" row built from what you listen to.** The Home feed's own
+  "Take it easy" shelf is removed and replaced in its place by songs picked from radios of the tracks this phone
+  plays most — never-heard songs first, then songs worth hearing again — signed in or out.
+- **A headphone's name reads cleanly, and the noise-control sheet scrolls it calmly.** The maker's prefix is
+  dropped ("HUAWEI FreeBuds 6i" reads "FreeBuds 6i"), and a device alias or a tag the phone added is never shown
+  in the sheet, the pill or the permission notice; the sheet's marquee now moves at a readable speed with a pause
+  between passes.
 - **A headphone's name too long for the noise-control sheet now scrolls.** The sheet's header used to cut the
   name off with an ellipsis; it moves now, so the whole name can be read, with the battery still beside it.
 - **"Download songs you like" now downloads all of them, and finishes even if you leave Settings.** The catch-up
@@ -709,7 +716,7 @@ Playback:
 ## Source code
 
 SimpMusic is licensed under the GNU General Public License v3.0 (see [LICENSE](LICENSE)).
-[SimpMusic-source-7815b06.zip](SimpMusic-source-7815b06.zip) is the complete source code this build was
-made from, including the changes above: the app at commit `7815b06` and its `core` module at `3111e35`.
+[SimpMusic-source-34169be.zip](SimpMusic-source-34169be.zip) is the complete source code this build was
+made from, including the changes above: the app at commit `34169be` and its `core` module at `892fd65`.
 Build it with `./gradlew :androidApp:assembleOptimized` (an unsigned release-type APK, to sign with
 your own key) or `./gradlew :androidApp:assembleDebug` (Android SDK and JDK 21 required).
