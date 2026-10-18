@@ -27,6 +27,12 @@ a throwaway test key, not the SimpMusic developers' key.
 
 New in this update:
 
+- **Home's "Top artists" is now your artists, with new ones to try.** The grid under Charts leads with the artists
+  this phone plays most, then with artists related to them that you have not heard yet — each of those marked
+  "New to you" — instead of YouTube's same-for-everyone chart.
+- **A "Recommended genres" row now appears in the Home feed.** The app checks YouTube's genre pages against the
+  artists you have heard and the songs you play most, and shows the genres that fit, as the same stripe cards the
+  Moods & genres grid uses. Both work signed in or out, and both are cached, so they cost nothing on later opens.
 - **Home's "Take it easy" row is now a "For you" row built from what you listen to.** The Home feed's own
   "Take it easy" shelf is removed and replaced in its place by songs picked from radios of the tracks this phone
   plays most — never-heard songs first, then songs worth hearing again — signed in or out.
@@ -716,7 +722,7 @@ Playback:
 ## Source code
 
 SimpMusic is licensed under the GNU General Public License v3.0 (see [LICENSE](LICENSE)).
-[SimpMusic-source-34169be.zip](SimpMusic-source-34169be.zip) is the complete source code this build was
-made from, including the changes above: the app at commit `34169be` and its `core` module at `892fd65`.
+[SimpMusic-source-5015fca.zip](SimpMusic-source-5015fca.zip) is the complete source code this build was
+made from, including the changes above: the app at commit `5015fca` and its `core` module at `b63f514`.
 Build it with `./gradlew :androidApp:assembleOptimized` (an unsigned release-type APK, to sign with
 your own key) or `./gradlew :androidApp:assembleDebug` (Android SDK and JDK 21 required).
