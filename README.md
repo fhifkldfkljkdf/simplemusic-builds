@@ -27,6 +27,12 @@ a throwaway test key, not the SimpMusic developers' key.
 
 New in this update:
 
+- **Home's rows are now made for you, not by YouTube.** Quick picks, New for you and Listen again are joined by
+  "Because you played <song>", up to three "More like <artist>" rows, "Recommended genres" and "<Genre> for you"
+  rows, all built from what this phone plays (signed in or out). YouTube's own feed shelves now show only when
+  there is no listening history to build from, and every row leaves out songs already shown above it.
+- **The duplicate "Quick picks" is gone.** YouTube's own Quick picks row used to sit under the app's one, looking
+  the same; YouTube's rows are dropped whenever the app's own rows exist.
 - **Home's "Top artists" is now your artists, with new ones to try.** The grid under Charts leads with the artists
   this phone plays most, then with artists related to them that you have not heard yet — each of those marked
   "New to you" — instead of YouTube's same-for-everyone chart.
@@ -722,7 +728,7 @@ Playback:
 ## Source code
 
 SimpMusic is licensed under the GNU General Public License v3.0 (see [LICENSE](LICENSE)).
-[SimpMusic-source-5015fca.zip](SimpMusic-source-5015fca.zip) is the complete source code this build was
-made from, including the changes above: the app at commit `5015fca` and its `core` module at `b63f514`.
+[SimpMusic-source-e23316f.zip](SimpMusic-source-e23316f.zip) is the complete source code this build was
+made from, including the changes above: the app at commit `e23316f` and its `core` module at `4bd00b6`.
 Build it with `./gradlew :androidApp:assembleOptimized` (an unsigned release-type APK, to sign with
 your own key) or `./gradlew :androidApp:assembleDebug` (Android SDK and JDK 21 required).
