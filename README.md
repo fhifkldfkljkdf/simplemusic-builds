@@ -27,8 +27,16 @@ a throwaway test key, not the SimpMusic developers' key.
 
 New in this update:
 
-- **Home's "Video charts" row is gone.** The Charts block no longer shows YouTube's music-video chart playlists;
-  only Top artists remains there.
+- **Top artists is now near the top of Home**, right after the first row, as big circular cards — it no longer
+  lives in the Charts block at the bottom.
+- **The Charts block is trimmed.** YouTube's "Video charts" row and the country selector are gone, and the whole
+  block disappears when it has no row left to show.
+- **Recommendations no longer include alternate versions.** Covers, karaoke, instrumentals, remixes, live takes,
+  sped-up/slowed/nightcore/8D, acoustic and AI versions are filtered out of Quick picks, New for you, Because you
+  played, More like and the genre rows. Listen again keeps your own songs as they are.
+- **Genre rows are now built from your artists.** Each "<Genre> for you" row plays a radio from a song by one of
+  your own artists in that genre, instead of the genre page's random top songs — so the R&B, dance/electronic and
+  folk/acoustic rows stop sounding like AI filler.
 - **Top artists is now a shelf of big circular cards.** Your most played artists lead — drawn from every play,
   not just the last fifty songs — with the name underneath and no rank numbers; genuinely new artists say
   "New to you", and related artists you have heard before say "You might like".
@@ -737,7 +745,7 @@ Playback:
 ## Source code
 
 SimpMusic is licensed under the GNU General Public License v3.0 (see [LICENSE](LICENSE)).
-[SimpMusic-source-4c0e1e3.zip](SimpMusic-source-4c0e1e3.zip) is the complete source code this build was
-made from, including the changes above: the app at commit `4c0e1e3` and its `core` module at `621016b`.
+[SimpMusic-source-d24bd51.zip](SimpMusic-source-d24bd51.zip) is the complete source code this build was
+made from, including the changes above: the app at commit `d24bd51` and its `core` module at `804cafa`.
 Build it with `./gradlew :androidApp:assembleOptimized` (an unsigned release-type APK, to sign with
 your own key) or `./gradlew :androidApp:assembleDebug` (Android SDK and JDK 21 required).
