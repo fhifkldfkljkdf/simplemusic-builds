@@ -27,6 +27,11 @@ a throwaway test key, not the SimpMusic developers' key.
 
 New in this update:
 
+- **Playback speed now goes up to 3×.** The speed control's + button used to stop at 2×; it now steps to 3×, for
+  songs and podcasts alike.
+- **Genre rows only follow artists you actually play.** R&B and dance rows used to count every artist you had ever
+  heard, so one random play could fill a whole row; they now count only artists from your most-played songs and
+  start from the one you play most in that genre.
 - **Top artists is now near the top of Home**, right after the first row, as big circular cards — it no longer
   lives in the Charts block at the bottom.
 - **The Charts block is trimmed.** YouTube's "Video charts" row and the country selector are gone, and the whole
@@ -34,9 +39,8 @@ New in this update:
 - **Recommendations no longer include alternate versions.** Covers, karaoke, instrumentals, remixes, live takes,
   sped-up/slowed/nightcore/8D, acoustic and AI versions are filtered out of Quick picks, New for you, Because you
   played, More like and the genre rows. Listen again keeps your own songs as they are.
-- **Genre rows are now built from your artists.** Each "<Genre> for you" row plays a radio from a song by one of
-  your own artists in that genre, instead of the genre page's random top songs — so the R&B, dance/electronic and
-  folk/acoustic rows stop sounding like AI filler.
+- **Genre rows are built from your artists.** Each "<Genre> for you" row plays a radio from a song by one of your
+  own artists in that genre, starting with the one you play most, instead of the genre page's random top songs.
 - **Top artists is now a shelf of big circular cards.** Your most played artists lead — drawn from every play,
   not just the last fifty songs — with the name underneath and no rank numbers; genuinely new artists say
   "New to you", and related artists you have heard before say "You might like".
@@ -745,7 +749,7 @@ Playback:
 ## Source code
 
 SimpMusic is licensed under the GNU General Public License v3.0 (see [LICENSE](LICENSE)).
-[SimpMusic-source-d24bd51.zip](SimpMusic-source-d24bd51.zip) is the complete source code this build was
-made from, including the changes above: the app at commit `d24bd51` and its `core` module at `804cafa`.
+[SimpMusic-source-7ab5dcb.zip](SimpMusic-source-7ab5dcb.zip) is the complete source code this build was
+made from, including the changes above: the app at commit `7ab5dcb` and its `core` module at `15ec317`.
 Build it with `./gradlew :androidApp:assembleOptimized` (an unsigned release-type APK, to sign with
 your own key) or `./gradlew :androidApp:assembleDebug` (Android SDK and JDK 21 required).
