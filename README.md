@@ -27,6 +27,11 @@ a throwaway test key, not the SimpMusic developers' key.
 
 New in this update:
 
+- **Home's "Video charts" row is gone.** The Charts block no longer shows YouTube's music-video chart playlists;
+  only Top artists remains there.
+- **Top artists is now a shelf of big circular cards.** Your most played artists lead — drawn from every play,
+  not just the last fifty songs — with the name underneath and no rank numbers; genuinely new artists say
+  "New to you", and related artists you have heard before say "You might like".
 - **The new Home rows each have their own look.** "Because you played <song>" opens with a full-width feature
   card of that song (title and artists over the art, with a play button) above the radio's songs; "More like
   <artist>" is a row of wide 16:9 cards; and "<Genre> for you" is a compact numbered Top 5 list. Quick picks, New
@@ -732,7 +737,7 @@ Playback:
 ## Source code
 
 SimpMusic is licensed under the GNU General Public License v3.0 (see [LICENSE](LICENSE)).
-[SimpMusic-source-6a53e11.zip](SimpMusic-source-6a53e11.zip) is the complete source code this build was
-made from, including the changes above: the app at commit `6a53e11` and its `core` module at `e7452e2`.
+[SimpMusic-source-4c0e1e3.zip](SimpMusic-source-4c0e1e3.zip) is the complete source code this build was
+made from, including the changes above: the app at commit `4c0e1e3` and its `core` module at `621016b`.
 Build it with `./gradlew :androidApp:assembleOptimized` (an unsigned release-type APK, to sign with
 your own key) or `./gradlew :androidApp:assembleDebug` (Android SDK and JDK 21 required).
