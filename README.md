@@ -27,6 +27,10 @@ a throwaway test key, not the SimpMusic developers' key.
 
 New in this update:
 
+- **The new Home rows each have their own look.** "Because you played <song>" opens with a full-width feature
+  card of that song (title and artists over the art, with a play button) above the radio's songs; "More like
+  <artist>" is a row of wide 16:9 cards; and "<Genre> for you" is a compact numbered Top 5 list. Quick picks, New
+  for you, Listen again, Recommended genres and Top artists keep their existing looks.
 - **Home's rows are now made for you, not by YouTube.** Quick picks, New for you and Listen again are joined by
   "Because you played <song>", up to three "More like <artist>" rows, "Recommended genres" and "<Genre> for you"
   rows, all built from what this phone plays (signed in or out). YouTube's own feed shelves now show only when
@@ -728,7 +732,7 @@ Playback:
 ## Source code
 
 SimpMusic is licensed under the GNU General Public License v3.0 (see [LICENSE](LICENSE)).
-[SimpMusic-source-e23316f.zip](SimpMusic-source-e23316f.zip) is the complete source code this build was
-made from, including the changes above: the app at commit `e23316f` and its `core` module at `4bd00b6`.
+[SimpMusic-source-6a53e11.zip](SimpMusic-source-6a53e11.zip) is the complete source code this build was
+made from, including the changes above: the app at commit `6a53e11` and its `core` module at `e7452e2`.
 Build it with `./gradlew :androidApp:assembleOptimized` (an unsigned release-type APK, to sign with
 your own key) or `./gradlew :androidApp:assembleDebug` (Android SDK and JDK 21 required).
