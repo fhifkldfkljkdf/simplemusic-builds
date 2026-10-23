@@ -32,8 +32,8 @@ New in this update:
   the mini player's controls and artist avatars use the same grid. Other themes keep their usual corners.
 - **Retro icons are sharper.** Each icon is rendered 4× larger and reduced to a hard 16×16 on/off grid —
   more detail than the old 12×12 mask and no grey, anti-aliased fringe, so the pixel edges stay crisp.
-- **Accent color is now a separate setting.** Settings → App theme → **Accent color** offers Theme
-  default, ten presets or any hex colour. It recolours buttons, selections and highlights for any theme;
+- **Accent color is now a separate setting.** **Settings → Accent color** (just below App theme) offers
+  Theme default, ten presets or any hex colour. It recolours buttons, selections and highlights for any theme;
   the background, surfaces, corners and typeface stay with the chosen theme.
 - **Theme fonts now apply everywhere.** The selected theme's typeface reaches all app text, not only Material
   components: Apple Music/Ocean/AMOLED use the system sans face, Spotify/Default/Custom keep Poppins, and Retro
