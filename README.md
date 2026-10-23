@@ -27,6 +27,10 @@ a throwaway test key, not the SimpMusic developers' key.
 
 New in this update:
 
+- **Retro Pixel is now a full pixel/ASCII pass.** Icons are sampled into a chunky 12×12 pixel grid, the whole
+  app's text uses the bundled VT323 terminal face, and faint CRT scanlines sit over the screen — on top of the
+  square corners and 8-bit palette. It covers the navigation bar, top bars, player, mini player, Home cards and
+  Settings.
 - **Themes now change more than colour.** Each theme carries its own corners (Apple's softer cards, Ocean's
   glassy radii, AMOLED/Retro's sharp edges), filter-pill style, navigation capsule/indicator shape and typeface
   (system sans for Apple/Ocean/AMOLED, monospace for Retro). Home gets a signature touch per theme — Apple Music's
@@ -764,7 +768,7 @@ Playback:
 ## Source code
 
 SimpMusic is licensed under the GNU General Public License v3.0 (see [LICENSE](LICENSE)).
-[SimpMusic-source-9f64663.zip](SimpMusic-source-9f64663.zip) is the complete source code this build was
-made from, including the changes above: the app at commit `9f64663` and its `core` module at `e48f691`.
+[SimpMusic-source-3b5d851.zip](SimpMusic-source-3b5d851.zip) is the complete source code this build was
+made from, including the changes above: the app at commit `3b5d851` and its `core` module at `e48f691`.
 Build it with `./gradlew :androidApp:assembleOptimized` (an unsigned release-type APK, to sign with
 your own key) or `./gradlew :androidApp:assembleDebug` (Android SDK and JDK 21 required).
