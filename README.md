@@ -27,14 +27,19 @@ a throwaway test key, not the SimpMusic developers' key.
 
 New in this update:
 
-- **Retro Pixel's corners are now made of pixels too.** Card, artwork, sheet, dialog, button, navigation
-  capsule and pill corners are drawn as a staircase instead of a smooth arc or a sharp square; the mini
-  player's round controls and artist avatars follow the same grid. Other themes keep their usual corners.
+- **Retro Pixel's corners are round pixels now.** Every card, artwork, sheet, dialog, button, navigation
+  capsule and pill follows a quarter-circle made of stair steps instead of a smooth arc or a 45° chamfer;
+  the mini player's controls and artist avatars use the same grid. Other themes keep their usual corners.
+- **Retro icons are sharper.** Each icon is rendered 4× larger and reduced to a hard 16×16 on/off grid —
+  more detail than the old 12×12 mask and no grey, anti-aliased fringe, so the pixel edges stay crisp.
+- **Accent color is now a separate setting.** Settings → App theme → **Accent color** offers Theme
+  default, ten presets or any hex colour. It recolours buttons, selections and highlights for any theme;
+  the background, surfaces, corners and typeface stay with the chosen theme.
 - **Theme fonts now apply everywhere.** The selected theme's typeface reaches all app text, not only Material
   components: Apple Music/Ocean/AMOLED use the system sans face, Spotify/Default/Custom keep Poppins, and Retro
   Pixel uses VT323 throughout. Under Retro, every vector icon in the app is also sampled into the pixel grid —
   not just the navigation bar and player — so the whole app reads pixelated.
-- **Retro Pixel is now a full pixel/ASCII pass.** Icons are sampled into a chunky 12×12 pixel grid, the whole
+- **Retro Pixel is now a full pixel/ASCII pass.** Icons are sampled into a hard 16×16 pixel grid, the whole
   app's text uses the bundled VT323 terminal face, and faint CRT scanlines sit over the screen — on top of the
   stair-stepped corners and 8-bit palette. It covers the navigation bar, top bars, player, mini player, Home cards and
   Settings.
@@ -775,7 +780,7 @@ Playback:
 ## Source code
 
 SimpMusic is licensed under the GNU General Public License v3.0 (see [LICENSE](LICENSE)).
-[SimpMusic-source-fed21c5.zip](SimpMusic-source-fed21c5.zip) is the complete source code this build was
-made from, including the changes above: the app at commit `fed21c5` and its `core` module at `e48f691`.
+[SimpMusic-source-4d44d57.zip](SimpMusic-source-4d44d57.zip) is the complete source code this build was
+made from, including the changes above: the app at commit `4d44d57` and its `core` module at `08acc80`.
 Build it with `./gradlew :androidApp:assembleOptimized` (an unsigned release-type APK, to sign with
 your own key) or `./gradlew :androidApp:assembleDebug` (Android SDK and JDK 21 required).
