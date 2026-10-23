@@ -27,6 +27,10 @@ a throwaway test key, not the SimpMusic developers' key.
 
 New in this update:
 
+- **Theme fonts now apply everywhere.** The selected theme's typeface reaches all app text, not only Material
+  components: Apple Music/Ocean/AMOLED use the system sans face, Spotify/Default/Custom keep Poppins, and Retro
+  Pixel uses VT323 throughout. Under Retro, every vector icon in the app is also sampled into the pixel grid —
+  not just the navigation bar and player — so the whole app reads pixelated.
 - **Retro Pixel is now a full pixel/ASCII pass.** Icons are sampled into a chunky 12×12 pixel grid, the whole
   app's text uses the bundled VT323 terminal face, and faint CRT scanlines sit over the screen — on top of the
   square corners and 8-bit palette. It covers the navigation bar, top bars, player, mini player, Home cards and
@@ -768,7 +772,7 @@ Playback:
 ## Source code
 
 SimpMusic is licensed under the GNU General Public License v3.0 (see [LICENSE](LICENSE)).
-[SimpMusic-source-3b5d851.zip](SimpMusic-source-3b5d851.zip) is the complete source code this build was
-made from, including the changes above: the app at commit `3b5d851` and its `core` module at `e48f691`.
+[SimpMusic-source-2a45e02.zip](SimpMusic-source-2a45e02.zip) is the complete source code this build was
+made from, including the changes above: the app at commit `2a45e02` and its `core` module at `e48f691`.
 Build it with `./gradlew :androidApp:assembleOptimized` (an unsigned release-type APK, to sign with
 your own key) or `./gradlew :androidApp:assembleDebug` (Android SDK and JDK 21 required).
