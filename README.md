@@ -27,6 +27,12 @@ a throwaway test key, not the SimpMusic developers' key.
 
 New in this update:
 
+- **Themes now change more than colour.** Each theme carries its own corners (Apple's softer cards, Ocean's
+  glassy radii, AMOLED/Retro's sharp edges), filter-pill style, navigation capsule/indicator shape and typeface
+  (system sans for Apple/Ocean/AMOLED, monospace for Retro). Home gets a signature touch per theme — Apple Music's
+  "Top Picks" editorial row, Ocean's tinted header, flat headers for AMOLED/Retro, Spotify's quick grid — and
+  choosing Spotify or Apple Music also switches the player layout to match. Named themes also paint the desktop
+  window's surfaces.
 - **A theme picker with more themes.** Settings → **App theme** now opens a visual swatch grid: Default,
   Material You, Spotify, Apple Music, Ocean, AMOLED Black, **Retro Pixel** and Custom. Every theme has a light
   and a dark variant and follows the existing light/dark/system setting; the selected one is ticked.
@@ -758,7 +764,7 @@ Playback:
 ## Source code
 
 SimpMusic is licensed under the GNU General Public License v3.0 (see [LICENSE](LICENSE)).
-[SimpMusic-source-ab7c1ae.zip](SimpMusic-source-ab7c1ae.zip) is the complete source code this build was
-made from, including the changes above: the app at commit `ab7c1ae` and its `core` module at `e48f691`.
+[SimpMusic-source-9f64663.zip](SimpMusic-source-9f64663.zip) is the complete source code this build was
+made from, including the changes above: the app at commit `9f64663` and its `core` module at `e48f691`.
 Build it with `./gradlew :androidApp:assembleOptimized` (an unsigned release-type APK, to sign with
 your own key) or `./gradlew :androidApp:assembleDebug` (Android SDK and JDK 21 required).
