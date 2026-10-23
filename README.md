@@ -27,11 +27,15 @@ a throwaway test key, not the SimpMusic developers' key.
 
 New in this update:
 
-- **A Spotify theme.** In Settings → Theme color, choose **Spotify**: the app takes Spotify's palette (dark
-  #121212 surfaces with #1DB954 green, or a white light variant) and Home takes its shape — a greeting-only
-  header, filled filter pills instead of outlined ones, and a two-column quick-access grid of your most-played
-  songs at the top. The current tile and the hearts turn green, and the Spotify player layout uses the same
-  palette.
+- **A theme picker with more themes.** Settings → **App theme** now opens a visual swatch grid: Default,
+  Material You, Spotify, Apple Music, Ocean, AMOLED Black, **Retro Pixel** and Custom. Every theme has a light
+  and a dark variant and follows the existing light/dark/system setting; the selected one is ticked.
+- **Retro Pixel** is an 8-bit theme: neon green, magenta and cyan on a near-black (or paper-light) background,
+  blocky corners and monospace text throughout.
+- **A Spotify theme.** Choose **Spotify**: the app takes Spotify's palette (dark #121212 surfaces with #1DB954
+  green, or a white light variant) and Home takes its shape — a greeting-only header, filled filter pills instead
+  of outlined ones, and a two-column quick-access grid of your most-played songs at the top. The current tile and
+  the hearts turn green, and the Spotify player layout uses the same palette.
 - **Playback speed now goes up to 3×.** The speed control's + button used to stop at 2×; it now steps to 3×, for
   songs and podcasts alike.
 - **Genre rows only follow artists you actually play.** R&B and dance rows used to count every artist you had ever
@@ -754,7 +758,7 @@ Playback:
 ## Source code
 
 SimpMusic is licensed under the GNU General Public License v3.0 (see [LICENSE](LICENSE)).
-[SimpMusic-source-ea03d87.zip](SimpMusic-source-ea03d87.zip) is the complete source code this build was
-made from, including the changes above: the app at commit `ea03d87` and its `core` module at `b6d624b`.
+[SimpMusic-source-ab7c1ae.zip](SimpMusic-source-ab7c1ae.zip) is the complete source code this build was
+made from, including the changes above: the app at commit `ab7c1ae` and its `core` module at `e48f691`.
 Build it with `./gradlew :androidApp:assembleOptimized` (an unsigned release-type APK, to sign with
 your own key) or `./gradlew :androidApp:assembleDebug` (Android SDK and JDK 21 required).
