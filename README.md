@@ -27,6 +27,17 @@ a throwaway test key, not the SimpMusic developers' key.
 
 New in this update:
 
+- **Home's mood chips now change Home.** Relax, Sleep, Energize and the rest used to update only YouTube's
+  hidden feed while the app-built rows stayed on screen. Selecting a mood now shows that mood's own feed;
+  **All** brings the personalised Home rows back.
+- **Podcast speed is separate and actually applies.** Songs show song speed + pitch; podcasts show only
+  **Podcast speed**. RSS and YouTube podcast episodes now use that value for real playback on Android and
+  Desktop, not the song speed.
+- **The three-dots sheet is pixelated too.** Its action icons, heart, speed/pitch, sleep timer, playlist and
+  artist rows were bypassing the Retro icon filter; they now go through the same hard 16×16 pixel grid.
+- **The radio mix bar follows the theme.** Retro draws it as ten hard blocks with a square pixel-stepped
+  thumb and pixelated end icons; AMOLED is square and solid, Spotify is a solid pill with a wider thumb,
+  Apple/Ocean keep soft rounded tracks, and the default theme keeps its gradient.
 - **Retro Pixel's corners are round pixels now.** Every card, artwork, sheet, dialog, button, navigation
   capsule and pill follows a quarter-circle made of stair steps instead of a smooth arc or a 45° chamfer;
   the mini player's controls and artist avatars use the same grid. Other themes keep their usual corners.
@@ -780,7 +791,7 @@ Playback:
 ## Source code
 
 SimpMusic is licensed under the GNU General Public License v3.0 (see [LICENSE](LICENSE)).
-[SimpMusic-source-4d44d57.zip](SimpMusic-source-4d44d57.zip) is the complete source code this build was
-made from, including the changes above: the app at commit `4d44d57` and its `core` module at `08acc80`.
+[SimpMusic-source-1a457e1.zip](SimpMusic-source-1a457e1.zip) is the complete source code this build was
+made from, including the changes above: the app at commit `1a457e1` and its `core` module at `5b24214`.
 Build it with `./gradlew :androidApp:assembleOptimized` (an unsigned release-type APK, to sign with
 your own key) or `./gradlew :androidApp:assembleDebug` (Android SDK and JDK 21 required).
