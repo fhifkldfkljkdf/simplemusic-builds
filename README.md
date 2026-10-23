@@ -9,7 +9,7 @@ problems with it to them.
 ## Download
 
 **[SimpMusic-dev-listen-together-arm64.apk](https://github.com/fhifkldfkljkdf/simplemusic-builds/raw/main/SimpMusic-dev-listen-together-arm64.apk)**
-(28.2 MB, for 64-bit Android phones)
+(28.3 MB, for 64-bit Android phones)
 
 1. Open the link on your phone. No GitHub account is needed.
 2. Open the downloaded file. The first time, Android asks you to allow installing apps from your browser.
@@ -27,16 +27,19 @@ a throwaway test key, not the SimpMusic developers' key.
 
 New in this update:
 
+- **Retro Pixel's corners are now made of pixels too.** Card, artwork, sheet, dialog, button, navigation
+  capsule and pill corners are drawn as a staircase instead of a smooth arc or a sharp square; the mini
+  player's round controls and artist avatars follow the same grid. Other themes keep their usual corners.
 - **Theme fonts now apply everywhere.** The selected theme's typeface reaches all app text, not only Material
   components: Apple Music/Ocean/AMOLED use the system sans face, Spotify/Default/Custom keep Poppins, and Retro
   Pixel uses VT323 throughout. Under Retro, every vector icon in the app is also sampled into the pixel grid —
   not just the navigation bar and player — so the whole app reads pixelated.
 - **Retro Pixel is now a full pixel/ASCII pass.** Icons are sampled into a chunky 12×12 pixel grid, the whole
   app's text uses the bundled VT323 terminal face, and faint CRT scanlines sit over the screen — on top of the
-  square corners and 8-bit palette. It covers the navigation bar, top bars, player, mini player, Home cards and
+  stair-stepped corners and 8-bit palette. It covers the navigation bar, top bars, player, mini player, Home cards and
   Settings.
 - **Themes now change more than colour.** Each theme carries its own corners (Apple's softer cards, Ocean's
-  glassy radii, AMOLED/Retro's sharp edges), filter-pill style, navigation capsule/indicator shape and typeface
+  glassy radii, AMOLED's sharp edges, Retro's stair-stepped corners), filter-pill style, navigation capsule/indicator shape and typeface
   (system sans for Apple/Ocean/AMOLED, monospace for Retro). Home gets a signature touch per theme — Apple Music's
   "Top Picks" editorial row, Ocean's tinted header, flat headers for AMOLED/Retro, Spotify's quick grid — and
   choosing Spotify or Apple Music also switches the player layout to match. Named themes also paint the desktop
@@ -45,7 +48,7 @@ New in this update:
   Material You, Spotify, Apple Music, Ocean, AMOLED Black, **Retro Pixel** and Custom. Every theme has a light
   and a dark variant and follows the existing light/dark/system setting; the selected one is ticked.
 - **Retro Pixel** is an 8-bit theme: neon green, magenta and cyan on a near-black (or paper-light) background,
-  blocky corners and monospace text throughout.
+  stair-stepped corners and monospace text throughout.
 - **A Spotify theme.** Choose **Spotify**: the app takes Spotify's palette (dark #121212 surfaces with #1DB954
   green, or a white light variant) and Home takes its shape — a greeting-only header, filled filter pills instead
   of outlined ones, and a two-column quick-access grid of your most-played songs at the top. The current tile and
@@ -772,7 +775,7 @@ Playback:
 ## Source code
 
 SimpMusic is licensed under the GNU General Public License v3.0 (see [LICENSE](LICENSE)).
-[SimpMusic-source-2a45e02.zip](SimpMusic-source-2a45e02.zip) is the complete source code this build was
-made from, including the changes above: the app at commit `2a45e02` and its `core` module at `e48f691`.
+[SimpMusic-source-fed21c5.zip](SimpMusic-source-fed21c5.zip) is the complete source code this build was
+made from, including the changes above: the app at commit `fed21c5` and its `core` module at `e48f691`.
 Build it with `./gradlew :androidApp:assembleOptimized` (an unsigned release-type APK, to sign with
 your own key) or `./gradlew :androidApp:assembleDebug` (Android SDK and JDK 21 required).
