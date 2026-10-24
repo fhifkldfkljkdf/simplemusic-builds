@@ -27,6 +27,9 @@ a throwaway test key, not the SimpMusic developers' key.
 
 New in this update:
 
+- **The three-dots menu icons are back to their old size.** The Retro pixel replacement had lost the
+  icon's 24dp size because the button's modifier only carried padding, so the menu icons shrank. Each
+  button now sizes its icon to 24dp inside the same 12dp padding, restoring the old row height.
 - **Home's mood chips now change Home.** Relax, Sleep, Energize and the rest used to update only YouTube's
   hidden feed while the app-built rows stayed on screen. Selecting a mood now shows that mood's own feed;
   **All** brings the personalised Home rows back.
@@ -791,7 +794,7 @@ Playback:
 ## Source code
 
 SimpMusic is licensed under the GNU General Public License v3.0 (see [LICENSE](LICENSE)).
-[SimpMusic-source-1a457e1.zip](SimpMusic-source-1a457e1.zip) is the complete source code this build was
-made from, including the changes above: the app at commit `1a457e1` and its `core` module at `5b24214`.
+[SimpMusic-source-0282732.zip](SimpMusic-source-0282732.zip) is the complete source code this build was
+made from, including the changes above: the app at commit `0282732` and its `core` module at `5b24214`.
 Build it with `./gradlew :androidApp:assembleOptimized` (an unsigned release-type APK, to sign with
 your own key) or `./gradlew :androidApp:assembleDebug` (Android SDK and JDK 21 required).
