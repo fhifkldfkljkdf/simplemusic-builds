@@ -27,6 +27,11 @@ a throwaway test key, not the SimpMusic developers' key.
 
 New in this update:
 
+- **Two new themes: Swiss and Neo-Brutalism.** Settings → App theme now has Swiss, a clean
+  black-and-white theme with one red accent, square corners, hairline dividers and bold, tightly
+  spaced headings, and Neo-Brutalism, a cream-and-bright-colour theme with thick black outlines,
+  hard offset shadows and very heavy type. Both have light and dark versions, and the Accent color
+  row still applies on top of either one.
 - **The ANC strength speaks in a natural voice built into the app.** Letting go of the MOMENTUM 4's
   strength slider now says "Noise cancelling at 80 percent" in a warm, natural neural voice that ships
   with the app, instead of the phone's text-to-speech voice. It still works on a phone with no
@@ -829,7 +834,7 @@ Playback:
 ## Source code
 
 SimpMusic is licensed under the GNU General Public License v3.0 (see [LICENSE](LICENSE)).
-[SimpMusic-source-b97ff3b.zip](SimpMusic-source-b97ff3b.zip) is the complete source code this build was
-made from, including the changes above: the app at commit `b97ff3b` and its `core` module at `5b24214`.
+[SimpMusic-source-8ef6687.zip](SimpMusic-source-8ef6687.zip) is the complete source code this build was
+made from, including the changes above: the app at commit `8ef6687` and its `core` module at `439fa44`.
 Build it with `./gradlew :androidApp:assembleOptimized` (an unsigned release-type APK, to sign with
 your own key) or `./gradlew :androidApp:assembleDebug` (Android SDK and JDK 21 required).
