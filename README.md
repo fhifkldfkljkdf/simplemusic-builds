@@ -27,6 +27,10 @@ a throwaway test key, not the SimpMusic developers' key.
 
 New in this update:
 
+- **Retro Pixel's mini player has clean pixel controls.** The heart and play/pause buttons are plain
+  pixel icons with no disc behind them — the heart fills in the theme's accent colour when liked —
+  while the normal 48dp touch target and a subtle ripple stay. The rest of the bar, and every other
+  theme, are unchanged.
 - **Retro Pixel's album and cover corners are clearly stair-stepped.** Covers in Retro Pixel now
   have a larger pixel-corner radius — 12dp for full-size artwork and 8dp for small artwork, cut into
   hard 3dp and 2dp steps — so the corner reads as a pixel staircase instead of a smooth arc. Cards,
@@ -853,7 +857,7 @@ Playback:
 ## Source code
 
 SimpMusic is licensed under the GNU General Public License v3.0 (see [LICENSE](LICENSE)).
-[SimpMusic-source-95ed58c.zip](SimpMusic-source-95ed58c.zip) is the complete source code this build was
-made from, including the changes above: the app at commit `95ed58c` and its `core` module at `439fa44`.
+[SimpMusic-source-0595313.zip](SimpMusic-source-0595313.zip) is the complete source code this build was
+made from, including the changes above: the app at commit `0595313` and its `core` module at `439fa44`.
 Build it with `./gradlew :androidApp:assembleOptimized` (an unsigned release-type APK, to sign with
 your own key) or `./gradlew :androidApp:assembleDebug` (Android SDK and JDK 21 required).
