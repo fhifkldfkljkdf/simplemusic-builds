@@ -27,6 +27,8 @@ a throwaway test key, not the SimpMusic developers' key.
 
 New in this update:
 
+- **Letting go of the ANC strength slider shows its value.** On the Sennheiser MOMENTUM 4, releasing the
+  strength slider now shows a short message such as "ANC 80%"; the bubble that followed the thumb is gone.
 - **The ANC strength slider shows its percentage.** For the Sennheiser MOMENTUM 4, the slider now shows
   its percentage in a bubble above the thumb while you drag it.
 - **The three-dots menu icons are back to their old size.** The Retro pixel replacement had lost the
@@ -796,7 +798,7 @@ Playback:
 ## Source code
 
 SimpMusic is licensed under the GNU General Public License v3.0 (see [LICENSE](LICENSE)).
-[SimpMusic-source-1eca131.zip](SimpMusic-source-1eca131.zip) is the complete source code this build was
-made from, including the changes above: the app at commit `1eca131` and its `core` module at `5b24214`.
+[SimpMusic-source-8351521.zip](SimpMusic-source-8351521.zip) is the complete source code this build was
+made from, including the changes above: the app at commit `8351521` and its `core` module at `5b24214`.
 Build it with `./gradlew :androidApp:assembleOptimized` (an unsigned release-type APK, to sign with
 your own key) or `./gradlew :androidApp:assembleDebug` (Android SDK and JDK 21 required).
