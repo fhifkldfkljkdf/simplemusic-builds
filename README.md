@@ -9,7 +9,7 @@ problems with it to them.
 ## Download
 
 **[SimpMusic-dev-listen-together-arm64.apk](https://github.com/fhifkldfkljkdf/simplemusic-builds/raw/main/SimpMusic-dev-listen-together-arm64.apk)**
-(28.3 MB, for 64-bit Android phones)
+(29.1 MB, for 64-bit Android phones)
 
 1. Open the link on your phone. No GitHub account is needed.
 2. Open the downloaded file. The first time, Android asks you to allow installing apps from your browser.
@@ -27,6 +27,10 @@ a throwaway test key, not the SimpMusic developers' key.
 
 New in this update:
 
+- **The ANC strength speaks in a natural voice built into the app.** Letting go of the MOMENTUM 4's
+  strength slider now says "Noise cancelling at 80 percent" in a warm, natural neural voice that ships
+  with the app, instead of the phone's text-to-speech voice. It still works on a phone with no
+  text-to-speech app installed, and the music still dips under the voice rather than stopping.
 - **Retro Pixel icons are finer again.** Still pixelated, no longer chunky.
 - **The ANC strength is read in a warmer voice.** Letting go of the MOMENTUM 4's strength slider now
   uses the warmest, most natural voice your phone has, a little slower and lower than before, and
@@ -825,7 +829,7 @@ Playback:
 ## Source code
 
 SimpMusic is licensed under the GNU General Public License v3.0 (see [LICENSE](LICENSE)).
-[SimpMusic-source-c8a02c7.zip](SimpMusic-source-c8a02c7.zip) is the complete source code this build was
-made from, including the changes above: the app at commit `c8a02c7` and its `core` module at `5b24214`.
+[SimpMusic-source-b97ff3b.zip](SimpMusic-source-b97ff3b.zip) is the complete source code this build was
+made from, including the changes above: the app at commit `b97ff3b` and its `core` module at `5b24214`.
 Build it with `./gradlew :androidApp:assembleOptimized` (an unsigned release-type APK, to sign with
 your own key) or `./gradlew :androidApp:assembleDebug` (Android SDK and JDK 21 required).
