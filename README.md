@@ -27,6 +27,13 @@ a throwaway test key, not the SimpMusic developers' key.
 
 New in this update:
 
+- **The ANC strength is read in a warmer voice.** Letting go of the MOMENTUM 4's strength slider now
+  uses the warmest, most natural voice your phone has, a little slower and lower than before, and
+  says "Noise cancelling at 80 percent" instead of just "ANC 80 percent".
+- **The Retro Pixel theme is more pixelated.** Album covers, Now Playing art and backdrops are now
+  drawn as chunky pixels, the app's background has a faint pixel dither, the sliders are blocks with
+  a square thumb rather than smooth pills, and the small icons are blockier too. Other themes look
+  the same as before.
 - **The ANC strength speaks for itself.** Letting go of the MOMENTUM 4's strength slider now only
   says the percentage out loud; the short pop-up message is gone. If the phone has no text-to-speech
   app installed, a short line under the slider tells you to install one.
@@ -817,7 +824,7 @@ Playback:
 ## Source code
 
 SimpMusic is licensed under the GNU General Public License v3.0 (see [LICENSE](LICENSE)).
-[SimpMusic-source-537207a.zip](SimpMusic-source-537207a.zip) is the complete source code this build was
-made from, including the changes above: the app at commit `537207a` and its `core` module at `5b24214`.
+[SimpMusic-source-3108a03.zip](SimpMusic-source-3108a03.zip) is the complete source code this build was
+made from, including the changes above: the app at commit `3108a03` and its `core` module at `5b24214`.
 Build it with `./gradlew :androidApp:assembleOptimized` (an unsigned release-type APK, to sign with
 your own key) or `./gradlew :androidApp:assembleDebug` (Android SDK and JDK 21 required).
