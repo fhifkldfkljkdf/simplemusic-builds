@@ -27,6 +27,12 @@ a throwaway test key, not the SimpMusic developers' key.
 
 New in this update:
 
+- **The ANC voice now says exactly the percentage shown, and Retro Pixel's navigation is rounder —
+  with a rare glitch.** Letting go of the MOMENTUM 4's strength slider announces the same whole
+  percent the label reads, even on a quick tap (it could previously speak the previous frame's
+  value, e.g. 32 instead of 30). Retro Pixel's navigation bar, selected indicator and Search button
+  are near-pill pixel capsules, the nav rail gets the same stepped pill, and once every 8–14 seconds
+  the nav bar makes a very short, very subtle 1–2dp RGB split.
 - **Retro Pixel: sharp photos and full-size nav icons.** Album and artist artwork is no longer
   pixelated — covers and Now Playing art stay sharp like in every other theme. The navigation icons
   (bottom bar, nav rail and the round Search button) are back to their normal 24dp size with crisp
@@ -843,7 +849,7 @@ Playback:
 ## Source code
 
 SimpMusic is licensed under the GNU General Public License v3.0 (see [LICENSE](LICENSE)).
-[SimpMusic-source-eca3ee0.zip](SimpMusic-source-eca3ee0.zip) is the complete source code this build was
-made from, including the changes above: the app at commit `eca3ee0` and its `core` module at `439fa44`.
+[SimpMusic-source-0c07a06.zip](SimpMusic-source-0c07a06.zip) is the complete source code this build was
+made from, including the changes above: the app at commit `0c07a06` and its `core` module at `439fa44`.
 Build it with `./gradlew :androidApp:assembleOptimized` (an unsigned release-type APK, to sign with
 your own key) or `./gradlew :androidApp:assembleDebug` (Android SDK and JDK 21 required).
