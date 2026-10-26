@@ -27,6 +27,10 @@ a throwaway test key, not the SimpMusic developers' key.
 
 New in this update:
 
+- **Retro Pixel: sharp photos and full-size nav icons.** Album and artist artwork is no longer
+  pixelated — covers and Now Playing art stay sharp like in every other theme. The navigation icons
+  (bottom bar, nav rail and the round Search button) are back to their normal 24dp size with crisp
+  pixel edges, and the selected tab keeps its light accent wash.
 - **Retro Pixel is now a modern pixel theme.** Icons are drawn on a much finer pixel grid, so they
   read as crisp pixel-art versions of the normal icons at normal weight instead of bold blocks. The
   selected tab in the navigation bar is a soft accent wash with a small pixel bar under it rather
@@ -839,7 +843,7 @@ Playback:
 ## Source code
 
 SimpMusic is licensed under the GNU General Public License v3.0 (see [LICENSE](LICENSE)).
-[SimpMusic-source-b23a471.zip](SimpMusic-source-b23a471.zip) is the complete source code this build was
-made from, including the changes above: the app at commit `b23a471` and its `core` module at `439fa44`.
+[SimpMusic-source-eca3ee0.zip](SimpMusic-source-eca3ee0.zip) is the complete source code this build was
+made from, including the changes above: the app at commit `eca3ee0` and its `core` module at `439fa44`.
 Build it with `./gradlew :androidApp:assembleOptimized` (an unsigned release-type APK, to sign with
 your own key) or `./gradlew :androidApp:assembleDebug` (Android SDK and JDK 21 required).
