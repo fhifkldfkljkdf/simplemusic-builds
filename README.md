@@ -27,6 +27,11 @@ a throwaway test key, not the SimpMusic developers' key.
 
 New in this update:
 
+- **The Retro Pixel theme is sharper.** Its neon green and pink are easier to read, the CRT scanlines
+  are visible again, and the pixel corners line up on the screen instead of blurring. Cards and chips
+  now use hard offset frames in place of soft shadows, the pixel font is no longer artificially bolded
+  and is a little larger, the radio-mix bar is flat blocks rather than a colour gradient, and Retro
+  switches instantly instead of fading. Other themes look the same as before.
 - **Letting go of the ANC strength slider shows its value.** On the Sennheiser MOMENTUM 4, releasing the
   strength slider now shows a short message such as "ANC 80%"; the bubble that followed the thumb is gone.
 - **The ANC strength slider shows its percentage.** For the Sennheiser MOMENTUM 4, the slider now shows
@@ -798,7 +803,7 @@ Playback:
 ## Source code
 
 SimpMusic is licensed under the GNU General Public License v3.0 (see [LICENSE](LICENSE)).
-[SimpMusic-source-8351521.zip](SimpMusic-source-8351521.zip) is the complete source code this build was
-made from, including the changes above: the app at commit `8351521` and its `core` module at `5b24214`.
+[SimpMusic-source-9507009.zip](SimpMusic-source-9507009.zip) is the complete source code this build was
+made from, including the changes above: the app at commit `9507009` and its `core` module at `5b24214`.
 Build it with `./gradlew :androidApp:assembleOptimized` (an unsigned release-type APK, to sign with
 your own key) or `./gradlew :androidApp:assembleDebug` (Android SDK and JDK 21 required).
