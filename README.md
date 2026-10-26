@@ -27,6 +27,11 @@ a throwaway test key, not the SimpMusic developers' key.
 
 New in this update:
 
+- **Retro Pixel is now a modern pixel theme.** Icons are drawn on a much finer pixel grid, so they
+  read as crisp pixel-art versions of the normal icons at normal weight instead of bold blocks. The
+  selected tab in the navigation bar is a soft accent wash with a small pixel bar under it rather
+  than a heavy framed cell, the Search button has a thin pixel outline and no drop shadow, and the
+  three-dots menu's buttons and heart are back to their normal size and spacing.
 - **Two new themes: Swiss and Neo-Brutalism.** Settings → App theme now has Swiss, a clean
   black-and-white theme with one red accent, square corners, hairline dividers and bold, tightly
   spaced headings, and Neo-Brutalism, a cream-and-bright-colour theme with thick black outlines,
@@ -834,7 +839,7 @@ Playback:
 ## Source code
 
 SimpMusic is licensed under the GNU General Public License v3.0 (see [LICENSE](LICENSE)).
-[SimpMusic-source-8ef6687.zip](SimpMusic-source-8ef6687.zip) is the complete source code this build was
-made from, including the changes above: the app at commit `8ef6687` and its `core` module at `439fa44`.
+[SimpMusic-source-b23a471.zip](SimpMusic-source-b23a471.zip) is the complete source code this build was
+made from, including the changes above: the app at commit `b23a471` and its `core` module at `439fa44`.
 Build it with `./gradlew :androidApp:assembleOptimized` (an unsigned release-type APK, to sign with
 your own key) or `./gradlew :androidApp:assembleDebug` (Android SDK and JDK 21 required).
