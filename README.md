@@ -27,6 +27,16 @@ a throwaway test key, not the SimpMusic developers' key.
 
 New in this update:
 
+- **A web player you can run on your own server, sharing your library with the phone.** There is a new
+  self-hosted web app (`web/`, Next.js, run with Docker on port 3000) that browses YouTube Music and plays
+  through your server — seeking included — with a queue, radio, lyrics, and likes, playlists, followed artists
+  and history kept in its own SQLite volume. Settings → **Web server sync** pairs it by scanning the QR code
+  from the web app's Settings (or by pasting the server address and token); after that likes, playlists,
+  follows and listening history move both ways with the last edit winning, though listening history is only
+  sent to the web, never pulled back onto the phone. Home shows a **Continue from web** card when the other
+  device was playing something, and the phone publishes what it plays every 10 seconds so the web player can
+  offer the same. Only the sync API asks for the token, so keep the server on your own network. It has not
+  been tried on a phone or in Docker yet.
 - **Retro Pixel's mini player has clean pixel controls.** The heart and play/pause buttons are plain
   pixel icons with no disc behind them — the heart fills in the theme's accent colour when liked —
   while the normal 48dp touch target and a subtle ripple stay. The rest of the bar, and every other
