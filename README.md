@@ -27,6 +27,12 @@ a throwaway test key, not the SimpMusic developers' key.
 
 New in this update:
 
+- **The web player has Play next and Add to queue on every song.** Song rows and song cards now show
+  small Play next and Add to queue buttons (on hover on desktop, always visible on touch screens), the
+  Now Playing view has them beside Like, and album and playlist pages have buttons that queue the whole
+  list in order. Play next slots the song right after the current one and Add to queue appends it; with
+  nothing playing, either starts playback and a short message confirms what happened.
+
 - **A web player you can run on your own server, sharing your library with the phone.** There is a new
   self-hosted web app (`web/`, Next.js, run with Docker on port 3000) that browses YouTube Music and plays
   through your server — seeking included — with a queue, radio, lyrics, and likes, playlists, followed artists
