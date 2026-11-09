@@ -27,6 +27,14 @@ a throwaway test key, not the SimpMusic developers' key.
 
 New in this update:
 
+- **Endless queue has a switch, and Add to queue hides while it's on.** The web player's Settings now
+  has an **Endless queue** switch, on by default, that decides whether a radio keeps fetching more songs
+  as the queue nears its end. While it is on there is no end of the queue to append to, so both players
+  hide **Add to queue** — in song rows, song cards, Now Playing, album and playlist headers, the
+  three-dots menu, and the Android song, multi-select, playlist and local playlist sheets. **Play next**
+  stays everywhere. Turn the switch off to bring Add to queue back; on Android, radio queues still show
+  the old disabled row with its reason.
+
 - **The web player has Play next and Add to queue on every song.** Song rows and song cards now show
   small Play next and Add to queue buttons (on hover on desktop, always visible on touch screens), the
   Now Playing view has them beside Like, and album and playlist pages have buttons that queue the whole
