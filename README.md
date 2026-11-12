@@ -9,7 +9,7 @@ problems with it to them.
 ## Download
 
 **[SimpMusic-dev-listen-together-arm64.apk](https://github.com/fhifkldfkljkdf/simplemusic-builds/raw/main/SimpMusic-dev-listen-together-arm64.apk)**
-(29.1 MB, for 64-bit Android phones)
+(29.4 MB, for 64-bit Android phones)
 
 1. Open the link on your phone. No GitHub account is needed.
 2. Open the downloaded file. The first time, Android asks you to allow installing apps from your browser.
@@ -26,6 +26,23 @@ a throwaway test key, not the SimpMusic developers' key.
 ## What is different in this build
 
 New in this update:
+
+- **Better recommendations, and SimpMusic 2.5.0 underneath.** Radios and Home's own rows now learn from
+  what you skip, not only from what you play. An artist you keep skipping drops down the radio and out of
+  Home's rows, and a song you later play in full is forgiven. Songs by artists you have liked move up, and
+  so do artists you have never played whom your top artists' pages point at. Karaoke tracks, covers,
+  sped-up, slowed, 8D and AI versions, tribute bands and clips under a minute are left out of a radio,
+  unless the radio is about them. Home starts from a different set of your most played songs each day, one
+  per artist, so it is not the same four radios all week, and a song that several of those radios agree on
+  comes first.
+
+  This build also takes in upstream SimpMusic 2.5.0: Home's new header (your avatar, an **All** chip, a
+  **Mood** chip and **Create** on one row) over YouTube's Home backdrop, comments on songs, song
+  recognition, a lyrics editor, Smart downloads, the Cached playlist and a sidebar on Desktop.
+  Notifications are now in the avatar menu, and Listen Together and Settings are under **Create**. The
+  Recently played screen is gone upstream, so its History button is gone here too. Everything this build
+  adds (themes, Listen Together, friends, podcasts, headphone noise control, other sources, the web
+  server sync) is kept, and the review, blog and banner pop-ups stay out.
 
 - **Endless queue has a switch, and Add to queue hides while it's on.** The web player's Settings now
   has an **Endless queue** switch, on by default, that decides whether a radio keeps fetching more songs
@@ -881,7 +898,7 @@ Playback:
 ## Source code
 
 SimpMusic is licensed under the GNU General Public License v3.0 (see [LICENSE](LICENSE)).
-[SimpMusic-source-0595313.zip](SimpMusic-source-0595313.zip) is the complete source code this build was
-made from, including the changes above: the app at commit `0595313` and its `core` module at `439fa44`.
+[SimpMusic-source-aae06c1.zip](SimpMusic-source-aae06c1.zip) is the complete source code this build was
+made from, including the changes above: the app at commit `aae06c1` and its `core` module at `cabcfbd`.
 Build it with `./gradlew :androidApp:assembleOptimized` (an unsigned release-type APK, to sign with
 your own key) or `./gradlew :androidApp:assembleDebug` (Android SDK and JDK 21 required).
