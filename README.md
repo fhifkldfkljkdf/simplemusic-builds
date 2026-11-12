@@ -27,6 +27,12 @@ a throwaway test key, not the SimpMusic developers' key.
 
 New in this update:
 
+- **The Comments and Queue buttons in the player have traded places.** In every player style the Queue
+  button now sits where Comments was, and Comments where Queue was. Classic: Queue is beside Info and
+  Output on the left, Comments at the far right. Material 3 Expressive: Comments, then Queue at the end
+  of the row. Apple Music: Queue is the third part of the middle capsule (lit while the queue shows) and
+  Comments is the round button on the right.
+
 - **Better recommendations, and SimpMusic 2.5.0 underneath.** Radios and Home's own rows now learn from
   what you skip, not only from what you play. An artist you keep skipping drops down the radio and out of
   Home's rows, and a song you later play in full is forgiven. Songs by artists you have liked move up, and
@@ -898,7 +904,7 @@ Playback:
 ## Source code
 
 SimpMusic is licensed under the GNU General Public License v3.0 (see [LICENSE](LICENSE)).
-[SimpMusic-source-aae06c1.zip](SimpMusic-source-aae06c1.zip) is the complete source code this build was
-made from, including the changes above: the app at commit `aae06c1` and its `core` module at `cabcfbd`.
+[SimpMusic-source-2f4b707.zip](SimpMusic-source-2f4b707.zip) is the complete source code this build was
+made from, including the changes above: the app at commit `2f4b707` and its `core` module at `cabcfbd`.
 Build it with `./gradlew :androidApp:assembleOptimized` (an unsigned release-type APK, to sign with
 your own key) or `./gradlew :androidApp:assembleDebug` (Android SDK and JDK 21 required).
