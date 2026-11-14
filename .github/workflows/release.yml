@@ -1,0 +1,56 @@
+name: Release
+
+# Cuts the GitHub release the app's update check reads (releases/latest of this repo).
+# A push to main that changes the APK, with the commit subject "Test build X.Y.Z: <summary>",
+# releases vX.Y.Z with that commit's APK. The notes are the commit body without its trailer lines,
+# or the summary when the body has none. It can also be run by hand (Actions > Release > Run
+# workflow) for a version, using the APK on main. It does nothing when the release already exists,
+# so one made with `gh release create` is left alone.
+on:
+  push:
+    branches: [main]
+    paths: [SimpMusic-dev-listen-together-arm64.apk]
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Version to release, without the v (e.g. 2.4.84). The APK on main is used."
+        required: true
+      notes:
+        description: "Release notes the app's update dialog shows"
+        required: true
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Create the release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          VERSION: ${{ inputs.version }}
+          NOTES: ${{ inputs.notes }}
+        run: |
+          subject="$(git log -1 --format=%s)"
+          if [ -z "$VERSION" ]; then
+            VERSION="$(printf '%s' "$subject" | sed -nE 's/^Test build ([0-9][0-9.]*):.*/\1/p')"
+          fi
+          if [ -z "$VERSION" ]; then
+            echo "No version in the commit subject \"$subject\"; nothing to release."
+            exit 0
+          fi
+          TAG="v${VERSION#v}"
+          if gh release view "$TAG" >/dev/null 2>&1; then
+            echo "Release $TAG already exists."
+            exit 0
+          fi
+          if [ -n "$NOTES" ]; then
+            printf '%s\n' "$NOTES" > notes.md
+          else
+            git log -1 --format=%b | grep -viE '^(co-authored-by|claude-session):' | sed '/^[[:space:]]*$/d' > notes.md || true
+            [ -s notes.md ] || printf '%s\n' "${subject#*: }" > notes.md
+          fi
+          gh release create "$TAG" SimpMusic-dev-listen-together-arm64.apk --title "$TAG" --target "$GITHUB_SHA" --notes-file notes.md
