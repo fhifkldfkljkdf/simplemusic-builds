@@ -27,6 +27,12 @@ a throwaway test key, not the SimpMusic developers' key.
 
 New in this update:
 
+- **Most played shows how often you played each song, and your listening stats.** Every song in the Most
+  played list now shows its play count before the artist ("42 plays · Artist"), and the header says how many
+  plays the list adds up to. A card above the list shows your total plays, roughly how long you have listened
+  (each song's length times its plays, so it counts songs you skipped early in full), how many artists are in
+  the list, and your top artist with their plays.
+
 - **The Cached list shows all your cached songs, how much each takes up, and the total.** It used to
   stop at 1000 songs, and it left out songs cached from the Internet Archive, Monochrome, Audius or the
   SoundCloud backup; now every song that plays offline from the cache is listed. Each row shows the
@@ -913,7 +919,7 @@ Playback:
 ## Source code
 
 SimpMusic is licensed under the GNU General Public License v3.0 (see [LICENSE](LICENSE)).
-[SimpMusic-source-e2b5987.zip](SimpMusic-source-e2b5987.zip) is the complete source code this build was
-made from, including the changes above: the app at commit `e2b5987` and its `core` module at `024e156`.
+[SimpMusic-source-d56a735.zip](SimpMusic-source-d56a735.zip) is the complete source code this build was
+made from, including the changes above: the app at commit `d56a735` and its `core` module at `25e6b81`.
 Build it with `./gradlew :androidApp:assembleOptimized` (an unsigned release-type APK, to sign with
 your own key) or `./gradlew :androidApp:assembleDebug` (Android SDK and JDK 21 required).
