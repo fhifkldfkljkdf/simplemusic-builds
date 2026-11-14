@@ -27,6 +27,15 @@ a throwaway test key, not the SimpMusic developers' key.
 
 New in this update:
 
+- **The Cached list shows all your cached songs, how much each takes up, and the total.** It used to
+  stop at 1000 songs, and it left out songs cached from the Internet Archive, Monochrome, Audius or the
+  SoundCloud backup; now every song that plays offline from the cache is listed. Each row shows the
+  song's size before the artist ("12.4 MB · Artist"), and the list's header shows how many songs there
+  are and how much space they take together ("1834 tracks · 6.42 GB"). The Cached card in Your library
+  shows the same total. **Remove from cache** now frees every copy of the song, and the list updates at
+  once. Lists longer than 1000 songs elsewhere (a big local playlist, a long queue) are no longer cut
+  off either.
+
 - **The Comments and Queue buttons in the player have traded places.** In every player style the Queue
   button now sits where Comments was, and Comments where Queue was. Classic: Queue is beside Info and
   Output on the left, Comments at the far right. Material 3 Expressive: Comments, then Queue at the end
@@ -904,7 +913,7 @@ Playback:
 ## Source code
 
 SimpMusic is licensed under the GNU General Public License v3.0 (see [LICENSE](LICENSE)).
-[SimpMusic-source-2f4b707.zip](SimpMusic-source-2f4b707.zip) is the complete source code this build was
-made from, including the changes above: the app at commit `2f4b707` and its `core` module at `cabcfbd`.
+[SimpMusic-source-e2b5987.zip](SimpMusic-source-e2b5987.zip) is the complete source code this build was
+made from, including the changes above: the app at commit `e2b5987` and its `core` module at `024e156`.
 Build it with `./gradlew :androidApp:assembleOptimized` (an unsigned release-type APK, to sign with
 your own key) or `./gradlew :androidApp:assembleDebug` (Android SDK and JDK 21 required).
