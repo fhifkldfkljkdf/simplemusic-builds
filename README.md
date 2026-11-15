@@ -27,6 +27,11 @@ a throwaway test key, not the SimpMusic developers' key.
 
 New in this update:
 
+- **Most played lists every song you have played more than once, not just the top 50.** The list used
+  to stop at 50 songs; now it goes on to every song you started at least twice, and the play count,
+  listening time and artist figures above it cover them all. The Most played card in Your library
+  shows the real number too, where it used to stop at 50.
+
 - **Most played shows how often you played each song, and your listening stats.** Every song in the Most
   played list now shows its play count before the artist ("42 plays · Artist"), and the header says how many
   plays the list adds up to. A card above the list shows your total plays, roughly how long you have listened
@@ -919,7 +924,7 @@ Playback:
 ## Source code
 
 SimpMusic is licensed under the GNU General Public License v3.0 (see [LICENSE](LICENSE)).
-[SimpMusic-source-d56a735.zip](SimpMusic-source-d56a735.zip) is the complete source code this build was
-made from, including the changes above: the app at commit `d56a735` and its `core` module at `25e6b81`.
+[SimpMusic-source-878d404.zip](SimpMusic-source-878d404.zip) is the complete source code this build was
+made from, including the changes above: the app at commit `878d404` and its `core` module at `e9bcfb7`.
 Build it with `./gradlew :androidApp:assembleOptimized` (an unsigned release-type APK, to sign with
 your own key) or `./gradlew :androidApp:assembleDebug` (Android SDK and JDK 21 required).
