@@ -27,11 +27,15 @@ a throwaway test key, not the SimpMusic developers' key.
 
 New in this update:
 
+- **Radio numbers are centered in each queue row.** A label like **3/18** means the song scored
+  third out of 18 candidates in that radio batch. Final playback order can differ because the
+  radio spaces out artists and hits. Tap the number for the breakdown.
+
+Earlier updates:
+
 - **Updated to upstream SimpMusic 2.6.0.** Includes library sync with Desktop, the SoundCloud
   player style, 8D audio, word-synced LRCLIB lyrics, and updates to the YouTube stream extractors.
   The test build keeps its queue ranks, Radio Mix, Listen Together controls, and custom themes.
-
-Earlier updates:
 
 - **See a song’s radio rank beside its title in the queue.** The label also shows when a track
   started the radio or was added manually. Tap the label to see the available listening and
@@ -934,7 +938,7 @@ Playback:
 ## Source code
 
 SimpMusic is licensed under the GNU General Public License v3.0 (see [LICENSE](LICENSE)).
-[SimpMusic-source-cbe030e.zip](SimpMusic-source-cbe030e.zip) is the complete source code this build was
-made from, including the changes above: the app at commit `cbe030e` and its `core` module at `37764d1`.
+[SimpMusic-source-1f77a52.zip](SimpMusic-source-1f77a52.zip) is the complete source code this build was
+made from, including the changes above: the app at commit `1f77a52` and its `core` module at `37764d1`.
 Build it with `./gradlew :androidApp:assembleOptimized` (an unsigned release-type APK, to sign with
 your own key) or `./gradlew :androidApp:assembleDebug` (Android SDK 37.2 and JDK 21 required).
