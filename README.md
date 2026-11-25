@@ -27,10 +27,9 @@ a throwaway test key, not the SimpMusic developers' key.
 
 New in this update:
 
-- **See why a song was added to the queue.** Tap **⋯ → Why this song?** on any queue entry.
-  New radio picks show their rank, where they landed in the batch, and the available listening
-  and popularity signals behind that placement. Manual additions show **Add to queue** or
-  **Play next** when recorded.
+- **See a song’s radio rank beside its title in the queue.** The label also shows when a track
+  started the radio or was added manually. Tap the label to see the available listening and
+  popularity signals and where the song landed in its radio batch.
 
 Earlier updates:
 
@@ -931,7 +930,7 @@ Playback:
 ## Source code
 
 SimpMusic is licensed under the GNU General Public License v3.0 (see [LICENSE](LICENSE)).
-[SimpMusic-source-3dccf3d.zip](SimpMusic-source-3dccf3d.zip) is the complete source code this build was
-made from, including the changes above: the app at commit `3dccf3d` and its `core` module at `f0400c6`.
+[SimpMusic-source-56b84ca.zip](SimpMusic-source-56b84ca.zip) is the complete source code this build was
+made from, including the changes above: the app at commit `56b84ca` and its `core` module at `f0400c6`.
 Build it with `./gradlew :androidApp:assembleOptimized` (an unsigned release-type APK, to sign with
 your own key) or `./gradlew :androidApp:assembleDebug` (Android SDK and JDK 21 required).
