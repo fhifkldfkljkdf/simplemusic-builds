@@ -27,6 +27,13 @@ a throwaway test key, not the SimpMusic developers' key.
 
 New in this update:
 
+- **See why a song was added to the queue.** Tap **⋯ → Why this song?** on any queue entry.
+  New radio picks show their rank, where they landed in the batch, and the available listening
+  and popularity signals behind that placement. Manual additions show **Add to queue** or
+  **Play next** when recorded.
+
+Earlier updates:
+
 - **Most played lists every song you have played more than once, not just the top 50.** The list used
   to stop at 50 songs; now it goes on to every song you started at least twice, and the play count,
   listening time and artist figures above it cover them all. The Most played card in Your library
@@ -924,7 +931,7 @@ Playback:
 ## Source code
 
 SimpMusic is licensed under the GNU General Public License v3.0 (see [LICENSE](LICENSE)).
-[SimpMusic-source-878d404.zip](SimpMusic-source-878d404.zip) is the complete source code this build was
-made from, including the changes above: the app at commit `878d404` and its `core` module at `e9bcfb7`.
+[SimpMusic-source-3dccf3d.zip](SimpMusic-source-3dccf3d.zip) is the complete source code this build was
+made from, including the changes above: the app at commit `3dccf3d` and its `core` module at `f0400c6`.
 Build it with `./gradlew :androidApp:assembleOptimized` (an unsigned release-type APK, to sign with
 your own key) or `./gradlew :androidApp:assembleDebug` (Android SDK and JDK 21 required).
