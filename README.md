@@ -27,11 +27,15 @@ a throwaway test key, not the SimpMusic developers' key.
 
 New in this update:
 
+- **See listening stats directly in the queue.** The center shows just the song’s score position.
+  The right side shows its recorded plays, with skips and liked status when available.
+  Tap the center label for the full radio score breakdown.
+
+Earlier updates:
+
 - **See exactly what moved a radio song up or down.** Tap its centered queue number to see
   the starting score, individual adjustments from listening and YouTube signals, and the
   gap to the song ranked above it. The full breakdown is recorded for newly queued radio songs.
-
-Earlier updates:
 
 - **Radio numbers are centered in each queue row.** A label like **3/18** means the song scored
   third out of 18 candidates in that radio batch. Final playback order can differ because the
@@ -944,7 +948,7 @@ Playback:
 ## Source code
 
 SimpMusic is licensed under the GNU General Public License v3.0 (see [LICENSE](LICENSE)).
-[SimpMusic-source-e76b587.zip](SimpMusic-source-e76b587.zip) is the complete source code this build was
-made from, including the changes above: the app at commit `e76b587` and its `core` module at `a705730`.
+[SimpMusic-source-4749da0.zip](SimpMusic-source-4749da0.zip) is the complete source code this build was
+made from, including the changes above: the app at commit `4749da0` and its `core` module at `a705730`.
 Build it with `./gradlew :androidApp:assembleOptimized` (an unsigned release-type APK, to sign with
 your own key) or `./gradlew :androidApp:assembleDebug` (Android SDK 37.2 and JDK 21 required).
