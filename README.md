@@ -9,7 +9,7 @@ problems with it to them.
 ## Download
 
 **[SimpMusic-dev-listen-together-arm64.apk](https://github.com/fhifkldfkljkdf/simplemusic-builds/raw/main/SimpMusic-dev-listen-together-arm64.apk)**
-(29.4 MB, for 64-bit Android phones)
+(29.6 MB, for 64-bit Android phones)
 
 1. Open the link on your phone. No GitHub account is needed.
 2. Open the downloaded file. The first time, Android asks you to allow installing apps from your browser.
@@ -27,11 +27,15 @@ a throwaway test key, not the SimpMusic developers' key.
 
 New in this update:
 
+- **Updated to upstream SimpMusic 2.6.0.** Includes library sync with Desktop, the SoundCloud
+  player style, 8D audio, word-synced LRCLIB lyrics, and updates to the YouTube stream extractors.
+  The test build keeps its queue ranks, Radio Mix, Listen Together controls, and custom themes.
+
+Earlier updates:
+
 - **See a song’s radio rank beside its title in the queue.** The label also shows when a track
   started the radio or was added manually. Tap the label to see the available listening and
   popularity signals and where the song landed in its radio batch.
-
-Earlier updates:
 
 - **Most played lists every song you have played more than once, not just the top 50.** The list used
   to stop at 50 songs; now it goes on to every song you started at least twice, and the play count,
@@ -930,7 +934,7 @@ Playback:
 ## Source code
 
 SimpMusic is licensed under the GNU General Public License v3.0 (see [LICENSE](LICENSE)).
-[SimpMusic-source-56b84ca.zip](SimpMusic-source-56b84ca.zip) is the complete source code this build was
-made from, including the changes above: the app at commit `56b84ca` and its `core` module at `f0400c6`.
+[SimpMusic-source-cbe030e.zip](SimpMusic-source-cbe030e.zip) is the complete source code this build was
+made from, including the changes above: the app at commit `cbe030e` and its `core` module at `37764d1`.
 Build it with `./gradlew :androidApp:assembleOptimized` (an unsigned release-type APK, to sign with
-your own key) or `./gradlew :androidApp:assembleDebug` (Android SDK and JDK 21 required).
+your own key) or `./gradlew :androidApp:assembleDebug` (Android SDK 37.2 and JDK 21 required).
