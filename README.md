@@ -9,7 +9,7 @@ problems with it to them.
 ## Download
 
 **[SimpMusic-dev-listen-together-arm64.apk](https://github.com/fhifkldfkljkdf/simplemusic-builds/raw/main/SimpMusic-dev-listen-together-arm64.apk)**
-(29.6 MB, for 64-bit Android phones)
+(29.7 MB, for 64-bit Android phones)
 
 1. Open the link on your phone. No GitHub account is needed.
 2. Open the downloaded file. The first time, Android asks you to allow installing apps from your browser.
@@ -27,11 +27,20 @@ a throwaway test key, not the SimpMusic developers' key.
 
 New in this update:
 
+- **Less like this in song menus.** Play a song less often in Radio, cool down its artist for a week,
+  or hide the exact version from future radio picks.
+- **Undo queue edits.** Reverse the last applied move or removal, or restore the queue you had before
+  starting a new radio.
+- **Radio recap.** See which discoveries you played, finished, liked, or skipped in your session.
+  Save the liked songs together as a local playlist.
+- **Vote on room suggestions.** Listen Together guests can vote or withdraw their votes. The host
+  sees the counts and chooses which suggestions play.
+
+Earlier updates:
+
 - **See listening stats directly in the queue.** The center shows just the song’s score position.
   The right side shows its recorded plays, with skips and liked status when available.
   Tap the center label for the full radio score breakdown.
-
-Earlier updates:
 
 - **See exactly what moved a radio song up or down.** Tap its centered queue number to see
   the starting score, individual adjustments from listening and YouTube signals, and the
@@ -948,7 +957,7 @@ Playback:
 ## Source code
 
 SimpMusic is licensed under the GNU General Public License v3.0 (see [LICENSE](LICENSE)).
-[SimpMusic-source-4749da0.zip](SimpMusic-source-4749da0.zip) is the complete source code this build was
-made from, including the changes above: the app at commit `4749da0` and its `core` module at `a705730`.
+[SimpMusic-source-0312c5c.zip](SimpMusic-source-0312c5c.zip) is the complete source code this build was
+made from, including the changes above: the app at commit `0312c5c` and its `core` module at `20e5662`.
 Build it with `./gradlew :androidApp:assembleOptimized` (an unsigned release-type APK, to sign with
 your own key) or `./gradlew :androidApp:assembleDebug` (Android SDK 37.2 and JDK 21 required).
